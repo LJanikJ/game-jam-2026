@@ -1,29 +1,21 @@
 [gd_scene format=3 uid="uid://dmywb3rw07ll8"]
 
+[ext_resource type="PackedScene" uid="uid://ctpfxcbcdhyqa" path="res://scenes/desk/tabletop_view.tscn" id="1_6s6y0"]
 [ext_resource type="PackedScene" uid="uid://bkqxdb87m7lot" path="res://scenes/handbook/handbook.tscn" id="1_fttaq"]
 
-[sub_resource type="Gradient" id="Gradient_6jf0j"]
-offsets = PackedFloat32Array(0.5510204)
-colors = PackedColorArray(0.548529, 0.29804233, 0.17326263, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_7nar7"]
-gradient = SubResource("Gradient_6jf0j")
-
 [node name="GameScene" type="Node2D" unique_id=1450174136]
-position = Vector2(50, 0)
 
-[node name="Tabletop View Placeholder" type="Sprite2D" parent="." unique_id=1609076697]
-position = Vector2(418, 240)
-scale = Vector2(3.65625, 480)
-texture = SubResource("GradientTexture1D_7nar7")
+[node name="Tabletop View" parent="." unique_id=458742552 instance=ExtResource("1_6s6y0")]
+position = Vector2(464, 240)
 
 [node name="Shop View Placeholder" type="Polygon2D" parent="." unique_id=1307578726]
-position = Vector2(0, -127.510925)
+position = Vector2(48, -128)
 scale = Vector2(1, 1.1970803)
-polygon = PackedVector2Array(-50, 507.4939, 886, 507.4939, 886, 647.8353, -50, 647.8353)
+polygon = PackedVector2Array(-48, 507.90247, 880, 507.90247, 880, 648.2439, -48, 648.2439)
 
 [node name="Spell List Placeholder" type="Polygon2D" parent="." unique_id=707430516]
-scale = Vector2(1, 1.0217391)
+position = Vector2(9.185181, 0)
+scale = Vector2(1.037037, 1.0217391)
 polygon = PackedVector2Array(886, 0, 886, 368, 990, 368, 1102, 368, 1102, 184, 1102, 0)
 
 [node name="Spell Button 1 Placeholder" type="Button" parent="Spell List Placeholder" unique_id=690936899]
@@ -58,9 +50,9 @@ text = "Spell 4 Placeholder"
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
-offset_left = 886.0
+offset_left = 928.0
 offset_top = 376.0
-offset_right = 886.0
+offset_right = 928.0
 offset_bottom = 376.0
 grow_horizontal = 0
 grow_vertical = 0

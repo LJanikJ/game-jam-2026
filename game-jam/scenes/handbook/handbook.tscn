@@ -8,7 +8,7 @@ colors = PackedColorArray(0.41960785, 0.25882354, 0.12156863, 1, 0.29411766, 0.1
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gpx6f"]
 gradient = SubResource("Gradient_gbxsw")
-width = 216
+width = 224
 height = 272
 
 [node name="Handbook" type="Control" unique_id=531685002]
@@ -27,7 +27,7 @@ polygon = PackedVector2Array(882, 369, 883, 645, 1102, 644, 1100, 369)
 
 [node name="Handbook Button" type="TextureButton" parent="." unique_id=1403453759]
 layout_mode = 0
-offset_right = 216.0
+offset_right = 224.0
 offset_bottom = 272.0
 texture_normal = SubResource("GradientTexture2D_gpx6f")
 ignore_texture_size = true
