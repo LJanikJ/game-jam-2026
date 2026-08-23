@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cvp6wf8x1x3v1"]
+
+[ext_resource type="Script" uid="uid://ccc7gxd7ebyf4" path="res://title-screen/title-screen.gd" id="1_vt7gb"]
+
+[sub_resource type="Gradient" id="Gradient_1s85s"]
+colors = PackedColorArray(0.7490196, 0, 0, 1, 1, 0, 0.6745098, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j5vie"]
+gradient = SubResource("Gradient_1s85s")
+
+[node name="Node2D" type="Node2D" unique_id=769329823]
+script = ExtResource("1_vt7gb")
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=993996892]
+layer = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="BackgroundLayer" unique_id=135912527]
+position = Vector2(576, 324)
+scale = Vector2(18, 10.125)
+texture = SubResource("GradientTexture2D_j5vie")
+
+[node name="InterfaceLayer" type="CanvasLayer" parent="." unique_id=1664139560]
+
+[node name="Button" type="Button" parent="InterfaceLayer" unique_id=429525052]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -328.0
+offset_right = 128.0
+offset_bottom = -264.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Start Game"
+
+[connection signal="pressed" from="InterfaceLayer/Button" to="." method="_on_button_pressed"]
