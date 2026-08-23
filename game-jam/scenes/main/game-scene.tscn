@@ -64,8 +64,3 @@ offset_right = 886.0
 offset_bottom = 376.0
 grow_horizontal = 0
 grow_vertical = 0
-
-[node name="Handbook Placeholder" type="Polygon2D" parent="." unique_id=1215945930]
-position = Vector2(286, -40)
-color = Color(0.7254902, 0.47843137, 0.34117648, 1)
-polygon = PackedVector2Array(886, 368, 886, 648, 1102, 648, 1102, 368)
