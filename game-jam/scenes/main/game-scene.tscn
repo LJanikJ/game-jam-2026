@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dmywb3rw07ll8"]
 
+[ext_resource type="PackedScene" uid="uid://bkqxdb87m7lot" path="res://scenes/handbook/handbook.tscn" id="1_fttaq"]
+
 [sub_resource type="Gradient" id="Gradient_6jf0j"]
 offsets = PackedFloat32Array(0.5510204)
 colors = PackedColorArray(0.548529, 0.29804233, 0.17326263, 1)
@@ -11,46 +13,54 @@ gradient = SubResource("Gradient_6jf0j")
 position = Vector2(50, 0)
 
 [node name="Tabletop View Placeholder" type="Sprite2D" parent="." unique_id=1609076697]
-position = Vector2(417, 242.5)
-scale = Vector2(3.640625, 481)
+position = Vector2(418, 240)
+scale = Vector2(3.65625, 480)
 texture = SubResource("GradientTexture1D_7nar7")
 
 [node name="Shop View Placeholder" type="Polygon2D" parent="." unique_id=1307578726]
 position = Vector2(0, -127.510925)
 scale = Vector2(1, 1.1970803)
-polygon = PackedVector2Array(-50, 510, 883, 511, 882, 646, -50, 647)
+polygon = PackedVector2Array(-50, 507.4939, 886, 507.4939, 886, 647.8353, -50, 647.8353)
 
 [node name="Spell List Placeholder" type="Polygon2D" parent="." unique_id=707430516]
-polygon = PackedVector2Array(882, 1, 883, 370, 1101, 370, 1101, 0)
+scale = Vector2(1, 1.0217391)
+polygon = PackedVector2Array(886, 0, 886, 368, 990, 368, 1102, 368, 1102, 184, 1102, 0)
 
 [node name="Spell Button 1 Placeholder" type="Button" parent="Spell List Placeholder" unique_id=690936899]
-offset_left = 881.0
-offset_top = 1.0
+offset_left = 886.0
+offset_top = 8.0
 offset_right = 1102.0
-offset_bottom = 92.0
+offset_bottom = 96.0
 text = "Spell 1 Placeholder"
 
 [node name="Spell Button 2 Placeholder2" type="Button" parent="Spell List Placeholder" unique_id=83679317]
-offset_left = 881.0
-offset_top = 92.0
+offset_left = 886.0
+offset_top = 96.0
 offset_right = 1102.0
-offset_bottom = 183.0
+offset_bottom = 184.0
 text = "Spell 2 Placeholder"
 
 [node name="Spell Button 3 Placeholder3" type="Button" parent="Spell List Placeholder" unique_id=874765296]
-offset_left = 880.0
-offset_top = 182.0
-offset_right = 1101.0
-offset_bottom = 273.0
+offset_left = 886.0
+offset_top = 184.0
+offset_right = 1102.0
+offset_bottom = 272.0
 text = "Spell 3 Placeholder"
 
 [node name="Spell Button 4 Placeholder3" type="Button" parent="Spell List Placeholder" unique_id=1348566006]
-offset_left = 881.0
-offset_top = 274.0
+offset_left = 886.0
+offset_top = 272.0
 offset_right = 1102.0
-offset_bottom = 365.0
+offset_bottom = 360.0
 text = "Spell 4 Placeholder"
 
-[node name="Handbook Placeholder" type="Polygon2D" parent="." unique_id=1215945930]
-color = Color(0.7254902, 0.47843137, 0.34117648, 1)
-polygon = PackedVector2Array(882, 369, 883, 645, 1102, 644, 1100, 369)
+[node name="Handbook" parent="." unique_id=531685002 instance=ExtResource("1_fttaq")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = 886.0
+offset_top = 376.0
+offset_right = 886.0
+offset_bottom = 376.0
+grow_horizontal = 0
+grow_vertical = 0
