@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bkqxdb87m7lot"]
+
+[ext_resource type="Script" uid="uid://n0rsnoe2fywm" path="res://scripts/handbook/handbook_button.gd" id="1_a7qyx"]
+[ext_resource type="Script" uid="uid://d3b7eaueptfwq" path="res://scripts/handbook/handbook_window.gd" id="2_gbxsw"]
+
+[node name="Handbook" type="Control" unique_id=531685002]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Handbook Placeholder" type="Polygon2D" parent="." unique_id=1402889963]
+visible = false
+position = Vector2(-883, -368)
+color = Color(0.7254902, 0.47843137, 0.34117648, 1)
+polygon = PackedVector2Array(882, 369, 883, 645, 1102, 644, 1100, 369)
+
+[node name="Handbook Button" type="Button" parent="." unique_id=1474795451]
+layout_mode = 0
+offset_right = 221.0
+offset_bottom = 278.0
+text = "Handbook"
+script = ExtResource("1_a7qyx")
+
+[node name="Handbook Window" type="Window" parent="Handbook Button" unique_id=572882381]
+oversampling_override = 1.0
+title = "Handbook"
+initial_position = 2
+size = Vector2i(400, 400)
+visible = false
+popup_window = true
+script = ExtResource("2_gbxsw")
+
+[connection signal="pressed" from="Handbook Button" to="Handbook Button" method="_on_pressed"]
+[connection signal="close_requested" from="Handbook Button/Handbook Window" to="Handbook Button/Handbook Window" method="_on_close_requested"]
