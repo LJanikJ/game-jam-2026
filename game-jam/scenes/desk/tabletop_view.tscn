@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://ctpfxcbcdhyqa"]
+
+[ext_resource type="Script" uid="uid://ne6l2mlcolwa" path="res://scripts/desk/item_manager.gd" id="1_lc0u4"]
+
+[sub_resource type="Gradient" id="Gradient_0pp5c"]
+colors = PackedColorArray(0.8666667, 0.5686275, 0.26666668, 1, 0.6509804, 0.3137255, 0.011764706, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0pp5c"]
+gradient = SubResource("Gradient_0pp5c")
+
+[sub_resource type="Animation" id="Animation_exh8c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ItemCarrier:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-384.0]
+}
+
+[sub_resource type="Animation" id="Animation_lc0u4"]
+resource_name = "slide_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ItemCarrier:position:x")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-384.0, 464.0]
+}
+
+[sub_resource type="Animation" id="Animation_2refd"]
+resource_name = "slide_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ItemCarrier:position:x")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [464.0, 1312.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2refd"]
+_data = {
+&"RESET": SubResource("Animation_exh8c"),
+&"slide_in": SubResource("Animation_lc0u4"),
+&"slide_out": SubResource("Animation_2refd")
+}
+
+[node name="Tabletop View" type="Node2D" unique_id=458742552]
+script = ExtResource("1_lc0u4")
+
+[node name="Background Layer" type="CanvasLayer" parent="." unique_id=1249260215]
+layer = 0
+
+[node name="TableTexture" type="Sprite2D" parent="Background Layer" unique_id=1880202786]
+position = Vector2(464, 239.99998)
+scale = Vector2(14.5, 7.5)
+texture = SubResource("GradientTexture2D_0pp5c")
+
+[node name="Item Layer" type="CanvasLayer" parent="." unique_id=817969860]
+
+[node name="TempButton" type="Button" parent="Item Layer" unique_id=1718638927]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 816.0
+offset_top = 424.0
+offset_right = -248.0
+offset_bottom = -184.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Next"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Item Layer" unique_id=1591364748]
+libraries/ = SubResource("AnimationLibrary_2refd")
+
+[node name="ItemCarrier" type="Node2D" parent="Item Layer" unique_id=1238515235]
+position = Vector2(-384, 240)
+
+[connection signal="pressed" from="Item Layer/TempButton" to="." method="_on_temp_button_pressed"]
+[connection signal="animation_finished" from="Item Layer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="child_exiting_tree" from="Item Layer/ItemCarrier" to="." method="_on_item_carrier_child_exiting_tree"]

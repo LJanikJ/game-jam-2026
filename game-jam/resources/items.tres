@@ -1,0 +1,22 @@
+[gd_resource type="JSON" format=3 uid="uid://bi05k1xpqgnsw"]
+
+[resource]
+data = [{
+"cursed": false,
+"lying": false,
+"quality": 10,
+"rarity": "common",
+"type": "misc"
+}, {
+"cursed": true,
+"lying": false,
+"quality": 1,
+"rarity": "legendary",
+"type": "weapon"
+}, {
+"cursed": false,
+"lying": false,
+"quality": 2,
+"rarity": "common",
+"type": "orb"
+}]
