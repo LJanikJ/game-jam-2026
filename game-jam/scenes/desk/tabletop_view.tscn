@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://ctpfxcbcdhyqa"]
 
+[ext_resource type="PackedScene" uid="uid://wmbu21rdj1hi" path="res://scenes/item/item.tscn" id="1_exh8c"]
+[ext_resource type="Script" uid="uid://ne6l2mlcolwa" path="res://scenes/desk/item_manager.gd" id="1_lc0u4"]
+
 [sub_resource type="Gradient" id="Gradient_0pp5c"]
 colors = PackedColorArray(0.8666667, 0.5686275, 0.26666668, 1, 0.6509804, 0.3137255, 0.011764706, 1)
 
@@ -7,6 +10,7 @@ colors = PackedColorArray(0.8666667, 0.5686275, 0.26666668, 1, 0.6509804, 0.3137
 gradient = SubResource("Gradient_0pp5c")
 
 [node name="Tabletop View" type="Node2D" unique_id=458742552]
+script = ExtResource("1_lc0u4")
 
 [node name="Background Layer" type="CanvasLayer" parent="." unique_id=1249260215]
 layer = 0
@@ -17,3 +21,6 @@ scale = Vector2(14.5, 7.5)
 texture = SubResource("GradientTexture2D_0pp5c")
 
 [node name="Item Layer" type="CanvasLayer" parent="." unique_id=817969860]
+
+[node name="Item" parent="Item Layer" unique_id=625937230 instance=ExtResource("1_exh8c")]
+position = Vector2(-96, 240)
