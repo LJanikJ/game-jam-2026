@@ -24,20 +24,33 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+# needs to pick up signal when one of the buttons is pressed
 func remove_item() -> void:
-	#slide
-	current_item.velocity.x = 5
+	current_item.queue_free()
 	
-	#
+	print($"Item Layer/ItemCarrier".get_child_count())
+		
+	if items.size() > 0:
+		get_next_item()
 	
-	# after user makes decision, slide item off table and remove instance
-	pass
 
 func get_next_item() -> void:
 	# get next item in queue and load instance, then slide in
+	print("remaining ", items.size())
 	current_item = items.pop_front()
 	
-	current_item.position.x = 300
-	current_item.position.y = 300
+	$"Item Layer/ItemCarrier".add_child(current_item)
 	
-	pass
+	$"Item Layer/AnimationPlayer".play("slide_in")
+
+
+func _on_temp_button_pressed() -> void:
+	print($"Item Layer/ItemCarrier".get_child_count())
+	if $"Item Layer/ItemCarrier".get_child_count() > 0:
+		$"Item Layer/AnimationPlayer".play("slide_out")
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "slide_out":
+		print("removing")
+		remove_item()
