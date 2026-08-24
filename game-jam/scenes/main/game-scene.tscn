@@ -3,6 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://ctpfxcbcdhyqa" path="res://scenes/desk/tabletop_view.tscn" id="1_6s6y0"]
 [ext_resource type="PackedScene" uid="uid://bkqxdb87m7lot" path="res://scenes/handbook/handbook.tscn" id="1_fttaq"]
 
+[sub_resource type="Gradient" id="Gradient_6s6y0"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j5vie"]
+gradient = SubResource("Gradient_6s6y0")
+
 [node name="GameScene" type="Node2D" unique_id=1450174136]
 
 [node name="GUILayer" type="CanvasLayer" parent="." unique_id=286979011]
@@ -13,53 +18,55 @@ position = Vector2(48, -128)
 scale = Vector2(1, 1.1970803)
 polygon = PackedVector2Array(-48, 507.90247, 880, 507.90247, 880, 648.2439, -48, 648.2439)
 
-[node name="Spell List Placeholder" type="Polygon2D" parent="GUILayer" unique_id=707430516]
-position = Vector2(9.185181, 0)
-scale = Vector2(1.037037, 1.0217391)
-polygon = PackedVector2Array(886, 0, 886, 368, 990, 368, 1102, 368, 1102, 184, 1102, 0)
+[node name="Right GUI Placeholder" type="Node2D" parent="GUILayer" unique_id=725023407]
+position = Vector2(1152, 648)
+scale = Vector2(1.014, 1)
 
-[node name="Spell Button 1 Placeholder" type="Button" parent="GUILayer/Spell List Placeholder" unique_id=690936899]
-offset_left = 886.0
-offset_top = 8.0
-offset_right = 1102.0
-offset_bottom = 96.0
+[node name="Right GUI Background" type="Polygon2D" parent="GUILayer/Right GUI Placeholder" unique_id=1620308746]
+position = Vector2(-1127.0364, -648)
+color = Color(0.66, 0.66, 0.66, 1)
+texture = SubResource("GradientTexture2D_j5vie")
+polygon = PackedVector2Array(906.12897, 0, 1127.0363, 0, 1127.0363, 648, 906.12897, 648)
+
+[node name="Spell Button 1 Placeholder" type="Button" parent="GUILayer/Right GUI Placeholder" unique_id=690936899]
+offset_left = -213.01788
+offset_top = -632.0
+offset_right = -7.8896484
+offset_bottom = -552.0
 text = "Spell 1 Placeholder"
-metadata/_edit_use_anchors_ = true
 
-[node name="Spell Button 2 Placeholder2" type="Button" parent="GUILayer/Spell List Placeholder" unique_id=83679317]
-offset_left = 886.0
-offset_top = 96.0
-offset_right = 1102.0
-offset_bottom = 184.0
+[node name="Spell Button 2 Placeholder2" type="Button" parent="GUILayer/Right GUI Placeholder" unique_id=83679317]
+offset_left = -213.01782
+offset_top = -544.0
+offset_right = -7.8896484
+offset_bottom = -464.0
 text = "Spell 2 Placeholder"
-metadata/_edit_use_anchors_ = true
 
-[node name="Spell Button 3 Placeholder3" type="Button" parent="GUILayer/Spell List Placeholder" unique_id=874765296]
-offset_left = 886.0
-offset_top = 184.0
-offset_right = 1102.0
-offset_bottom = 272.0
+[node name="Spell Button 3 Placeholder3" type="Button" parent="GUILayer/Right GUI Placeholder" unique_id=874765296]
+offset_left = -213.01782
+offset_top = -456.0
+offset_right = -7.8896484
+offset_bottom = -376.0
 text = "Spell 3 Placeholder"
-metadata/_edit_use_anchors_ = true
 
-[node name="Spell Button 4 Placeholder3" type="Button" parent="GUILayer/Spell List Placeholder" unique_id=1348566006]
-offset_left = 886.0
-offset_top = 272.0
-offset_right = 1102.0
-offset_bottom = 360.0
+[node name="Spell Button 4 Placeholder3" type="Button" parent="GUILayer/Right GUI Placeholder" unique_id=1348566006]
+offset_left = -213.01782
+offset_top = -368.0
+offset_right = -7.8896484
+offset_bottom = -288.0
 text = "Spell 4 Placeholder"
-metadata/_edit_use_anchors_ = true
 
-[node name="Handbook" parent="GUILayer" unique_id=531685002 instance=ExtResource("1_fttaq")]
+[node name="Handbook" parent="GUILayer/Right GUI Placeholder" unique_id=531685002 instance=ExtResource("1_fttaq")]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
-offset_left = -224.0
-offset_top = -272.0
-offset_right = -224.0
-offset_bottom = -272.0
+offset_left = -15.779092
+offset_top = -16.0
+offset_right = -15.779092
+offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
+scale = Vector2(0.985, 1)
 
 [node name="TableLayer" type="CanvasLayer" parent="." unique_id=813252621]
 
