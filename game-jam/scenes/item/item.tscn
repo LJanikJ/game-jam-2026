@@ -11,6 +11,7 @@ gradient = SubResource("Gradient_vcqat")
 script = ExtResource("1_vcqat")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1039051149]
+visible = false
 position = Vector2(-7.6293945e-06, -7.6293945e-06)
 scale = Vector2(3.9999998, 3.9999998)
 texture = SubResource("GradientTexture2D_0pp5c")

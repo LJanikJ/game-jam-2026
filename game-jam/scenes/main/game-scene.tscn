@@ -26,7 +26,7 @@ scale = Vector2(1.014, 1)
 position = Vector2(-1127.0364, -648)
 color = Color(0.66, 0.66, 0.66, 1)
 texture = SubResource("GradientTexture2D_j5vie")
-polygon = PackedVector2Array(906.12897, 0, 1127.0363, 0, 1127.0363, 648, 906.12897, 648)
+polygon = PackedVector2Array(906.1291, 0, 1127.0363, 0, 1127.0363, 648, 906.12897, 648)
 
 [node name="Spell Button 1 Placeholder" type="Button" parent="GUILayer/Right GUI Placeholder" unique_id=690936899]
 offset_left = -213.01788
