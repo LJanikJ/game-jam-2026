@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.gd" id="6_rvpa5"]
 [ext_resource type="Script" uid="uid://c5c8uftj1shcq" path="res://scripts/dialogue/dialogue_manager.gd" id="7_btbfx"]
 [ext_resource type="Script" uid="uid://btj8pexgc0x2" path="res://scripts/dialogue/dialogue_background.gd" id="8_yui8m"]
+[ext_resource type="PackedScene" uid="uid://k8pjt00oc8p8" path="res://scenes/shop/shop_view.tscn" id="6_btbfx"]
+
 
 [sub_resource type="Gradient" id="Gradient_6s6y0"]
 
@@ -106,6 +108,8 @@ position = Vector2(335.99997, 64)
 scale = Vector2(9.499999, 1.5000001)
 texture = SubResource("GradientTexture2D_5c4a4")
 script = ExtResource("8_yui8m")
+[node name="ShopView" parent="GUILayer" unique_id=571563122 instance=ExtResource("6_btbfx")]
+position = Vector2(0, 648)
 
 [node name="TableLayer" type="CanvasLayer" parent="." unique_id=813252621]
 
