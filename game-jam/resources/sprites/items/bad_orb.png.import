@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhei6o8i7g02g"
-path="res://.godot/imported/magic_bean.png-165af41657ff579b20f266fdbc800fc1.ctex"
+uid="uid://bkhe5ykvqprt"
+path="res://.godot/imported/bad_orb.png-0497a65d5d9532cd5519b6ed462fefd8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/item-sprites/magic_bean.png"
-dest_files=["res://.godot/imported/magic_bean.png-165af41657ff579b20f266fdbc800fc1.ctex"]
+source_file="res://resources/sprites/items/bad_orb.png"
+dest_files=["res://.godot/imported/bad_orb.png-0497a65d5d9532cd5519b6ed462fefd8.ctex"]
 
 [params]
 

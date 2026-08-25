@@ -28,7 +28,7 @@ func load_item(index: int) -> void:
 		
 		# add sprite as child node
 		var item_sprite = Sprite2D.new()
-		item_sprite.texture = load("res://resources/item-sprites/"+json_entry["name"]+".png") 
+		item_sprite.texture = load("res://resources/sprites/items/"+json_entry["name"]+".png") 
 		add_child(item_sprite)
 		
 		# set parameters
