@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://ne6l2mlcolwa" path="res://scripts/desk/item_manager.gd" id="1_lc0u4"]
 [ext_resource type="Texture2D" uid="uid://dthmly7t5xo3l" path="res://resources/sprites/desk/accept_button.png" id="2_lc0u4"]
 [ext_resource type="Texture2D" uid="uid://4ys3ckj40civ" path="res://resources/sprites/desk/reject_button.png" id="3_2refd"]
+[ext_resource type="PackedScene" uid="uid://dwdt0ojfbkpd" path="res://scenes/dialogue_box/dialogue_box.tscn" id="4_bisel"]
 
 [sub_resource type="Gradient" id="Gradient_0pp5c"]
 colors = PackedColorArray(0.8666667, 0.5686275, 0.26666668, 1, 0.6509804, 0.3137255, 0.011764706, 1)
@@ -112,6 +113,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("3_2refd")
 stretch_mode = 0
+
+[node name="DialogueBox" parent="GUILayer" unique_id=1440367046 instance=ExtResource("4_bisel")]
 
 [connection signal="animation_finished" from="Item Layer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="child_exiting_tree" from="Item Layer/ItemCarrier" to="." method="_on_item_carrier_child_exiting_tree"]

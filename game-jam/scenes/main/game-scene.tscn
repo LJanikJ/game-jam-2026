@@ -20,7 +20,7 @@ layer = 3
 [node name="Shop View Placeholder" type="Polygon2D" parent="GUILayer" unique_id=1307578726]
 position = Vector2(48, -128)
 scale = Vector2(1, 1.1970803)
-polygon = PackedVector2Array(-48, 507.90247, 880, 507.90247, 880, 648.2439, -48, 648.2439)
+polygon = PackedVector2Array(-48, 514.5854, 416, 514.5854, 880, 514.5854, 880, 648.2439, -48, 648.2439)
 
 [node name="Right GUI Placeholder" type="Node2D" parent="GUILayer" unique_id=725023407]
 position = Vector2(1152, 648)
