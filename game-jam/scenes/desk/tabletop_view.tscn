@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://ctpfxcbcdhyqa"]
 
 [ext_resource type="Script" uid="uid://ne6l2mlcolwa" path="res://scripts/desk/item_manager.gd" id="1_lc0u4"]
+[ext_resource type="Texture2D" uid="uid://dthmly7t5xo3l" path="res://resources/sprites/desk/accept_button.png" id="2_lc0u4"]
+[ext_resource type="Texture2D" uid="uid://4ys3ckj40civ" path="res://resources/sprites/desk/reject_button.png" id="3_2refd"]
 
 [sub_resource type="Gradient" id="Gradient_0pp5c"]
 colors = PackedColorArray(0.8666667, 0.5686275, 0.26666668, 1, 0.6509804, 0.3137255, 0.011764706, 1)
@@ -75,24 +77,42 @@ texture = SubResource("GradientTexture2D_0pp5c")
 
 [node name="Item Layer" type="CanvasLayer" parent="." unique_id=817969860]
 
-[node name="TempButton" type="Button" parent="Item Layer" unique_id=1718638927]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 816.0
-offset_top = 424.0
-offset_right = -248.0
-offset_bottom = -184.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Next"
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Item Layer" unique_id=1591364748]
 libraries/ = SubResource("AnimationLibrary_2refd")
 
 [node name="ItemCarrier" type="Node2D" parent="Item Layer" unique_id=1238515235]
 position = Vector2(-384, 240)
 
-[connection signal="pressed" from="Item Layer/TempButton" to="." method="_on_temp_button_pressed"]
+[node name="GUILayer" type="CanvasLayer" parent="." unique_id=850804959]
+
+[node name="AcceptButton" type="TextureButton" parent="GUILayer" unique_id=712971444]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 768.0
+offset_top = 336.0
+offset_right = -256.0
+offset_bottom = -264.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_lc0u4")
+stretch_mode = 0
+
+[node name="RejectButton" type="TextureButton" parent="GUILayer" unique_id=2013129212]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 768.0
+offset_top = 400.0
+offset_right = -256.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_2refd")
+stretch_mode = 0
+
 [connection signal="animation_finished" from="Item Layer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="child_exiting_tree" from="Item Layer/ItemCarrier" to="." method="_on_item_carrier_child_exiting_tree"]
+[connection signal="pressed" from="GUILayer/AcceptButton" to="." method="_on_temp_button_pressed"]

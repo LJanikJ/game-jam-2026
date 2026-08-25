@@ -1,15 +1,8 @@
 [gd_scene format=3 uid="uid://bkqxdb87m7lot"]
 
 [ext_resource type="Script" uid="uid://n0rsnoe2fywm" path="res://scripts/handbook/handbook_button.gd" id="1_a7qyx"]
+[ext_resource type="Texture2D" uid="uid://cpk24u7f8v54v" path="res://resources/sprites/book/book.png" id="1_o05c4"]
 [ext_resource type="Script" uid="uid://d3b7eaueptfwq" path="res://scripts/handbook/handbook_window.gd" id="2_gbxsw"]
-
-[sub_resource type="Gradient" id="Gradient_gbxsw"]
-colors = PackedColorArray(0.41960785, 0.25882354, 0.12156863, 1, 0.29411766, 0.16078432, 0.2, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_gpx6f"]
-gradient = SubResource("Gradient_gbxsw")
-width = 192
-height = 256
 
 [node name="Handbook" type="Control" unique_id=531685002]
 layout_mode = 3
@@ -20,11 +13,12 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Handbook Button" type="TextureButton" parent="." unique_id=1403453759]
+texture_filter = 1
 layout_mode = 0
 offset_left = -192.0
 offset_top = -256.0
-texture_normal = SubResource("GradientTexture2D_gpx6f")
-ignore_texture_size = true
+texture_normal = ExtResource("1_o05c4")
+stretch_mode = 0
 script = ExtResource("1_a7qyx")
 
 [node name="Handbook Window" type="Window" parent="Handbook Button" unique_id=572882381]

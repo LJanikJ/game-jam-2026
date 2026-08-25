@@ -2,6 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://ctpfxcbcdhyqa" path="res://scenes/desk/tabletop_view.tscn" id="1_6s6y0"]
 [ext_resource type="PackedScene" uid="uid://bkqxdb87m7lot" path="res://scenes/handbook/handbook.tscn" id="1_fttaq"]
+[ext_resource type="Texture2D" uid="uid://yu6wdm2vbygb" path="res://resources/sprites/spells/spell1.png" id="1_hquci"]
+[ext_resource type="Texture2D" uid="uid://b8kkhp0hd3ksa" path="res://resources/sprites/spells/spell2.png" id="2_lg53t"]
+[ext_resource type="Texture2D" uid="uid://46npg5x6q131" path="res://resources/sprites/spells/spell3.png" id="3_5y0al"]
+[ext_resource type="Texture2D" uid="uid://bxxptd0ihjds1" path="res://resources/sprites/spells/spell4.png" id="4_tb07p"]
 
 [sub_resource type="Gradient" id="Gradient_6s6y0"]
 
@@ -28,33 +32,41 @@ color = Color(0.66, 0.66, 0.66, 1)
 texture = SubResource("GradientTexture2D_j5vie")
 polygon = PackedVector2Array(906.1291, 0, 1127.0363, 0, 1127.0363, 648, 906.12897, 648)
 
-[node name="Spell Button 1 Placeholder" type="Button" parent="GUILayer/Right GUI Placeholder" unique_id=690936899]
+[node name="Spell Button 1 Placeholder" type="TextureButton" parent="GUILayer/Right GUI Placeholder" unique_id=533092793]
+texture_filter = 1
 offset_left = -213.01788
 offset_top = -632.0
 offset_right = -7.8896484
 offset_bottom = -552.0
-text = "Spell 1 Placeholder"
+texture_normal = ExtResource("1_hquci")
+stretch_mode = 0
 
-[node name="Spell Button 2 Placeholder2" type="Button" parent="GUILayer/Right GUI Placeholder" unique_id=83679317]
+[node name="Spell Button 2 Placeholder2" type="TextureButton" parent="GUILayer/Right GUI Placeholder" unique_id=1336778833]
+texture_filter = 1
 offset_left = -213.01782
 offset_top = -544.0
 offset_right = -7.8896484
 offset_bottom = -464.0
-text = "Spell 2 Placeholder"
+texture_normal = ExtResource("2_lg53t")
+stretch_mode = 0
 
-[node name="Spell Button 3 Placeholder3" type="Button" parent="GUILayer/Right GUI Placeholder" unique_id=874765296]
+[node name="Spell Button 3 Placeholder3" type="TextureButton" parent="GUILayer/Right GUI Placeholder" unique_id=969327212]
+texture_filter = 1
 offset_left = -213.01782
 offset_top = -456.0
 offset_right = -7.8896484
 offset_bottom = -376.0
-text = "Spell 3 Placeholder"
+texture_normal = ExtResource("3_5y0al")
+stretch_mode = 0
 
-[node name="Spell Button 4 Placeholder3" type="Button" parent="GUILayer/Right GUI Placeholder" unique_id=1348566006]
+[node name="Spell Button 4 Placeholder3" type="TextureButton" parent="GUILayer/Right GUI Placeholder" unique_id=530602718]
+texture_filter = 1
 offset_left = -213.01782
 offset_top = -368.0
 offset_right = -7.8896484
 offset_bottom = -288.0
-text = "Spell 4 Placeholder"
+texture_normal = ExtResource("4_tb07p")
+stretch_mode = 0
 
 [node name="Handbook" parent="GUILayer/Right GUI Placeholder" unique_id=531685002 instance=ExtResource("1_fttaq")]
 anchors_preset = 3
