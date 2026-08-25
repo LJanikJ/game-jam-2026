@@ -23,12 +23,20 @@ func load_item(index: int) -> void:
 	#var error = json.parse(json)
 	
 	if typeof(json.data) == TYPE_ARRAY:
+		
 		var json_entry = json.data[index]
 		
+		# add sprite as child node
+		var item_sprite = Sprite2D.new()
+		item_sprite.texture = load("res://resources/item-sprites/"+json_entry["name"]+".png") 
+		add_child(item_sprite)
+		
+		# set parameters
 		cursed = json_entry["cursed"]
 		lying = json_entry["lying"]
 		quality = json_entry["quality"]
 		
+		# set multiplier based on rarity
 		if json_entry["rarity"] == "common":
 			rarity = 1
 		elif json_entry["rarity"] == "uncommon":

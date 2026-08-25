@@ -4,18 +4,21 @@
 data = [{
 "cursed": false,
 "lying": false,
+"name": "magic_bean",
 "quality": 10,
 "rarity": "common",
 "type": "misc"
 }, {
 "cursed": true,
 "lying": false,
+"name": "super_sword",
 "quality": 1,
 "rarity": "legendary",
 "type": "weapon"
 }, {
 "cursed": false,
 "lying": false,
+"name": "bad_orb",
 "quality": 2,
 "rarity": "common",
 "type": "orb"
