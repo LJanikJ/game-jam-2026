@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b8kkhp0hd3ksa" path="res://resources/sprites/spells/spell2.png" id="2_lg53t"]
 [ext_resource type="Texture2D" uid="uid://46npg5x6q131" path="res://resources/sprites/spells/spell3.png" id="3_5y0al"]
 [ext_resource type="Texture2D" uid="uid://bxxptd0ihjds1" path="res://resources/sprites/spells/spell4.png" id="4_tb07p"]
+[ext_resource type="PackedScene" uid="uid://k8pjt00oc8p8" path="res://scenes/shop/shop_view.tscn" id="6_btbfx"]
 
 [sub_resource type="Gradient" id="Gradient_6s6y0"]
 
@@ -79,6 +80,9 @@ offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.985, 1)
+
+[node name="ShopView" parent="GUILayer" unique_id=571563122 instance=ExtResource("6_btbfx")]
+position = Vector2(0, 648)
 
 [node name="TableLayer" type="CanvasLayer" parent="." unique_id=813252621]
 
