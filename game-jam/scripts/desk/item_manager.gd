@@ -46,14 +46,19 @@ func get_next_item() -> void:
 	$"Item Layer/AnimationPlayer".play("slide_in")
 
 
-func _on_temp_button_pressed() -> void:
-	if $"Item Layer/ItemCarrier".get_child_count() > 0:
-		$"Item Layer/AnimationPlayer".play("slide_out")
-
-
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "slide_out":
 		remove_item()
 		
 	if anim_name == "slide_in":
 		new_item.emit(current_item.item_name)
+
+
+func _on_reject_button_pressed() -> void:
+	if $"Item Layer/ItemCarrier".get_child_count() > 0:
+		$"Item Layer/AnimationPlayer".play("slide_out")
+
+
+func _on_accept_button_pressed() -> void:
+	if $"Item Layer/ItemCarrier".get_child_count() > 0:
+		$"Item Layer/AnimationPlayer".play("slide_out")

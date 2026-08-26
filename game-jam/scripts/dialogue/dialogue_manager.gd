@@ -19,21 +19,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-#func print_next_line() -> void:
-	#dialogue_label.dialogue_line = next_line
-	#
-	#dialogue_label.type_out()
-	#
-	#next_line = await current_dialogue.get_next_dialogue_line(next_line.next_id)
-	#
-	#await get_tree().create_timer(2.5).timeout
-#
-	#if next_line:
-		#print_next_line()
-		#
-	#else:
-		#dialogue_label.visible = false
-
 
 func _on_tabletop_view_new_item(item_name: String) -> void:
 	dialogue_label.visible = true
@@ -47,19 +32,6 @@ func _on_tabletop_view_new_item(item_name: String) -> void:
 		if next_line:
 			dialogue_label.dialogue_line = next_line
 			dialogue_label.type_out()
-	
-	#while next_line:
-		#dialogue_label.dialogue_line = next_line
-		#dialogue_label.type_out()
-		#
-		#if current_dialogue:
-			#next_line = await current_dialogue.get_next_dialogue_line(next_line.next_id)
-		#
-		#await get_tree().create_timer(0.1).timeout
-		#
-		## CHANGE TO WAIT FOR USER TO DISMISS
-		#
-	#dialogue_label.visible = false
 
 
 func _on_dialogue_label_finished_typing() -> void:
