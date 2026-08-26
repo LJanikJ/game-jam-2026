@@ -1,10 +1,10 @@
 extends AudioStreamPlayer2D
 
 var slide = [
-	preload("res://resources/sound_effects/slide/slide1.wav"),
-	preload("res://resources/sound_effects/slide/slide2.wav"),
-	preload("res://resources/sound_effects/slide/slide3.wav"),
-	preload("res://resources/sound_effects/slide/slide4.wav")
+	preload("res://resources/sound_effects/item/slide1.wav"),
+	preload("res://resources/sound_effects/item/slide2.wav"),
+	preload("res://resources/sound_effects/item/slide3.wav"),
+	preload("res://resources/sound_effects/item/slide4.wav")
 ]
 
 # Called when the node enters the scene tree for the first time.

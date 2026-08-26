@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://n0rsnoe2fywm" path="res://scripts/handbook/handbook_button.gd" id="1_a7qyx"]
 [ext_resource type="Texture2D" uid="uid://cpk24u7f8v54v" path="res://resources/sprites/book/book.png" id="1_o05c4"]
 [ext_resource type="Script" uid="uid://d3b7eaueptfwq" path="res://scripts/handbook/handbook_window.gd" id="2_gbxsw"]
+[ext_resource type="Script" uid="uid://bb2su46qxfval" path="res://scenes/handbook/page_flip.gd" id="4_gs2xn"]
 
 [node name="Handbook" type="Control" unique_id=531685002]
 layout_mode = 3
@@ -30,5 +31,10 @@ visible = false
 popup_window = true
 script = ExtResource("2_gbxsw")
 
+[node name="PageFlipSound" type="AudioStreamPlayer2D" parent="." unique_id=711734584]
+panning_strength = 0.0
+script = ExtResource("4_gs2xn")
+
 [connection signal="pressed" from="Handbook Button" to="Handbook Button" method="_on_pressed"]
+[connection signal="pressed" from="Handbook Button" to="PageFlipSound" method="_on_handbook_button_pressed"]
 [connection signal="close_requested" from="Handbook Button/Handbook Window" to="Handbook Button/Handbook Window" method="_on_close_requested"]
