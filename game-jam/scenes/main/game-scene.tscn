@@ -6,11 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://b8kkhp0hd3ksa" path="res://resources/sprites/spells/spell2.png" id="2_lg53t"]
 [ext_resource type="Texture2D" uid="uid://46npg5x6q131" path="res://resources/sprites/spells/spell3.png" id="3_5y0al"]
 [ext_resource type="Texture2D" uid="uid://bxxptd0ihjds1" path="res://resources/sprites/spells/spell4.png" id="4_tb07p"]
+[ext_resource type="PackedScene" uid="uid://k8pjt00oc8p8" path="res://scenes/shop/shop_view.tscn" id="6_btbfx"]
 [ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.gd" id="6_rvpa5"]
 [ext_resource type="Script" uid="uid://c5c8uftj1shcq" path="res://scripts/dialogue/dialogue_manager.gd" id="7_btbfx"]
 [ext_resource type="Script" uid="uid://btj8pexgc0x2" path="res://scripts/dialogue/dialogue_background.gd" id="8_yui8m"]
-[ext_resource type="PackedScene" uid="uid://k8pjt00oc8p8" path="res://scenes/shop/shop_view.tscn" id="6_btbfx"]
-
+[ext_resource type="PackedScene" uid="uid://e6uh51fia7to" path="res://scenes/end-screen/end-screen.tscn" id="10_io8k2"]
 
 [sub_resource type="Gradient" id="Gradient_6s6y0"]
 
@@ -108,8 +108,12 @@ position = Vector2(335.99997, 64)
 scale = Vector2(9.499999, 1.5000001)
 texture = SubResource("GradientTexture2D_5c4a4")
 script = ExtResource("8_yui8m")
+
 [node name="ShopView" parent="GUILayer" unique_id=571563122 instance=ExtResource("6_btbfx")]
 position = Vector2(0, 648)
+
+[node name="EndScreen" parent="GUILayer" unique_id=1587460076 instance=ExtResource("10_io8k2")]
+visible = false
 
 [node name="TableLayer" type="CanvasLayer" parent="." unique_id=813252621]
 
@@ -119,3 +123,4 @@ position = Vector2(464, 240)
 [connection signal="finished_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground" method="_on_dialogue_label_finished_typing"]
 [connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground" method="_on_dialogue_label_hidden"]
 [connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground" method="_on_dialogue_label_started_typing"]
+[connection signal="items_empty" from="TableLayer/Tabletop View" to="GUILayer/EndScreen" method="_on_tabletop_view_items_empty"]
