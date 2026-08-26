@@ -3,6 +3,8 @@ extends Node2D
 var items = []
 var current_item
 
+signal new_item
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# initialize with queue of items 
@@ -49,3 +51,6 @@ func _on_temp_button_pressed() -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "slide_out":
 		remove_item()
+		
+	if anim_name == "slide_in":
+		new_item.emit(current_item.item_name)

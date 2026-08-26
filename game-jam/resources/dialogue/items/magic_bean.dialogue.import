@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cerum6cwhyg5y"
+path="res://.godot/imported/magic_bean.dialogue-ea9e94706aaa3bb8900eeeadb1156318.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/items/magic_bean.dialogue"
+dest_files=["res://.godot/imported/magic_bean.dialogue-ea9e94706aaa3bb8900eeeadb1156318.tres"]
+
+[params]
+
+defaults=true

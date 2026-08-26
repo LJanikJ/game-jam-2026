@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://6ywvg60omuce"
+path="res://.godot/imported/bad_orb.dialogue-9d088cbb9b4fb62a205e9924b379650f.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/items/bad_orb.dialogue"
+dest_files=["res://.godot/imported/bad_orb.dialogue-9d088cbb9b4fb62a205e9924b379650f.tres"]
+
+[params]
+
+defaults=true

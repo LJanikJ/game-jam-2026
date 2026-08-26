@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://ci1b2p7ib3lru"
+path="res://.godot/imported/super_sword.dialogue-ca3846d0c5798ab7653c11fe1b4bab85.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/items/super_sword.dialogue"
+dest_files=["res://.godot/imported/super_sword.dialogue-ca3846d0c5798ab7653c11fe1b4bab85.tres"]
+
+[params]
+
+defaults=true
