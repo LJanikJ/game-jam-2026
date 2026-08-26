@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dmywb3rw07ll8"]
 
-[ext_resource type="Script" uid="uid://di5473iy0ra66" path="res://scripts/main/control.gd" id="1_2xsdd"]
 [ext_resource type="PackedScene" uid="uid://ctpfxcbcdhyqa" path="res://scenes/desk/tabletop_view.tscn" id="1_6s6y0"]
 [ext_resource type="PackedScene" uid="uid://bkqxdb87m7lot" path="res://scenes/handbook/handbook.tscn" id="1_fttaq"]
 [ext_resource type="Texture2D" uid="uid://yu6wdm2vbygb" path="res://resources/sprites/spells/spell1.png" id="1_hquci"]
@@ -25,7 +24,6 @@ colors = PackedColorArray(0, 0, 0, 0.39215687, 0, 0, 0, 0.39215687)
 gradient = SubResource("Gradient_rvpa5")
 
 [node name="GameScene" type="Node2D" unique_id=1450174136]
-script = ExtResource("1_2xsdd")
 
 [node name="EndLayer" type="CanvasLayer" parent="." unique_id=1371532826]
 layer = 4
