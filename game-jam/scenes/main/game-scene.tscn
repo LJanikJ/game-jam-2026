@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dmywb3rw07ll8"]
 
+[ext_resource type="Script" uid="uid://di5473iy0ra66" path="res://scripts/main/control.gd" id="1_2xsdd"]
 [ext_resource type="PackedScene" uid="uid://ctpfxcbcdhyqa" path="res://scenes/desk/tabletop_view.tscn" id="1_6s6y0"]
 [ext_resource type="PackedScene" uid="uid://bkqxdb87m7lot" path="res://scenes/handbook/handbook.tscn" id="1_fttaq"]
 [ext_resource type="Texture2D" uid="uid://yu6wdm2vbygb" path="res://resources/sprites/spells/spell1.png" id="1_hquci"]
@@ -24,6 +25,14 @@ colors = PackedColorArray(0, 0, 0, 0.39215687, 0, 0, 0, 0.39215687)
 gradient = SubResource("Gradient_rvpa5")
 
 [node name="GameScene" type="Node2D" unique_id=1450174136]
+script = ExtResource("1_2xsdd")
+
+[node name="EndLayer" type="CanvasLayer" parent="." unique_id=1371532826]
+layer = 4
+
+[node name="EndScreen" parent="EndLayer" unique_id=1587460076 instance=ExtResource("10_io8k2")]
+process_mode = 3
+visible = false
 
 [node name="GUILayer" type="CanvasLayer" parent="." unique_id=286979011]
 layer = 3
@@ -107,9 +116,6 @@ script = ExtResource("8_yui8m")
 [node name="ShopView" parent="GUILayer" unique_id=571563122 instance=ExtResource("6_btbfx")]
 position = Vector2(0, 648)
 
-[node name="EndScreen" parent="GUILayer" unique_id=1587460076 instance=ExtResource("10_io8k2")]
-visible = false
-
 [node name="TableLayer" type="CanvasLayer" parent="." unique_id=813252621]
 
 [node name="Tabletop View" parent="TableLayer" unique_id=458742552 instance=ExtResource("1_6s6y0")]
@@ -118,5 +124,5 @@ position = Vector2(464, 240)
 [connection signal="finished_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager" method="_on_dialogue_label_finished_typing"]
 [connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground Placeholder" method="_on_dialogue_label_hidden"]
 [connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground Placeholder" method="_on_dialogue_label_started_typing"]
-[connection signal="items_empty" from="TableLayer/Tabletop View" to="GUILayer/EndScreen" method="_on_tabletop_view_items_empty"]
+[connection signal="items_empty" from="TableLayer/Tabletop View" to="EndLayer/EndScreen" method="_on_tabletop_view_items_empty"]
 [connection signal="new_item" from="TableLayer/Tabletop View" to="GUILayer/DialogueManager" method="_on_tabletop_view_new_item"]

@@ -29,7 +29,8 @@ func _process(delta: float) -> void:
 
 # needs to pick up signal when one of the buttons is pressed
 func remove_item() -> void:
-	current_item.queue_free()
+	if current_item:
+		current_item.queue_free()
 		
 	if items.size() > 0:
 		get_next_item()
@@ -49,9 +50,6 @@ func get_next_item() -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "slide_out":
 		remove_item()
-		
-	if anim_name == "slide_in":
-		new_item.emit(current_item.item_name)
 
 
 func _on_reject_button_pressed() -> void:
@@ -62,3 +60,8 @@ func _on_reject_button_pressed() -> void:
 func _on_accept_button_pressed() -> void:
 	if $"Item Layer/ItemCarrier".get_child_count() > 0:
 		$"Item Layer/AnimationPlayer".play("slide_out")
+
+
+func _on_animation_player_animation_started(anim_name: StringName) -> void:
+	if anim_name == "slide_in":
+		new_item.emit(current_item.item_name)

@@ -38,7 +38,8 @@ func _on_dialogue_label_finished_typing() -> void:
 	await get_tree().create_timer(1.5).timeout
 	
 	if current_dialogue and dType == DialogueType.ITEM:
-		next_line = await current_dialogue.get_next_dialogue_line(next_line.next_id)
+		if next_line:
+			next_line = await current_dialogue.get_next_dialogue_line(next_line.next_id)
 		
 		if next_line:
 			dialogue_label.dialogue_line = next_line
