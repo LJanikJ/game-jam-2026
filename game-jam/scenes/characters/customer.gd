@@ -1,4 +1,4 @@
-extends Node2D
+extends TextureRect
 
 @onready var sprite = $Sprite2D
 
