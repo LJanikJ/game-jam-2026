@@ -28,22 +28,17 @@ gradient = SubResource("Gradient_rvpa5")
 [node name="GUILayer" type="CanvasLayer" parent="." unique_id=286979011]
 layer = 3
 
-[node name="Shop View Placeholder" type="Polygon2D" parent="GUILayer" unique_id=1307578726]
-position = Vector2(48, -128)
-scale = Vector2(1, 1.1970803)
-polygon = PackedVector2Array(-48, 514.5854, 416, 514.5854, 880, 514.5854, 880, 648.2439, -48, 648.2439)
-
-[node name="Right GUI Placeholder" type="Node2D" parent="GUILayer" unique_id=725023407]
+[node name="Right GUI" type="Node2D" parent="GUILayer" unique_id=725023407]
 position = Vector2(1152, 648)
 scale = Vector2(1.014, 1)
 
-[node name="Right GUI Background" type="Polygon2D" parent="GUILayer/Right GUI Placeholder" unique_id=1620308746]
+[node name="Right GUI Background" type="Polygon2D" parent="GUILayer/Right GUI" unique_id=1620308746]
 position = Vector2(-1127.0364, -648)
 color = Color(0.66, 0.66, 0.66, 1)
 texture = SubResource("GradientTexture2D_j5vie")
 polygon = PackedVector2Array(906.1291, 0, 1127.0363, 0, 1127.0363, 648, 906.12897, 648)
 
-[node name="Spell Button 1 Placeholder" type="TextureButton" parent="GUILayer/Right GUI Placeholder" unique_id=533092793]
+[node name="Spell Button 1 Placeholder" type="TextureButton" parent="GUILayer/Right GUI" unique_id=533092793]
 texture_filter = 1
 offset_left = -213.01788
 offset_top = -632.0
@@ -52,7 +47,7 @@ offset_bottom = -552.0
 texture_normal = ExtResource("1_hquci")
 stretch_mode = 0
 
-[node name="Spell Button 2 Placeholder2" type="TextureButton" parent="GUILayer/Right GUI Placeholder" unique_id=1336778833]
+[node name="Spell Button 2 Placeholder2" type="TextureButton" parent="GUILayer/Right GUI" unique_id=1336778833]
 texture_filter = 1
 offset_left = -213.01782
 offset_top = -544.0
@@ -61,7 +56,7 @@ offset_bottom = -464.0
 texture_normal = ExtResource("2_lg53t")
 stretch_mode = 0
 
-[node name="Spell Button 3 Placeholder3" type="TextureButton" parent="GUILayer/Right GUI Placeholder" unique_id=969327212]
+[node name="Spell Button 3 Placeholder3" type="TextureButton" parent="GUILayer/Right GUI" unique_id=969327212]
 texture_filter = 1
 offset_left = -213.01782
 offset_top = -456.0
@@ -70,7 +65,7 @@ offset_bottom = -376.0
 texture_normal = ExtResource("3_5y0al")
 stretch_mode = 0
 
-[node name="Spell Button 4 Placeholder3" type="TextureButton" parent="GUILayer/Right GUI Placeholder" unique_id=530602718]
+[node name="Spell Button 4 Placeholder3" type="TextureButton" parent="GUILayer/Right GUI" unique_id=530602718]
 texture_filter = 1
 offset_left = -213.01782
 offset_top = -368.0
@@ -79,7 +74,7 @@ offset_bottom = -288.0
 texture_normal = ExtResource("4_tb07p")
 stretch_mode = 0
 
-[node name="Handbook" parent="GUILayer/Right GUI Placeholder" unique_id=531685002 instance=ExtResource("1_fttaq")]
+[node name="Handbook" parent="GUILayer/Right GUI" unique_id=531685002 instance=ExtResource("1_fttaq")]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -95,17 +90,17 @@ scale = Vector2(0.985, 1)
 script = ExtResource("7_btbfx")
 
 [node name="DialogueLabel" type="RichTextLabel" parent="GUILayer/DialogueManager" unique_id=1522081482]
-offset_left = 48.0
-offset_top = 24.0
+offset_left = 40.0
+offset_top = 344.0
 offset_right = 624.0
-offset_bottom = 104.0
+offset_bottom = 440.0
 script = ExtResource("6_rvpa5")
 skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
 metadata/_custom_type_script = "uid://g32um0mltv5d"
 
-[node name="DialogueBackground" type="Sprite2D" parent="GUILayer/DialogueManager" unique_id=177258410]
-position = Vector2(335.99997, 64)
-scale = Vector2(9.499999, 1.5000001)
+[node name="DialogueBackground Placeholder" type="Sprite2D" parent="GUILayer/DialogueManager" unique_id=177258410]
+position = Vector2(331.99997, 392.00003)
+scale = Vector2(9.624998, 1.7499998)
 texture = SubResource("GradientTexture2D_5c4a4")
 script = ExtResource("8_yui8m")
 
@@ -120,7 +115,8 @@ visible = false
 [node name="Tabletop View" parent="TableLayer" unique_id=458742552 instance=ExtResource("1_6s6y0")]
 position = Vector2(464, 240)
 
-[connection signal="finished_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground" method="_on_dialogue_label_finished_typing"]
-[connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground" method="_on_dialogue_label_hidden"]
-[connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground" method="_on_dialogue_label_started_typing"]
+[connection signal="finished_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager" method="_on_dialogue_label_finished_typing"]
+[connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground Placeholder" method="_on_dialogue_label_hidden"]
+[connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground Placeholder" method="_on_dialogue_label_started_typing"]
 [connection signal="items_empty" from="TableLayer/Tabletop View" to="GUILayer/EndScreen" method="_on_tabletop_view_items_empty"]
+[connection signal="new_item" from="TableLayer/Tabletop View" to="GUILayer/DialogueManager" method="_on_tabletop_view_new_item"]

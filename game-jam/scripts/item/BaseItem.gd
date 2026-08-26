@@ -2,7 +2,7 @@ extends Node2D
 
 var cursed: bool
 var lying: bool
-
+@export var item_name: String
 
 # common = 1, uncommon = 2, rare = 5, legendary = 10
 var rarity: int
@@ -26,9 +26,11 @@ func load_item(index: int) -> void:
 		
 		var json_entry = json.data[index]
 		
+		item_name = json_entry["name"]
+		
 		# add sprite as child node
 		var item_sprite = Sprite2D.new()
-		item_sprite.texture = load("res://resources/sprites/items/"+json_entry["name"]+".png") 
+		item_sprite.texture = load("res://resources/sprites/items/"+item_name+".png") 
 		add_child(item_sprite)
 		
 		# set parameters
