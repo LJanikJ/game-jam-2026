@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://e6uh51fia7to"]
+
+[ext_resource type="Script" uid="uid://bmhmswwtcdbl1" path="res://scripts/end-screen/end-screen.gd" id="1_atjdj"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_q6h2t"]
+
+[node name="EndScreen" type="Node2D" unique_id=1587460076]
+script = ExtResource("1_atjdj")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1612035895]
+offset_left = 200.0
+offset_top = 160.0
+offset_right = 832.0
+offset_bottom = 536.0
+text = "Game Over!
+
+Score: Placeholder, score emitted via signal from item manager probably"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=969319896]
+modulate = Color(0.24477622, 0.24477643, 0.24477637, 0.5294118)
+position = Vector2(575.75, 323.75)
+scale = Vector2(1152.5, 648.5)
+texture = SubResource("CanvasTexture_q6h2t")
+
+[node name="Button" type="Button" parent="." unique_id=1505699632]
+offset_left = 200.0
+offset_top = 256.0
+offset_right = 368.0
+offset_bottom = 320.0
+text = "Main Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

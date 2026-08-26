@@ -2,6 +2,7 @@ extends Node2D
 
 var items = []
 var current_item
+signal items_empty
 
 signal new_item
 
@@ -32,6 +33,8 @@ func remove_item() -> void:
 		
 	if items.size() > 0:
 		get_next_item()
+	else:
+		items_empty.emit()
 	
 
 func get_next_item() -> void:

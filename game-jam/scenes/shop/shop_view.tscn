@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://k8pjt00oc8p8"]
 
 [ext_resource type="Texture2D" uid="uid://dc7nro6g7dyct" path="res://resources/sprites/Tilesets/tileset001.png" id="1_ngjm4"]
+[ext_resource type="Script" uid="uid://mttfdr0fpe2i" path="res://scripts/shop/shop_view.gd" id="1_pt6nk"]
 [ext_resource type="Texture2D" uid="uid://c1t76sixd2iwa" path="res://resources/sprites/Tilesets/Characters.png" id="2_pt6nk"]
 
 [sub_resource type="Gradient" id="Gradient_duihe"]
@@ -72,6 +73,7 @@ sources/0 = SubResource("TileSetAtlasSource_w7ujg")
 sources/1 = SubResource("TileSetAtlasSource_rmtpy")
 
 [node name="ShopView" type="Node2D" unique_id=571563122]
+script = ExtResource("1_pt6nk")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1232225471]
 position = Vector2(464, -80)
@@ -90,5 +92,8 @@ layer_1/name = "Layer1"
 tile_set = SubResource("TileSet_3ik0m")
 format = 2
 
-[node name="LineStart" type="Marker2D" parent="." unique_id=1689331219]
-position = Vector2(784, -32)
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1846515748]
+offset_left = 8.0
+offset_top = -64.0
+offset_right = 872.0
+offset_bottom = -24.0

@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.gd" id="6_rvpa5"]
 [ext_resource type="Script" uid="uid://c5c8uftj1shcq" path="res://scripts/dialogue/dialogue_manager.gd" id="7_btbfx"]
 [ext_resource type="Script" uid="uid://btj8pexgc0x2" path="res://scripts/dialogue/dialogue_background.gd" id="8_yui8m"]
+[ext_resource type="PackedScene" uid="uid://e6uh51fia7to" path="res://scenes/end-screen/end-screen.tscn" id="10_io8k2"]
 
 [sub_resource type="Gradient" id="Gradient_6s6y0"]
 
@@ -106,6 +107,9 @@ script = ExtResource("8_yui8m")
 [node name="ShopView" parent="GUILayer" unique_id=571563122 instance=ExtResource("6_btbfx")]
 position = Vector2(0, 648)
 
+[node name="EndScreen" parent="GUILayer" unique_id=1587460076 instance=ExtResource("10_io8k2")]
+visible = false
+
 [node name="TableLayer" type="CanvasLayer" parent="." unique_id=813252621]
 
 [node name="Tabletop View" parent="TableLayer" unique_id=458742552 instance=ExtResource("1_6s6y0")]
@@ -115,3 +119,5 @@ position = Vector2(464, 240)
 [connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground Placeholder" method="_on_dialogue_label_hidden"]
 [connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground Placeholder" method="_on_dialogue_label_started_typing"]
 [connection signal="new_item" from="TableLayer/Tabletop View" to="GUILayer/DialogueManager" method="_on_tabletop_view_new_item"]
+[connection signal="items_empty" from="TableLayer/Tabletop View" to="GUILayer/EndScreen" method="_on_tabletop_view_items_empty"]
+
