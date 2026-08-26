@@ -6,22 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://b8kkhp0hd3ksa" path="res://resources/sprites/spells/spell2.png" id="2_lg53t"]
 [ext_resource type="Texture2D" uid="uid://46npg5x6q131" path="res://resources/sprites/spells/spell3.png" id="3_5y0al"]
 [ext_resource type="Texture2D" uid="uid://bxxptd0ihjds1" path="res://resources/sprites/spells/spell4.png" id="4_tb07p"]
-[ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.gd" id="6_rvpa5"]
-[ext_resource type="Script" uid="uid://c5c8uftj1shcq" path="res://scripts/dialogue/dialogue_manager.gd" id="7_btbfx"]
-[ext_resource type="Script" uid="uid://btj8pexgc0x2" path="res://scripts/dialogue/dialogue_background.gd" id="8_yui8m"]
-[ext_resource type="PackedScene" uid="uid://k8pjt00oc8p8" path="res://scenes/shop/shop_view.tscn" id="6_btbfx"]
 [ext_resource type="PackedScene" uid="uid://dqs4ifim0l3k1" path="res://scenes/end-screen/end-screen.tscn" id="6_btbfx"]
 
 [sub_resource type="Gradient" id="Gradient_6s6y0"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_j5vie"]
 gradient = SubResource("Gradient_6s6y0")
-
-[sub_resource type="Gradient" id="Gradient_rvpa5"]
-colors = PackedColorArray(0, 0, 0, 0.39215687, 0, 0, 0, 0.39215687)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_5c4a4"]
-gradient = SubResource("Gradient_rvpa5")
 
 [node name="GameScene" type="Node2D" unique_id=1450174136]
 
@@ -31,7 +21,7 @@ layer = 3
 [node name="Shop View Placeholder" type="Polygon2D" parent="GUILayer" unique_id=1307578726]
 position = Vector2(48, -128)
 scale = Vector2(1, 1.1970803)
-polygon = PackedVector2Array(-48, 514.5854, 416, 514.5854, 880, 514.5854, 880, 648.2439, -48, 648.2439)
+polygon = PackedVector2Array(-48, 507.90247, 880, 507.90247, 880, 648.2439, -48, 648.2439)
 
 [node name="Right GUI Placeholder" type="Node2D" parent="GUILayer" unique_id=725023407]
 position = Vector2(1152, 648)
@@ -91,26 +81,6 @@ grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.985, 1)
 
-[node name="DialogueManager" type="Node" parent="GUILayer" unique_id=393276648]
-script = ExtResource("7_btbfx")
-
-[node name="DialogueLabel" type="RichTextLabel" parent="GUILayer/DialogueManager" unique_id=1522081482]
-offset_left = 48.0
-offset_top = 24.0
-offset_right = 624.0
-offset_bottom = 104.0
-script = ExtResource("6_rvpa5")
-skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
-metadata/_custom_type_script = "uid://g32um0mltv5d"
-
-[node name="DialogueBackground" type="Sprite2D" parent="GUILayer/DialogueManager" unique_id=177258410]
-position = Vector2(335.99997, 64)
-scale = Vector2(9.499999, 1.5000001)
-texture = SubResource("GradientTexture2D_5c4a4")
-script = ExtResource("8_yui8m")
-[node name="ShopView" parent="GUILayer" unique_id=571563122 instance=ExtResource("6_btbfx")]
-position = Vector2(0, 648)
-
 [node name="EndScreen" parent="GUILayer" unique_id=2045781676 instance=ExtResource("6_btbfx")]
 visible = false
 
@@ -119,7 +89,4 @@ visible = false
 [node name="Tabletop View" parent="TableLayer" unique_id=458742552 instance=ExtResource("1_6s6y0")]
 position = Vector2(464, 240)
 
-[connection signal="finished_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground" method="_on_dialogue_label_finished_typing"]
-[connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground" method="_on_dialogue_label_hidden"]
-[connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground" method="_on_dialogue_label_started_typing"]
 [connection signal="items_empty" from="TableLayer/Tabletop View" to="GUILayer/EndScreen" method="_on_tabletop_view_items_empty"]
