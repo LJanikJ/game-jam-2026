@@ -2,6 +2,7 @@ extends Node2D
 
 var items = []
 var current_item
+signal items_empty
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,14 +31,19 @@ func remove_item() -> void:
 		
 	if items.size() > 0:
 		get_next_item()
+	else:
+		items_empty.emit()
 	
 
 func get_next_item() -> void:
 	# get next item in queue and load instance, then slide in
+	
+	# If we find ourselves at the end of the items queue, transition to
+	# game over screen for now
 	current_item = items.pop_front()
 	
 	$"Item Layer/ItemCarrier".add_child(current_item)
-	
+		
 	$"Item Layer/AnimationPlayer".play("slide_in")
 
 

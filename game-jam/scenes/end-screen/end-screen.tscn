@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dqs4ifim0l3k1"]
+
+[ext_resource type="Script" uid="uid://vil5hgnwyknp" path="res://scripts/end-screen/end-screen.gd" id="1_atjdj"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7nar7"]
+specular_color = Color(0.2159017, 0.21590173, 0.2159017, 1)
+
+[node name="EndScreen" type="Node2D" unique_id=2045781676]
+script = ExtResource("1_atjdj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2045004520]
+modulate = Color(1, 1, 1, 0.54901963)
+self_modulate = Color(0.14044744, 0.14044744, 0.14044744, 1)
+position = Vector2(575.5, 323.99994)
+rotation = 1.5707964
+scale = Vector2(648.9998, 1152.0624)
+texture = SubResource("CanvasTexture_7nar7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=638462951]
+offset_left = 256.0
+offset_top = 192.0
+offset_right = 1024.0
+offset_bottom = 320.0
+text = "Time's Up!
+
+Score: Placeholder (ideally some sort of function to get the final score we've been updating as the game goes)"
+metadata/_edit_use_anchors_ = true
+
+[node name="MainMenuButton" type="Button" parent="." unique_id=1350248694]
+offset_left = 256.0
+offset_top = 384.0
+offset_right = 464.0
+offset_bottom = 464.0
+text = "Main Menu"
+
+[connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
