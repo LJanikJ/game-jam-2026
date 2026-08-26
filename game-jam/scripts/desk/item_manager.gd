@@ -2,8 +2,8 @@ extends Node2D
 
 var items = []
 var current_item
-signal items_empty
 
+signal items_empty
 signal new_item
 
 # Called when the node enters the scene tree for the first time.
