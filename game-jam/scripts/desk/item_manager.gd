@@ -2,6 +2,7 @@ extends Node2D
 
 var items = []
 var current_item
+signal items_empty
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,6 +31,8 @@ func remove_item() -> void:
 		
 	if items.size() > 0:
 		get_next_item()
+	else:
+		items_empty.emit()
 	
 
 func get_next_item() -> void:
