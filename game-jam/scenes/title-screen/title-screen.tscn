@@ -52,3 +52,4 @@ theme_override_font_sizes/font_size = 32
 text = "Options"
 
 [connection signal="pressed" from="InterfaceLayer/start-button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="InterfaceLayer/options-button" to="." method="_on_optionsbutton_pressed"]
