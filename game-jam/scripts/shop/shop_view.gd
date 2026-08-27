@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var lineCont = $CustomerCarrier
-@export var customer_scene : PackedScene = preload("res://scenes/characters/customer.tscn")
+var customer_scene : PackedScene = preload("res://scenes/characters/customer.tscn")
 
 var spacing = 60
 
@@ -46,25 +46,23 @@ func advance_line() -> void:
 		var threads = []
 		
 		for customer in queue:
-			threads.append(Thread.new())
-		
-		for customer in queue:
 			var thread: Thread = Thread.new()
+			threads.append(thread)
 			
 			thread.start(shift_forward.bind(customer))
 			
-			await get_tree().create_timer(0.2).timeout
+			if get_tree():
+				await get_tree().create_timer(0.2).timeout
 			
 		for thread in threads:
 			thread.wait_to_finish()
-		
-		threads = []
 
 func shift_forward(customer) -> void:
 	customer.is_walking = true
 	
 	for i in range(spacing):
-		await get_tree().process_frame
+		if get_tree():
+			await get_tree().process_frame
 		
 	customer.is_walking = false
 
@@ -76,7 +74,6 @@ func _on_reject_button_pressed() -> void:
 	advance_line()
 	
 func _on_customer_left(customer) -> void:
-	print("Freeing " + str(customer))
 	lineCont.remove_child(customer)
 	customer.queue_free()
 

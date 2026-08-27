@@ -15,9 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://dthmly7t5xo3l" path="res://resources/sprites/desk/accept_button.png" id="11_65vu2"]
 [ext_resource type="Script" uid="uid://bxbfon4g2ims2" path="res://scripts/item/accept_button.gd" id="12_1f4fv"]
 [ext_resource type="Script" uid="uid://2e0qtb7r4bhh" path="res://scripts/music/music_player.gd" id="12_2xsdd"]
+[ext_resource type="Texture2D" uid="uid://itwhvrubxteo" path="res://resources/sprites/desk/accept_button_press.png" id="12_5eu4v"]
 [ext_resource type="AudioStream" uid="uid://n8538lefolro" path="res://resources/music/game_jam.mp3" id="12_diqyw"]
 [ext_resource type="Texture2D" uid="uid://4ys3ckj40civ" path="res://resources/sprites/desk/reject_button.png" id="12_vmbtd"]
 [ext_resource type="Script" uid="uid://7gjqrxjrp58" path="res://scripts/item/reject_button.gd" id="14_uggeb"]
+[ext_resource type="Texture2D" uid="uid://clhdiwmuhvefk" path="res://resources/sprites/desk/reject_button_press.png" id="15_uci7i"]
 
 [sub_resource type="Gradient" id="Gradient_6s6y0"]
 
@@ -128,7 +130,9 @@ offset_right = -256.0
 offset_bottom = -264.0
 grow_horizontal = 2
 grow_vertical = 2
+disabled = true
 texture_normal = ExtResource("11_65vu2")
+texture_pressed = ExtResource("12_5eu4v")
 stretch_mode = 0
 script = ExtResource("12_1f4fv")
 
@@ -143,7 +147,9 @@ offset_right = -256.0
 offset_bottom = -200.0
 grow_horizontal = 2
 grow_vertical = 2
+disabled = true
 texture_normal = ExtResource("12_vmbtd")
+texture_pressed = ExtResource("15_uci7i")
 stretch_mode = 0
 script = ExtResource("14_uggeb")
 
