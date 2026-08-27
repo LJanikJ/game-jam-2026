@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bt575tbl14tyr"]
+
+[ext_resource type="Script" uid="uid://bum0adiuqljbe" path="res://scripts/options-screen/options_screen.gd" id="1_geulf"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_q6h2t"]
+
+[node name="OptionsScreen" type="Node2D" unique_id=1553045600]
+script = ExtResource("1_geulf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=280956431]
+modulate = Color(0.1584723, 0.15847233, 0.1584723, 1)
+position = Vector2(575.75, 323.75)
+scale = Vector2(1152.5, 648.5)
+texture = SubResource("CanvasTexture_q6h2t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=299751051]
+offset_left = 256.0
+offset_top = 192.0
+offset_right = 888.0
+offset_bottom = 512.0
+
+[node name="MasterLabel" type="Label" parent="VBoxContainer" unique_id=1596286561]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="MasterSlider" type="HSlider" parent="VBoxContainer" unique_id=662904658]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="BGMLabel" type="Label" parent="VBoxContainer" unique_id=1857864445]
+layout_mode = 2
+text = "BGM Volume"
+
+[node name="BGMSlider" type="HSlider" parent="VBoxContainer" unique_id=1649492168]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="SFXLabel" type="Label" parent="VBoxContainer" unique_id=1255028551]
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="SFXSlider" type="HSlider" parent="VBoxContainer" unique_id=2127686043]
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+
+[node name="ReturnButton" type="Button" parent="." unique_id=2086149429]
+offset_left = 456.0
+offset_top = 384.0
+offset_right = 680.0
+offset_bottom = 424.0
+text = "Main Menu"
+
+[connection signal="drag_ended" from="VBoxContainer/MasterSlider" to="." method="_on_master_slider_drag_ended"]
+[connection signal="drag_ended" from="VBoxContainer/BGMSlider" to="." method="_on_bgm_slider_drag_ended"]
+[connection signal="drag_ended" from="VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
+[connection signal="pressed" from="ReturnButton" to="." method="_on_return_button_pressed"]

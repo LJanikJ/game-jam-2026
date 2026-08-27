@@ -90,6 +90,7 @@ position = Vector2(-384, 240)
 
 [node name="SlidePlayer2D" type="AudioStreamPlayer2D" parent="Item Layer/ItemCarrier" unique_id=1755894961]
 position = Vector2(384, -240)
+bus = &"SFX"
 script = ExtResource("2_bisel")
 
 [node name="GUILayer" type="CanvasLayer" parent="." unique_id=850804959]

@@ -163,6 +163,7 @@ process_mode = 3
 stream = ExtResource("12_diqyw")
 autoplay = true
 panning_strength = 0.0
+bus = &"BGM"
 parameters/looping = true
 script = ExtResource("12_2xsdd")
 
