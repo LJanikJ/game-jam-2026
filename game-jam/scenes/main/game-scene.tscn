@@ -11,8 +11,12 @@
 [ext_resource type="Script" uid="uid://c5c8uftj1shcq" path="res://scripts/dialogue/dialogue_manager.gd" id="7_btbfx"]
 [ext_resource type="Script" uid="uid://btj8pexgc0x2" path="res://scripts/dialogue/dialogue_background.gd" id="8_yui8m"]
 [ext_resource type="PackedScene" uid="uid://e6uh51fia7to" path="res://scenes/end-screen/end-screen.tscn" id="10_io8k2"]
+[ext_resource type="Texture2D" uid="uid://dthmly7t5xo3l" path="res://resources/sprites/desk/accept_button.png" id="11_65vu2"]
+[ext_resource type="Script" uid="uid://bxbfon4g2ims2" path="res://scripts/item/accept_button.gd" id="12_1f4fv"]
 [ext_resource type="Script" uid="uid://2e0qtb7r4bhh" path="res://scripts/music/music_player.gd" id="12_2xsdd"]
 [ext_resource type="AudioStream" uid="uid://n8538lefolro" path="res://resources/music/game_jam.mp3" id="12_diqyw"]
+[ext_resource type="Texture2D" uid="uid://4ys3ckj40civ" path="res://resources/sprites/desk/reject_button.png" id="12_vmbtd"]
+[ext_resource type="Script" uid="uid://7gjqrxjrp58" path="res://scripts/item/reject_button.gd" id="14_uggeb"]
 
 [sub_resource type="Gradient" id="Gradient_6s6y0"]
 
@@ -101,20 +105,53 @@ script = ExtResource("7_btbfx")
 [node name="DialogueLabel" type="RichTextLabel" parent="GUILayer/DialogueManager" unique_id=1522081482]
 offset_left = 40.0
 offset_top = 344.0
-offset_right = 624.0
+offset_right = 704.0
 offset_bottom = 440.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
 script = ExtResource("6_rvpa5")
 skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
 metadata/_custom_type_script = "uid://g32um0mltv5d"
 
 [node name="DialogueBackground Placeholder" type="Sprite2D" parent="GUILayer/DialogueManager" unique_id=177258410]
-position = Vector2(331.99997, 392.00003)
-scale = Vector2(9.624998, 1.7499998)
+position = Vector2(372.00006, 392.00003)
+scale = Vector2(10.875001, 1.7499998)
 texture = SubResource("GradientTexture2D_5c4a4")
 script = ExtResource("8_yui8m")
 
 [node name="ShopView" parent="GUILayer" unique_id=571563122 instance=ExtResource("6_btbfx")]
 position = Vector2(0, 648)
+
+[node name="AcceptButton" type="TextureButton" parent="GUILayer" unique_id=1341324760]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 768.0
+offset_top = 336.0
+offset_right = -256.0
+offset_bottom = -264.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("11_65vu2")
+stretch_mode = 0
+script = ExtResource("12_1f4fv")
+
+[node name="RejectButton" type="TextureButton" parent="GUILayer" unique_id=2010224881]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 768.0
+offset_top = 400.0
+offset_right = -256.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("12_vmbtd")
+stretch_mode = 0
+script = ExtResource("14_uggeb")
 
 [node name="TableLayer" type="CanvasLayer" parent="." unique_id=813252621]
 
@@ -122,6 +159,7 @@ position = Vector2(0, 648)
 position = Vector2(464, 240)
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1022832991]
+process_mode = 3
 stream = ExtResource("12_diqyw")
 autoplay = true
 panning_strength = 0.0
@@ -130,6 +168,12 @@ script = ExtResource("12_2xsdd")
 
 [connection signal="finished_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager" method="_on_dialogue_label_finished_typing"]
 [connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground Placeholder" method="_on_dialogue_label_hidden"]
+[connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/AcceptButton" method="_on_dialogue_label_hidden"]
+[connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/RejectButton" method="_on_dialogue_label_hidden"]
 [connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground Placeholder" method="_on_dialogue_label_started_typing"]
+[connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/AcceptButton" method="_on_dialogue_label_started_typing"]
+[connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/RejectButton" method="_on_dialogue_label_started_typing"]
+[connection signal="pressed" from="GUILayer/AcceptButton" to="TableLayer/Tabletop View" method="_on_accept_button_pressed"]
+[connection signal="pressed" from="GUILayer/RejectButton" to="TableLayer/Tabletop View" method="_on_reject_button_pressed"]
 [connection signal="items_empty" from="TableLayer/Tabletop View" to="EndLayer/EndScreen" method="_on_tabletop_view_items_empty"]
 [connection signal="new_item" from="TableLayer/Tabletop View" to="GUILayer/DialogueManager" method="_on_tabletop_view_new_item"]

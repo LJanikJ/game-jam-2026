@@ -33,6 +33,7 @@ offset_right = 128.0
 offset_bottom = -224.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_font_sizes/font_size = 32
 text = "Start Game"
 
 [node name="options-button" type="Button" parent="InterfaceLayer" unique_id=1239823388]
@@ -47,6 +48,7 @@ offset_right = 128.0
 offset_bottom = -136.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_font_sizes/font_size = 32
 text = "Options"
 
 [connection signal="pressed" from="InterfaceLayer/start-button" to="." method="_on_button_pressed"]
