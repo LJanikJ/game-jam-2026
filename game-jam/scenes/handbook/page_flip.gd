@@ -1,10 +1,11 @@
 extends AudioStreamPlayer2D
 
-var flip = preload("res://resources/sound_effects/book/flip.wav")
+var open = preload("res://resources/sound_effects/book/open.wav")
+var flip = preload("res://resources/sound_effects/book/open.wav")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	stream = flip
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -13,5 +14,10 @@ func _process(_delta: float) -> void:
 
 
 func _on_handbook_button_pressed() -> void:
+	stream = open
+	play()
+
+
+func _on_page_sprite_texture_changed() -> void:
 	stream = flip
 	play()
