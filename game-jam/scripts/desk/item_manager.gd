@@ -6,21 +6,21 @@ var current_item
 signal items_empty
 signal new_item
 
+var json = preload("res://resources/items.tres")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# initialize with queue of items 
 	# get list of items from json or something
 	
-	# change range to be number of items
-	for index in range(3):
+	# potentially limit the size of the array so that not every item appears in a single run
+	for index in range(json.data.size()):
 		var item = preload("res://scenes/item/item.tscn").instantiate()
 		
 		item.load_item(index)
 		items.append(item)
 	
 	items.shuffle()
-	
-	#get_next_item()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

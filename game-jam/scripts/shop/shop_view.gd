@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var lineCont = $CustomerCarrier
 var customer_scene : PackedScene = preload("res://scenes/characters/customer.tscn")
+var json = preload("res://resources/items.tres")
 
 var spacing = 60
 
@@ -12,7 +13,7 @@ signal customer_at_desk
 
 # Ready will create the number of customers 
 func _ready() -> void:
-	for person in range(12):
+	for person in range(json.data.size()):
 		create_customer()
 		
 	advance_line()
