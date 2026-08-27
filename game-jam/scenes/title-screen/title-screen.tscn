@@ -51,4 +51,19 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 32
 text = "Options"
 
+[node name="RichTextLabel" type="RichTextLabel" parent="InterfaceLayer" unique_id=716157823]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -288.0
+offset_top = 72.0
+offset_right = 288.0
+offset_bottom = 296.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 96
+bbcode_enabled = true
+text = "Trust No Wanderer"
+horizontal_alignment = 1
+
 [connection signal="pressed" from="InterfaceLayer/start-button" to="." method="_on_button_pressed"]
