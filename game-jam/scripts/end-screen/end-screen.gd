@@ -8,12 +8,18 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
-	
-func _on_button_pressed() -> void:
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/title-screen/title-screen.tscn")
 
 
 func _on_tabletop_view_items_empty() -> void:
 	get_tree().paused = true
 	self.show()
+
+
+func _on_menu_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/title-screen/title-screen.tscn")
+
+
+func _on_retry_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/main/game-scene.tscn")

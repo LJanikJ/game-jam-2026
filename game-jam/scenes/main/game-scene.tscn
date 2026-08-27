@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://k8pjt00oc8p8" path="res://scenes/shop/shop_view.tscn" id="6_btbfx"]
 [ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.gd" id="6_rvpa5"]
 [ext_resource type="Script" uid="uid://c5c8uftj1shcq" path="res://scripts/dialogue/dialogue_manager.gd" id="7_btbfx"]
+[ext_resource type="Texture2D" uid="uid://ddygjqgmjfcrt" path="res://resources/sprites/text/dialogue.png" id="8_uggeb"]
 [ext_resource type="Script" uid="uid://btj8pexgc0x2" path="res://scripts/dialogue/dialogue_background.gd" id="8_yui8m"]
 [ext_resource type="PackedScene" uid="uid://e6uh51fia7to" path="res://scenes/end-screen/end-screen.tscn" id="10_io8k2"]
 [ext_resource type="Texture2D" uid="uid://dthmly7t5xo3l" path="res://resources/sprites/desk/accept_button.png" id="11_65vu2"]
@@ -22,12 +23,6 @@
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_j5vie"]
 gradient = SubResource("Gradient_6s6y0")
-
-[sub_resource type="Gradient" id="Gradient_rvpa5"]
-colors = PackedColorArray(0, 0, 0, 0.5882353, 0, 0, 0, 0.5882353)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_5c4a4"]
-gradient = SubResource("Gradient_rvpa5")
 
 [node name="GameScene" type="Node2D" unique_id=1450174136]
 
@@ -104,15 +99,15 @@ script = ExtResource("7_btbfx")
 
 [node name="DialogueBackground Placeholder" type="Sprite2D" parent="GUILayer/DialogueManager" unique_id=177258410]
 position = Vector2(372.00006, 392.00003)
-scale = Vector2(10.875001, 1.7499998)
-texture = SubResource("GradientTexture2D_5c4a4")
+scale = Vector2(8, 8)
+texture = ExtResource("8_uggeb")
 script = ExtResource("8_yui8m")
 
 [node name="DialogueLabel" type="RichTextLabel" parent="GUILayer/DialogueManager" unique_id=1522081482]
-offset_left = 40.0
-offset_top = 344.0
-offset_right = 704.0
-offset_bottom = 440.0
+offset_left = 48.0
+offset_top = 352.0
+offset_right = 696.0
+offset_bottom = 432.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 32
