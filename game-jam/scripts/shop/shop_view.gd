@@ -57,6 +57,8 @@ func advance_line() -> void:
 			
 		for thread in threads:
 			thread.wait_to_finish()
+		
+		threads = []
 
 func shift_forward(customer) -> void:
 	customer.is_walking = true
