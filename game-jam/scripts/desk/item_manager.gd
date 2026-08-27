@@ -20,7 +20,7 @@ func _ready() -> void:
 	
 	items.shuffle()
 	
-	get_next_item()
+	#get_next_item()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,9 +32,7 @@ func remove_item() -> void:
 	if current_item:
 		current_item.queue_free()
 		
-	if items.size() > 0:
-		get_next_item()
-	else:
+	if items.size() == 0:
 		items_empty.emit()
 	
 
@@ -65,3 +63,8 @@ func _on_accept_button_pressed() -> void:
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
 	if anim_name == "slide_in":
 		new_item.emit(current_item.item_name)
+
+
+func _on_shop_view_customer_at_desk() -> void:
+	if items.size() > 0:
+		get_next_item()
