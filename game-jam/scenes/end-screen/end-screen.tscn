@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://e6uh51fia7to"]
 
 [ext_resource type="Script" uid="uid://bmhmswwtcdbl1" path="res://scripts/end-screen/end-screen.gd" id="1_atjdj"]
+[ext_resource type="Script" uid="uid://bmx6vihlh881i" path="res://scripts/end-screen/final_score_label.gd" id="2_4q8k0"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_q6h2t"]
 
@@ -24,7 +25,7 @@ position = Vector2(576, 324)
 scale = Vector2(5.0000005, 8.125001)
 texture = SubResource("GradientTexture2D_5c4a4")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1612035895]
+[node name="FinalScoreLabel" type="RichTextLabel" parent="." unique_id=1612035895]
 offset_left = 440.0
 offset_top = 96.0
 offset_right = 712.0
@@ -42,6 +43,8 @@ You made a profit of 999 gold pieces.
 [fade]testing[/fade]
 [rainbow]testing[/rainbow]"
 horizontal_alignment = 1
+script = ExtResource("2_4q8k0")
+metadata/final_score = 0
 
 [node name="MenuButton" type="Button" parent="." unique_id=1505699632]
 offset_left = 480.0
@@ -59,5 +62,6 @@ offset_bottom = 456.0
 theme_override_font_sizes/font_size = 32
 text = "Try Again"
 
+[connection signal="final_score" from="." to="FinalScoreLabel" method="_on_end_screen_final_score"]
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
