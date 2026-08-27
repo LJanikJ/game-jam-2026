@@ -167,7 +167,6 @@ process_mode = 3
 stream = ExtResource("12_diqyw")
 autoplay = true
 panning_strength = 0.0
-bus = &"BGM"
 parameters/looping = true
 script = ExtResource("12_2xsdd")
 
@@ -178,7 +177,14 @@ script = ExtResource("12_2xsdd")
 [connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground Placeholder" method="_on_dialogue_label_started_typing"]
 [connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/AcceptButton" method="_on_dialogue_label_started_typing"]
 [connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/RejectButton" method="_on_dialogue_label_started_typing"]
+[connection signal="pressed" from="GUILayer/AcceptButton" to="GUILayer/AcceptButton" method="_on_pressed"]
+[connection signal="pressed" from="GUILayer/AcceptButton" to="GUILayer/RejectButton" method="_on_accept_button_pressed"]
+[connection signal="pressed" from="GUILayer/AcceptButton" to="ShopLayer/ShopView" method="_on_accept_button_pressed"]
 [connection signal="pressed" from="GUILayer/AcceptButton" to="TableLayer/Tabletop View" method="_on_accept_button_pressed"]
+[connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/AcceptButton" method="_on_reject_button_pressed"]
+[connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/RejectButton" method="_on_pressed"]
+[connection signal="pressed" from="GUILayer/RejectButton" to="ShopLayer/ShopView" method="_on_reject_button_pressed"]
 [connection signal="pressed" from="GUILayer/RejectButton" to="TableLayer/Tabletop View" method="_on_reject_button_pressed"]
+[connection signal="customer_at_desk" from="ShopLayer/ShopView" to="TableLayer/Tabletop View" method="_on_shop_view_customer_at_desk"]
 [connection signal="items_empty" from="TableLayer/Tabletop View" to="EndLayer/EndScreen" method="_on_tabletop_view_items_empty"]
 [connection signal="new_item" from="TableLayer/Tabletop View" to="GUILayer/DialogueManager" method="_on_tabletop_view_new_item"]

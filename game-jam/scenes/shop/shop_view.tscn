@@ -82,10 +82,7 @@ layer_1/name = "Layer1"
 tile_set = SubResource("TileSet_3ik0m")
 format = 2
 
-[node name="CustomerContainer" type="HBoxContainer" parent="." unique_id=1846515748]
-offset_left = -1816.0
-offset_top = -64.0
-offset_right = 736.0
-offset_bottom = -24.0
-theme_override_constants/separation = 24
-alignment = 2
+[node name="CustomerCarrier" type="Node2D" parent="." unique_id=1189135633]
+position = Vector2(816, -16)
+
+[connection signal="child_exiting_tree" from="CustomerCarrier" to="." method="_on_customer_carrier_child_exiting_tree"]

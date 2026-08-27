@@ -17,3 +17,11 @@ func _on_dialogue_label_started_typing() -> void:
 
 func _on_dialogue_label_hidden() -> void:
 	disabled = false
+
+
+func _on_pressed() -> void:
+	disabled = true
+
+
+func _on_reject_button_pressed() -> void:
+	disabled = true
