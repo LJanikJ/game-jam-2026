@@ -24,7 +24,7 @@
 gradient = SubResource("Gradient_6s6y0")
 
 [sub_resource type="Gradient" id="Gradient_rvpa5"]
-colors = PackedColorArray(0, 0, 0, 0.39215687, 0, 0, 0, 0.39215687)
+colors = PackedColorArray(0, 0, 0, 0.5882353, 0, 0, 0, 0.5882353)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_5c4a4"]
 gradient = SubResource("Gradient_rvpa5")
@@ -102,6 +102,12 @@ scale = Vector2(0.985, 1)
 [node name="DialogueManager" type="Node" parent="GUILayer" unique_id=393276648]
 script = ExtResource("7_btbfx")
 
+[node name="DialogueBackground Placeholder" type="Sprite2D" parent="GUILayer/DialogueManager" unique_id=177258410]
+position = Vector2(372.00006, 392.00003)
+scale = Vector2(10.875001, 1.7499998)
+texture = SubResource("GradientTexture2D_5c4a4")
+script = ExtResource("8_yui8m")
+
 [node name="DialogueLabel" type="RichTextLabel" parent="GUILayer/DialogueManager" unique_id=1522081482]
 offset_left = 40.0
 offset_top = 344.0
@@ -113,12 +119,6 @@ bbcode_enabled = true
 script = ExtResource("6_rvpa5")
 skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
 metadata/_custom_type_script = "uid://g32um0mltv5d"
-
-[node name="DialogueBackground Placeholder" type="Sprite2D" parent="GUILayer/DialogueManager" unique_id=177258410]
-position = Vector2(372.00006, 392.00003)
-scale = Vector2(10.875001, 1.7499998)
-texture = SubResource("GradientTexture2D_5c4a4")
-script = ExtResource("8_yui8m")
 
 [node name="ShopView" parent="GUILayer" unique_id=571563122 instance=ExtResource("6_btbfx")]
 position = Vector2(0, 648)
