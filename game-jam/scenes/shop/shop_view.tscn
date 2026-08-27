@@ -4,11 +4,6 @@
 [ext_resource type="Script" uid="uid://mttfdr0fpe2i" path="res://scripts/shop/shop_view.gd" id="1_pt6nk"]
 [ext_resource type="Texture2D" uid="uid://c1t76sixd2iwa" path="res://resources/sprites/Tilesets/Characters.png" id="2_pt6nk"]
 
-[sub_resource type="Gradient" id="Gradient_duihe"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_pgrle"]
-gradient = SubResource("Gradient_duihe")
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v2xj8"]
 texture = ExtResource("1_ngjm4")
 0:0/0 = 0
@@ -75,11 +70,6 @@ sources/1 = SubResource("TileSetAtlasSource_rmtpy")
 [node name="ShopView" type="Node2D" unique_id=571563122]
 script = ExtResource("1_pt6nk")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1232225471]
-position = Vector2(464, -80)
-scale = Vector2(14.5, 2.5)
-texture = SubResource("GradientTexture2D_pgrle")
-
 [node name="TileMap" type="TileMap" parent="." unique_id=1241711558]
 texture_filter = 1
 scale = Vector2(2, 2)
@@ -92,8 +82,10 @@ layer_1/name = "Layer1"
 tile_set = SubResource("TileSet_3ik0m")
 format = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1846515748]
-offset_left = 8.0
+[node name="CustomerContainer" type="HBoxContainer" parent="." unique_id=1846515748]
+offset_left = -1816.0
 offset_top = -64.0
-offset_right = 872.0
+offset_right = 736.0
 offset_bottom = -24.0
+theme_override_constants/separation = 24
+alignment = 2

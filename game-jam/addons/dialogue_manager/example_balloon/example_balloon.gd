@@ -97,7 +97,7 @@ func _ready() -> void:
 	# /EXAMPLE MESSAGE
 
 
-func _process(_delta: float) -> void:
+func _process: float) -> void:
 	if is_instance_valid(dialogue_line):
 		progress.visible = not dialogue_label.is_typing and dialogue_line.responses.size() == 0 and not dialogue_line.has_tag("voice")
 

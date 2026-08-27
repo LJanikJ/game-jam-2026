@@ -60,7 +60,7 @@ func load_item(index: int) -> void:
 		print("Unexpected data")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 # placeholder value calc
