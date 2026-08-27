@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cpk24u7f8v54v" path="res://resources/sprites/book/book.png" id="1_o05c4"]
 [ext_resource type="Script" uid="uid://d3b7eaueptfwq" path="res://scripts/handbook/handbook_window.gd" id="2_gbxsw"]
 [ext_resource type="Script" uid="uid://bb2su46qxfval" path="res://scenes/handbook/page_flip.gd" id="4_gs2xn"]
+[ext_resource type="Texture2D" uid="uid://dbq2rqpw5ytnd" path="res://resources/sprites/book/page1.png" id="4_qxhgv"]
 
 [node name="Handbook" type="Control" unique_id=531685002]
 layout_mode = 3
@@ -26,10 +27,27 @@ script = ExtResource("1_a7qyx")
 oversampling_override = 1.0
 title = "Handbook"
 initial_position = 2
-size = Vector2i(400, 400)
+size = Vector2i(600, 400)
 visible = false
+unresizable = true
 popup_window = true
+theme_override_font_sizes/title_font_size = 24
 script = ExtResource("2_gbxsw")
+
+[node name="PageSprite" type="Sprite2D" parent="Handbook Button/Handbook Window" unique_id=1684584933]
+position = Vector2(300, 200)
+texture = ExtResource("4_qxhgv")
+
+[node name="PageLeft" type="Button" parent="Handbook Button/Handbook Window" unique_id=1225658142]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 108.0
+offset_bottom = 400.0
+
+[node name="PageRight" type="Button" parent="Handbook Button/Handbook Window" unique_id=160501002]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 492.0
+offset_right = 600.0
+offset_bottom = 400.0
 
 [node name="PageFlipSound" type="AudioStreamPlayer2D" parent="." unique_id=711734584]
 panning_strength = 0.0
@@ -38,3 +56,6 @@ script = ExtResource("4_gs2xn")
 [connection signal="pressed" from="Handbook Button" to="Handbook Button" method="_on_pressed"]
 [connection signal="pressed" from="Handbook Button" to="PageFlipSound" method="_on_handbook_button_pressed"]
 [connection signal="close_requested" from="Handbook Button/Handbook Window" to="Handbook Button/Handbook Window" method="_on_close_requested"]
+[connection signal="texture_changed" from="Handbook Button/Handbook Window/PageSprite" to="PageFlipSound" method="_on_page_sprite_texture_changed"]
+[connection signal="pressed" from="Handbook Button/Handbook Window/PageLeft" to="Handbook Button/Handbook Window" method="_on_page_left_pressed"]
+[connection signal="pressed" from="Handbook Button/Handbook Window/PageRight" to="Handbook Button/Handbook Window" method="_on_page_right_pressed"]
