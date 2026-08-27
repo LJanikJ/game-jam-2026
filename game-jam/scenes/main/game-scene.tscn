@@ -187,5 +187,6 @@ script = ExtResource("12_2xsdd")
 [connection signal="pressed" from="GUILayer/RejectButton" to="ShopLayer/ShopView" method="_on_reject_button_pressed"]
 [connection signal="pressed" from="GUILayer/RejectButton" to="TableLayer/Tabletop View" method="_on_reject_button_pressed"]
 [connection signal="customer_at_desk" from="ShopLayer/ShopView" to="TableLayer/Tabletop View" method="_on_shop_view_customer_at_desk"]
+[connection signal="final_score" from="TableLayer/Tabletop View" to="EndLayer/EndScreen" method="_on_tabletop_view_final_score"]
 [connection signal="items_empty" from="TableLayer/Tabletop View" to="EndLayer/EndScreen" method="_on_tabletop_view_items_empty"]
 [connection signal="new_item" from="TableLayer/Tabletop View" to="GUILayer/DialogueManager" method="_on_tabletop_view_new_item"]

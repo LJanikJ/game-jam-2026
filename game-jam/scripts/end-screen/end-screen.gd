@@ -1,5 +1,7 @@
 extends Node2D
 
+signal final_score
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide()
@@ -23,3 +25,9 @@ func _on_menu_button_pressed() -> void:
 func _on_retry_button_pressed() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+
+
+func _on_tabletop_view_final_score(score: int) -> void:
+	# Set the rich text label's number for score
+	# right now placeholder is 999
+	final_score.emit(score)
