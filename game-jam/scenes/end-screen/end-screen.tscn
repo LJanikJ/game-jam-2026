@@ -21,34 +21,41 @@ texture = SubResource("CanvasTexture_q6h2t")
 
 [node name="Scroll" type="Sprite2D" parent="." unique_id=1288847877]
 position = Vector2(576, 324)
-scale = Vector2(5.0000005, 7.1249995)
+scale = Vector2(5.0000005, 8.125001)
 texture = SubResource("GradientTexture2D_5c4a4")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1612035895]
-offset_left = 448.0
-offset_top = 128.0
-offset_right = 704.0
-offset_bottom = 368.0
+offset_left = 440.0
+offset_top = 96.0
+offset_right = 712.0
+offset_bottom = 384.0
 theme_override_constants/line_separation = -8
+theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 32
-text = "Game Over!
+bbcode_enabled = true
+text = "Shift Over!
 
-Score: 999"
+You made a profit of 999 gold pieces.
+
+[wave]testing[/wave]
+[shake]testing[/shake]
+[fade]testing[/fade]
+[rainbow]testing[/rainbow]"
 horizontal_alignment = 1
 
 [node name="MenuButton" type="Button" parent="." unique_id=1505699632]
 offset_left = 480.0
-offset_top = 456.0
+offset_top = 488.0
 offset_right = 672.0
-offset_bottom = 520.0
+offset_bottom = 552.0
 theme_override_font_sizes/font_size = 32
 text = "Main Menu"
 
 [node name="RetryButton" type="Button" parent="." unique_id=1240793077]
 offset_left = 480.0
-offset_top = 360.0
+offset_top = 392.0
 offset_right = 672.0
-offset_bottom = 424.0
+offset_bottom = 456.0
 theme_override_font_sizes/font_size = 32
 text = "Try Again"
 
