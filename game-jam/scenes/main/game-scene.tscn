@@ -11,6 +11,8 @@
 [ext_resource type="Script" uid="uid://c5c8uftj1shcq" path="res://scripts/dialogue/dialogue_manager.gd" id="7_btbfx"]
 [ext_resource type="Script" uid="uid://btj8pexgc0x2" path="res://scripts/dialogue/dialogue_background.gd" id="8_yui8m"]
 [ext_resource type="PackedScene" uid="uid://e6uh51fia7to" path="res://scenes/end-screen/end-screen.tscn" id="10_io8k2"]
+[ext_resource type="Script" uid="uid://2e0qtb7r4bhh" path="res://scripts/music/music_player.gd" id="12_2xsdd"]
+[ext_resource type="AudioStream" uid="uid://n8538lefolro" path="res://resources/music/game_jam.mp3" id="12_diqyw"]
 
 [sub_resource type="Gradient" id="Gradient_6s6y0"]
 
@@ -118,6 +120,13 @@ position = Vector2(0, 648)
 
 [node name="Tabletop View" parent="TableLayer" unique_id=458742552 instance=ExtResource("1_6s6y0")]
 position = Vector2(464, 240)
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1022832991]
+stream = ExtResource("12_diqyw")
+autoplay = true
+panning_strength = 0.0
+parameters/looping = true
+script = ExtResource("12_2xsdd")
 
 [connection signal="finished_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager" method="_on_dialogue_label_finished_typing"]
 [connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground Placeholder" method="_on_dialogue_label_hidden"]
