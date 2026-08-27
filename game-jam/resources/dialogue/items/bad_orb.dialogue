@@ -1,5 +1,5 @@
 ~ start
-test: BAD ORB
-test: BAD ORB!
-test: BAD. ORB.
+test: [color=#ffffff]BAD ORB[/color]
+test: [color=#ffffff]BAD ORB![/color]
+test: [color=#ffffff]BAD. ORB.[/color]
 => END

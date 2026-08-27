@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ctpfxcbcdhyqa"]
 
 [ext_resource type="Script" uid="uid://ne6l2mlcolwa" path="res://scripts/desk/item_manager.gd" id="1_lc0u4"]
+[ext_resource type="Texture2D" uid="uid://dgul7wao8wuwx" path="res://resources/sprites/desk/Table.png" id="2_2refd"]
 [ext_resource type="Script" uid="uid://dxsmjs6ac5jhf" path="res://scenes/desk/slide_audio.gd" id="2_bisel"]
 
 [sub_resource type="Gradient" id="Gradient_2refd"]
@@ -8,12 +9,6 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_2refd"]
 gradient = SubResource("Gradient_2refd")
-
-[sub_resource type="Gradient" id="Gradient_0pp5c"]
-colors = PackedColorArray(0.8666667, 0.5686275, 0.26666668, 1, 0.6509804, 0.3137255, 0.011764706, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_0pp5c"]
-gradient = SubResource("Gradient_0pp5c")
 
 [sub_resource type="Animation" id="Animation_exh8c"]
 length = 0.001
@@ -82,8 +77,8 @@ texture = SubResource("GradientTexture2D_2refd")
 
 [node name="TableTexture" type="Sprite2D" parent="Background Layer" unique_id=1880202786]
 position = Vector2(464, 244)
-scale = Vector2(14.249999, 7.3749995)
-texture = SubResource("GradientTexture2D_0pp5c")
+scale = Vector2(8, 8)
+texture = ExtResource("2_2refd")
 
 [node name="Item Layer" type="CanvasLayer" parent="." unique_id=817969860]
 
