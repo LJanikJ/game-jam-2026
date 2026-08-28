@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://c4rnf4bjy5bow"
+path="res://.godot/imported/Sword03.dialogue-c05f0204c5588a813ad357e7f8bda842.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/items/weapon/Sword03.dialogue"
+dest_files=["res://.godot/imported/Sword03.dialogue-c05f0204c5588a813ad357e7f8bda842.tres"]
+
+[params]
+
+defaults=true

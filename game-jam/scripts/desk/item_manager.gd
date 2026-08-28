@@ -62,7 +62,7 @@ func _on_accept_button_pressed() -> void:
 
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
 	if anim_name == "slide_in":
-		new_item.emit(current_item.item_name)
+		new_item.emit(current_item.type, current_item.item_name)
 
 
 func _on_shop_view_customer_at_desk() -> void:
