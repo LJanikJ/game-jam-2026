@@ -4,12 +4,13 @@ var dull = preload("res://resources/sound_effects/glass/dull.wav")
 var sharp = preload("res://resources/sound_effects/glass/sharp.wav")
 
 @onready var ccc = $ClickCheckCollider
-
 @onready var audio = $ClickPlayer
 
+# Item property variable declaration 
 var cursed: bool
 var lying: bool
 @export var item_name: String
+@export var magic_school: String 
 
 # value is an int ranging from -X to Y
 @export var value: int
@@ -44,6 +45,8 @@ func load_item(index: int) -> void:
 		cursed = json_entry["cursed"]
 		lying = json_entry["lying"]
 		value = json_entry["value"]
+		magic_school = json_entry["magic_school"]
+		
 	else:
 		print("Unexpected data")
 
@@ -69,7 +72,8 @@ func on_click() -> void:
 	else:
 		pass
 
-
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.is_pressed():
 		self.on_click()
+
+ 

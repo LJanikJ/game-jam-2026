@@ -22,7 +22,7 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func _on_tabletop_view_new_item(item_type: String, item_name: String) -> void:
+func _on_tabletop_view_new_item(item_type: String, item_name: String, _magic_school : String) -> void:
 	dialogue_label.visible = true
 	dType = DialogueType.ITEM
 	
