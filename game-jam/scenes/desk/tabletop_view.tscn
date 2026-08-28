@@ -68,7 +68,7 @@ _data = {
 script = ExtResource("1_lc0u4")
 
 [node name="Background Layer" type="CanvasLayer" parent="." unique_id=1249260215]
-layer = 0
+layer = 2
 
 [node name="Border" type="Sprite2D" parent="Background Layer" unique_id=273450353]
 position = Vector2(464, 244)
@@ -81,6 +81,7 @@ scale = Vector2(8, 8)
 texture = ExtResource("2_2refd")
 
 [node name="Item Layer" type="CanvasLayer" parent="." unique_id=817969860]
+layer = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Item Layer" unique_id=1591364748]
 libraries/ = SubResource("AnimationLibrary_2refd")
@@ -94,6 +95,7 @@ bus = &"SFX"
 script = ExtResource("2_bisel")
 
 [node name="GUILayer" type="CanvasLayer" parent="." unique_id=850804959]
+layer = 3
 
 [connection signal="animation_finished" from="Item Layer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="Item Layer/AnimationPlayer" to="." method="_on_animation_player_animation_started"]

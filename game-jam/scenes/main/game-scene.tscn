@@ -40,7 +40,7 @@ process_mode = 3
 visible = false
 
 [node name="GUILayer" type="CanvasLayer" parent="." unique_id=286979011]
-layer = 3
+layer = 5
 
 [node name="Right GUI" type="Node2D" parent="GUILayer" unique_id=725023407]
 position = Vector2(1152, 648)
