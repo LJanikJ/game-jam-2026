@@ -61,12 +61,15 @@ offset_left = -213.01788
 offset_top = -632.0
 offset_right = -7.8896484
 offset_bottom = -552.0
+disabled = true
 texture_normal = ExtResource("1_hquci")
 texture_pressed = ExtResource("3_cj10v")
+texture_disabled = ExtResource("3_cj10v")
 stretch_mode = 0
 script = ExtResource("4_cmec0")
 
 [node name="Spell Button 2 Placeholder2" type="TextureButton" parent="GUILayer/Right GUI" unique_id=1336778833]
+visible = false
 texture_filter = 1
 offset_left = -213.01782
 offset_top = -544.0
@@ -77,6 +80,7 @@ texture_pressed = ExtResource("5_cmec0")
 stretch_mode = 0
 
 [node name="Spell Button 3 Placeholder3" type="TextureButton" parent="GUILayer/Right GUI" unique_id=969327212]
+visible = false
 texture_filter = 1
 offset_left = -213.01782
 offset_top = -456.0
@@ -87,6 +91,7 @@ texture_pressed = ExtResource("7_5u3ss")
 stretch_mode = 0
 
 [node name="Spell Button 4 Placeholder3" type="TextureButton" parent="GUILayer/Right GUI" unique_id=530602718]
+visible = false
 texture_filter = 1
 offset_left = -213.01782
 offset_top = -368.0
@@ -168,7 +173,7 @@ script = ExtResource("14_uggeb")
 [node name="magicSchoolSprite" type="Sprite2D" parent="GUILayer" unique_id=456525369]
 visible = false
 position = Vector2(112, 112)
-scale = Vector2(1.25, 1.25)
+scale = Vector2(8, 8)
 texture = ExtResource("22_5u3ss")
 script = ExtResource("23_hlfle")
 
@@ -200,16 +205,18 @@ script = ExtResource("12_2xsdd")
 [connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground Placeholder" method="_on_dialogue_label_started_typing"]
 [connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/AcceptButton" method="_on_dialogue_label_started_typing"]
 [connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/RejectButton" method="_on_dialogue_label_started_typing"]
+[connection signal="pressed" from="GUILayer/AcceptButton" to="GUILayer/Right GUI/Spell 1" method="_on_accept_button_pressed"]
 [connection signal="pressed" from="GUILayer/AcceptButton" to="GUILayer/AcceptButton" method="_on_pressed"]
 [connection signal="pressed" from="GUILayer/AcceptButton" to="GUILayer/RejectButton" method="_on_accept_button_pressed"]
+[connection signal="pressed" from="GUILayer/AcceptButton" to="GUILayer/magicSchoolSprite" method="_on_accept_button_pressed"]
 [connection signal="pressed" from="GUILayer/AcceptButton" to="ShopLayer/ShopView" method="_on_accept_button_pressed"]
 [connection signal="pressed" from="GUILayer/AcceptButton" to="TableLayer/Tabletop View" method="_on_accept_button_pressed"]
-[connection signal="pressed" from="GUILayer/AcceptButton" to="GUILayer/magicSchoolSprite" method="_on_accept_button_pressed"]
+[connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/Right GUI/Spell 1" method="_on_reject_button_pressed"]
 [connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/AcceptButton" method="_on_reject_button_pressed"]
 [connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/RejectButton" method="_on_pressed"]
+[connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/magicSchoolSprite" method="_on_reject_button_pressed"]
 [connection signal="pressed" from="GUILayer/RejectButton" to="ShopLayer/ShopView" method="_on_reject_button_pressed"]
 [connection signal="pressed" from="GUILayer/RejectButton" to="TableLayer/Tabletop View" method="_on_reject_button_pressed"]
-[connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/magicSchoolSprite" method="_on_reject_button_pressed"]
 [connection signal="customer_at_desk" from="ShopLayer/ShopView" to="TableLayer/Tabletop View" method="_on_shop_view_customer_at_desk"]
 [connection signal="final_score" from="TableLayer/Tabletop View" to="EndLayer/EndScreen" method="_on_tabletop_view_final_score"]
 [connection signal="items_empty" from="TableLayer/Tabletop View" to="EndLayer/EndScreen" method="_on_tabletop_view_items_empty"]

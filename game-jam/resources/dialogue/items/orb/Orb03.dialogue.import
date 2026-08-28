@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cbgs0pymniwdk"
+path="res://.godot/imported/Orb03.dialogue-52e4ffdacd2f1c79f71949e1039f87b6.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/items/orb/Orb03.dialogue"
+dest_files=["res://.godot/imported/Orb03.dialogue-52e4ffdacd2f1c79f71949e1039f87b6.tres"]
+
+[params]
+
+defaults=true

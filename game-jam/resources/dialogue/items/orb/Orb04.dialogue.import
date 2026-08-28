@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cuib16gaw0ila"
+path="res://.godot/imported/Orb04.dialogue-8bcea0cb6741079630d8b6529d62d800.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/items/orb/Orb04.dialogue"
+dest_files=["res://.godot/imported/Orb04.dialogue-8bcea0cb6741079630d8b6529d62d800.tres"]
+
+[params]
+
+defaults=true

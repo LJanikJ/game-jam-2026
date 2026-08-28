@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dqogfl6w4ol1m"
+path="res://.godot/imported/Orb05.dialogue-c25a1368863cb38c82703d7fcd07ed19.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/items/orb/Orb05.dialogue"
+dest_files=["res://.godot/imported/Orb05.dialogue-c25a1368863cb38c82703d7fcd07ed19.tres"]
+
+[params]
+
+defaults=true

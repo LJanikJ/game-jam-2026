@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bjdtaolkgx0g5"
+path="res://.godot/imported/Orb02.dialogue-3669208e5e3760dcbc8677598357739d.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/items/orb/Orb02.dialogue"
+dest_files=["res://.godot/imported/Orb02.dialogue-3669208e5e3760dcbc8677598357739d.tres"]
+
+[params]
+
+defaults=true

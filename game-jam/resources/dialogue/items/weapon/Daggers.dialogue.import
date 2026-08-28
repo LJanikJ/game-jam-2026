@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://d1iaevowjrf37"
+path="res://.godot/imported/Daggers.dialogue-50ac0c8e65063217ed096b6db7452637.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/items/weapon/Daggers.dialogue"
+dest_files=["res://.godot/imported/Daggers.dialogue-50ac0c8e65063217ed096b6db7452637.tres"]
+
+[params]
+
+defaults=true
