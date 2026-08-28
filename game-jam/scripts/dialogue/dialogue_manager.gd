@@ -22,11 +22,11 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func _on_tabletop_view_new_item(item_name: String) -> void:
+func _on_tabletop_view_new_item(item_type: String, item_name: String) -> void:
 	dialogue_label.visible = true
 	dType = DialogueType.ITEM
 	
-	current_dialogue = load("res://resources/dialogue/items/"+item_name+".dialogue")
+	current_dialogue = load("res://resources/dialogue/items/"+item_type+"/"+item_name+".dialogue")
 	
 	if current_dialogue:
 		next_line = await current_dialogue.get_next_dialogue_line("start")

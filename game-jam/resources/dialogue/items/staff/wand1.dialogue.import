@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://bk73uw5xe63m5"
+path="res://.godot/imported/wand1.dialogue-c75521dee91f66853b1af61b946b7767.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/items/staff/wand1.dialogue"
+dest_files=["res://.godot/imported/wand1.dialogue-c75521dee91f66853b1af61b946b7767.tres"]
+
+[params]
+
+defaults=true

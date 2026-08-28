@@ -5,12 +5,16 @@
 [ext_resource type="Texture2D" uid="uid://yu6wdm2vbygb" path="res://resources/sprites/spells/spell1.png" id="1_hquci"]
 [ext_resource type="Texture2D" uid="uid://b8kkhp0hd3ksa" path="res://resources/sprites/spells/spell2.png" id="2_lg53t"]
 [ext_resource type="Texture2D" uid="uid://46npg5x6q131" path="res://resources/sprites/spells/spell3.png" id="3_5y0al"]
+[ext_resource type="Texture2D" uid="uid://iqh2001nqphk" path="res://resources/sprites/spells/spell1_press.png" id="3_cj10v"]
 [ext_resource type="Texture2D" uid="uid://bxxptd0ihjds1" path="res://resources/sprites/spells/spell4.png" id="4_tb07p"]
+[ext_resource type="Texture2D" uid="uid://c34pre8d6ykqm" path="res://resources/sprites/spells/spell2_press.png" id="5_cmec0"]
 [ext_resource type="PackedScene" uid="uid://k8pjt00oc8p8" path="res://scenes/shop/shop_view.tscn" id="6_btbfx"]
 [ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.gd" id="6_rvpa5"]
+[ext_resource type="Texture2D" uid="uid://dbi6n5vvgbq8n" path="res://resources/sprites/spells/spell3_press.png" id="7_5u3ss"]
 [ext_resource type="Script" uid="uid://c5c8uftj1shcq" path="res://scripts/dialogue/dialogue_manager.gd" id="7_btbfx"]
 [ext_resource type="Texture2D" uid="uid://ddygjqgmjfcrt" path="res://resources/sprites/text/dialogue.png" id="8_uggeb"]
 [ext_resource type="Script" uid="uid://btj8pexgc0x2" path="res://scripts/dialogue/dialogue_background.gd" id="8_yui8m"]
+[ext_resource type="Texture2D" uid="uid://dw0kua0248ryn" path="res://resources/sprites/spells/spell4_press.png" id="9_hlfle"]
 [ext_resource type="PackedScene" uid="uid://e6uh51fia7to" path="res://scenes/end-screen/end-screen.tscn" id="10_io8k2"]
 [ext_resource type="Texture2D" uid="uid://dthmly7t5xo3l" path="res://resources/sprites/desk/accept_button.png" id="11_65vu2"]
 [ext_resource type="Script" uid="uid://bxbfon4g2ims2" path="res://scripts/item/accept_button.gd" id="12_1f4fv"]
@@ -55,6 +59,7 @@ offset_top = -632.0
 offset_right = -7.8896484
 offset_bottom = -552.0
 texture_normal = ExtResource("1_hquci")
+texture_pressed = ExtResource("3_cj10v")
 stretch_mode = 0
 
 [node name="Spell Button 2 Placeholder2" type="TextureButton" parent="GUILayer/Right GUI" unique_id=1336778833]
@@ -64,6 +69,7 @@ offset_top = -544.0
 offset_right = -7.8896484
 offset_bottom = -464.0
 texture_normal = ExtResource("2_lg53t")
+texture_pressed = ExtResource("5_cmec0")
 stretch_mode = 0
 
 [node name="Spell Button 3 Placeholder3" type="TextureButton" parent="GUILayer/Right GUI" unique_id=969327212]
@@ -73,6 +79,7 @@ offset_top = -456.0
 offset_right = -7.8896484
 offset_bottom = -376.0
 texture_normal = ExtResource("3_5y0al")
+texture_pressed = ExtResource("7_5u3ss")
 stretch_mode = 0
 
 [node name="Spell Button 4 Placeholder3" type="TextureButton" parent="GUILayer/Right GUI" unique_id=530602718]
@@ -82,6 +89,7 @@ offset_top = -368.0
 offset_right = -7.8896484
 offset_bottom = -288.0
 texture_normal = ExtResource("4_tb07p")
+texture_pressed = ExtResource("9_hlfle")
 stretch_mode = 0
 
 [node name="Handbook" parent="GUILayer/Right GUI" unique_id=531685002 instance=ExtResource("1_fttaq")]

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://caigwfph08hqr"
+path="res://.godot/imported/staff1.dialogue-8ec39daeb7cbddd502eb656bad9d3dcb.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/items/staff/staff1.dialogue"
+dest_files=["res://.godot/imported/staff1.dialogue-8ec39daeb7cbddd502eb656bad9d3dcb.tres"]
+
+[params]
+
+defaults=true

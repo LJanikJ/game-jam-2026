@@ -8,8 +8,7 @@ var lying: bool
 @export var value: int
 
 # decides what page of the book governs it
-enum ItemType {ORB, WAND, WEAPON, MISC}
-var type: ItemType
+var type: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,35 +23,20 @@ func load_item(index: int) -> void:
 		var json_entry = json.data[index]
 		
 		item_name = json_entry["name"]
+		type = json_entry["type"]
 		
 		# add sprite as child node
 		var item_sprite = Sprite2D.new()
-		item_sprite.texture = load("res://resources/sprites/items/"+item_name+".png") 
+		item_sprite.texture = load("res://resources/sprites/items/"+type+"/"+item_name+".png")
+		item_sprite.scale.x = 8.0
+		item_sprite.scale.y = 8.0
+		
 		add_child(item_sprite)
 		
 		# set parameters
 		cursed = json_entry["cursed"]
 		lying = json_entry["lying"]
 		value = json_entry["value"]
-		
-		# set multiplier based on rarity
-		#if json_entry["rarity"] == "common":
-			#rarity = 1
-		#elif json_entry["rarity"] == "uncommon":
-			#rarity = 2
-		#elif json_entry["rarity"] == "rare":
-			#rarity = 5
-		#elif json_entry["rarity"] == "legendary":
-			#rarity = 10
-		
-		if json_entry["type"] == "weapon":
-			type = ItemType.WEAPON
-		elif json_entry["type"] == "wand":
-			type = ItemType.WAND
-		elif json_entry["type"] == "orb":
-			type = ItemType.ORB
-		elif json_entry["type"] == "misc":
-			type = ItemType.MISC
 	else:
 		print("Unexpected data")
 

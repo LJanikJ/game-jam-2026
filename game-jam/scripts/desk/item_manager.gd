@@ -9,21 +9,21 @@ signal items_empty
 signal new_item
 signal final_score
 
+var json = preload("res://resources/items.tres")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# initialize with queue of items 
 	# get list of items from json or something
 	
-	# change range to be number of items
-	for index in range(3):
+	# potentially limit the size of the array so that not every item appears in a single run
+	for index in range(json.data.size()):
 		var item = preload("res://scenes/item/item.tscn").instantiate()
 		
 		item.load_item(index)
 		items.append(item)
 	
 	items.shuffle()
-	
-	#get_next_item()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -71,7 +71,7 @@ func _on_accept_button_pressed() -> void:
 
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
 	if anim_name == "slide_in":
-		new_item.emit(current_item.item_name)
+		new_item.emit(current_item.type, current_item.item_name)
 
 
 func _on_shop_view_customer_at_desk() -> void:
