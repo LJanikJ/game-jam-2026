@@ -36,12 +36,7 @@ theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "Shift Over!
 
-You made a profit of 999 gold pieces.
-
-[wave]testing[/wave]
-[shake]testing[/shake]
-[fade]testing[/fade]
-[rainbow]testing[/rainbow]"
+You made a profit of 999 gold pieces."
 horizontal_alignment = 1
 script = ExtResource("2_4q8k0")
 metadata/final_score = 0

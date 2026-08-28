@@ -15,20 +15,11 @@ func _on_end_screen_final_score(score: int) -> void:
 	if (score >= 0):
 		self.text = """Shift Over!
 
-You made a profit of %d gold pieces.
-
-[wave]testing[/wave]
-[shake]testing[/shake]
-[fade]testing[/fade]
-[rainbow]testing[/rainbow]""" % [score]
+You made a profit of %d gold pieces.""" % [score]
 	
 	else:
 		self.text = """Shift Over!
 
 You're Fired!
-You lost the shop %d gold pieces.
 
-[wave]testing[/wave]
-[shake]testing[/shake]
-[fade]testing[/fade]
-[rainbow]testing[/rainbow]""" % [score * -1]
+You lost the shop %d gold pieces.""" % [score * -1]

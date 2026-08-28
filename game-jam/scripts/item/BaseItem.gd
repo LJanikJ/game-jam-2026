@@ -45,7 +45,7 @@ func load_item(index: int) -> void:
 		cursed = json_entry["cursed"]
 		lying = json_entry["lying"]
 		value = json_entry["value"]
-		magic_school = json_entry["magic_school"]
+		magic_school = json_entry["school"]
 		
 	else:
 		print("Unexpected data")
@@ -56,7 +56,7 @@ func _process(_delta: float) -> void:
 
 func on_click() -> void:
 	# currently set to weaponfor testing
-	if type == "weapon":
+	if type == "orb":
 		if lying:
 			audio.stream = dull
 			# dull sound effect
@@ -65,7 +65,7 @@ func on_click() -> void:
 			# sharp sound effect
 		
 		audio.play()
-	elif type == "orb":
+	elif type == "weapon":
 		pass
 	elif type == "staff":
 		pass

@@ -1,6 +1,6 @@
 extends Sprite2D
 
-var magic_school : String
+#var school : String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,8 +11,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _on_tabletop_view_new_item(_item_type: String, _item_name: String, item_magic_school : String) -> void:
-	magic_school = item_magic_school
+func _on_tabletop_view_new_item(_item_type: String, _item_name: String, magic_school : String) -> void:
+	#school = magic_school
+	
+	texture = load("res://resources/sprites/sigil/"+magic_school+".png")
 
 
 func _on_spell_1_pressed() -> void:

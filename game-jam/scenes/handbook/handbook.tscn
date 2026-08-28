@@ -40,12 +40,12 @@ texture = ExtResource("4_qxhgv")
 
 [node name="PageLeft" type="Button" parent="Handbook Button/Handbook Window" unique_id=1225658142]
 self_modulate = Color(1, 1, 1, 0)
-offset_right = 108.0
+offset_right = 148.0
 offset_bottom = 400.0
 
 [node name="PageRight" type="Button" parent="Handbook Button/Handbook Window" unique_id=160501002]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 492.0
+offset_left = 460.0
 offset_right = 600.0
 offset_bottom = 400.0
 

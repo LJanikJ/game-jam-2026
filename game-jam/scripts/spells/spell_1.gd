@@ -18,8 +18,17 @@ func _on_pressed() -> void:
 
 
 func _on_dialogue_label_hidden() -> void:
-	disabled = false 
+	disabled = false
 
 
 func _on_tabletop_view_new_item(_item_type: String, _item_name: String, item_magic_school : String) -> void:
 	magic_school = item_magic_school
+	disabled = true
+
+
+func _on_accept_button_pressed() -> void:
+	disabled = true
+
+
+func _on_reject_button_pressed() -> void:
+	disabled = true
