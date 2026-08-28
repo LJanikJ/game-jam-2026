@@ -3,19 +3,19 @@
 [resource]
 data = [{
 "cursed": false,
-"lying": false,
+"lying": true,
 "name": "Sword01",
-"type": "weapon",
-"value": 0
-}, {
-"cursed": false,
-"lying": false,
-"name": "Sword02",
 "type": "weapon",
 "value": 0
 }, {
 "cursed": true,
 "lying": false,
+"name": "Sword02",
+"type": "weapon",
+"value": 0
+}, {
+"cursed": false,
+"lying": true,
 "name": "Sword03",
 "type": "weapon",
 "value": 0

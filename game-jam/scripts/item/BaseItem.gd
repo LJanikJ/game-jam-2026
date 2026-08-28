@@ -1,4 +1,11 @@
-extends Node2D
+extends Area2D
+
+var dull = preload("res://resources/sound_effects/glass/dull.wav")
+var sharp = preload("res://resources/sound_effects/glass/sharp.wav")
+
+@onready var ccc = $ClickCheckCollider
+
+@onready var audio = $ClickPlayer
 
 var cursed: bool
 var lying: bool
@@ -43,3 +50,26 @@ func load_item(index: int) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
+
+func on_click() -> void:
+	# currently set to weaponfor testing
+	if type == "weapon":
+		if lying:
+			audio.stream = dull
+			# dull sound effect
+		else:
+			audio.stream = sharp
+			# sharp sound effect
+		
+		audio.play()
+	elif type == "orb":
+		pass
+	elif type == "staff":
+		pass
+	else:
+		pass
+
+
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.is_pressed():
+		self.on_click()
