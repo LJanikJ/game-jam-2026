@@ -4,6 +4,7 @@ var items = []
 var current_item
 var score = 0
 var num_cursed = 0
+var magic_school : String
 
 signal items_empty
 signal new_item
@@ -43,11 +44,13 @@ func remove_item() -> void:
 func get_next_item() -> void:
 	# get next item in queue and load instance, then slide in
 	current_item = items.pop_front()
+	magic_school = current_item.magic_school
+	
 	
 	$"Item Layer/ItemCarrier".add_child(current_item)
-	
 	$"Item Layer/AnimationPlayer".play("slide_in")
-
+		
+	
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "slide_out":
@@ -71,7 +74,8 @@ func _on_accept_button_pressed() -> void:
 
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
 	if anim_name == "slide_in":
-		new_item.emit(current_item.type, current_item.item_name)
+		new_item.emit(current_item.type, current_item.item_name, current_item.magic_school)
+
 
 
 func _on_shop_view_customer_at_desk() -> void:
