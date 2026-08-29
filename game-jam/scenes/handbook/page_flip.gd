@@ -17,6 +17,6 @@ func _on_handbook_button_pressed() -> void:
 	play()
 
 
-func _on_page_sprite_texture_changed() -> void:
+func _on_handbook_window_flip_sound() -> void:
 	volume_db = -5.0
 	play()

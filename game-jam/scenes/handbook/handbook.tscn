@@ -5,6 +5,12 @@
 [ext_resource type="Script" uid="uid://d3b7eaueptfwq" path="res://scripts/handbook/handbook_window.gd" id="2_gbxsw"]
 [ext_resource type="Script" uid="uid://bb2su46qxfval" path="res://scenes/handbook/page_flip.gd" id="4_gs2xn"]
 [ext_resource type="Texture2D" uid="uid://dbq2rqpw5ytnd" path="res://resources/sprites/book/page1.png" id="4_qxhgv"]
+[ext_resource type="Texture2D" uid="uid://dkqpqyx0uoylx" path="res://resources/sprites/book/page2_temp.png" id="5_xxilg"]
+[ext_resource type="Texture2D" uid="uid://cunkfkl74dfpt" path="res://resources/sprites/book/page3.png" id="6_nqi3i"]
+[ext_resource type="Texture2D" uid="uid://bnn7lekgujxsj" path="res://resources/sprites/book/page4.png" id="7_qdtkm"]
+[ext_resource type="Texture2D" uid="uid://p5t8y645pqev" path="res://resources/sprites/book/page5.png" id="8_xxilg"]
+[ext_resource type="Texture2D" uid="uid://hefk8b53ydua" path="res://resources/sprites/book/page6.png" id="9_seayl"]
+[ext_resource type="Texture2D" uid="uid://s0shr115eru6" path="res://resources/sprites/book/page7.png" id="10_a3ntf"]
 
 [node name="Handbook" type="Control" unique_id=531685002]
 layout_mode = 3
@@ -34,9 +40,375 @@ popup_window = true
 theme_override_font_sizes/title_font_size = 24
 script = ExtResource("2_gbxsw")
 
-[node name="PageSprite" type="Sprite2D" parent="Handbook Button/Handbook Window" unique_id=1684584933]
+[node name="PageSprite1" type="Sprite2D" parent="Handbook Button/Handbook Window" unique_id=1684584933]
 position = Vector2(300, 200)
 texture = ExtResource("4_qxhgv")
+
+[node name="LeftPageText" type="RichTextLabel" parent="Handbook Button/Handbook Window/PageSprite1" unique_id=219371621]
+offset_left = -280.0
+offset_top = -188.0
+offset_right = -24.0
+offset_bottom = 188.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -2
+bbcode_enabled = true
+text = "[center]
+
+
+
+
+[font_size=24]
+Buyer [shake]Beware[/shake]!
+[/font_size]
+A magic item appraisal guide for apprentice wizards.
+
+
+
+(I made the text shake with magic)
+
+[/center]"
+
+[node name="RightPageText" type="RichTextLabel" parent="Handbook Button/Handbook Window/PageSprite1" unique_id=239702692]
+offset_left = 24.0
+offset_top = -188.0
+offset_right = 280.0
+offset_bottom = 188.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -2
+bbcode_enabled = true
+text = "
+
+
+
+Table of Contents
+
+
+[table=2]
+[cell][left]Introduction[/left][/cell]
+[cell][right]1[/right][/cell]
+
+[cell][left]Curses[/left][/cell]
+[cell][right]2[/right][/cell]
+
+[cell][left]Schools of Magic[/left][/cell]
+[cell][right]3[/right][/cell]
+
+[cell][left]Weapons[/left][/cell]
+[cell][right]5[/right][/cell]
+
+[cell][left]Wands and Staves            [/left][/cell]
+[cell][right]7[/right][/cell]
+
+[cell][left]Crystal Balls[/left][/cell]
+[cell][right]9[/right][/cell]
+
+[cell][left]Other Items[/left][/cell]
+[cell][right]11[/right][/cell]
+[/table]
+"
+horizontal_alignment = 1
+
+[node name="PageSprite2" type="Sprite2D" parent="Handbook Button/Handbook Window" unique_id=248034303]
+visible = false
+position = Vector2(300, 200)
+texture = ExtResource("5_xxilg")
+
+[node name="LeftPageText" type="RichTextLabel" parent="Handbook Button/Handbook Window/PageSprite2" unique_id=1308254568]
+offset_left = -280.0
+offset_top = -188.0
+offset_right = -24.0
+offset_bottom = 188.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -1
+bbcode_enabled = true
+text = "[center][b]Introduction[/b][/center]
+
+Greetings, apprentice!
+
+This mystic tome is for those who wish to identify magical artifacts. It is no simple task, but fret not! This guide shall bestow the ABCs upon ye!
+
+When encountering a magic item, simply:
+
+[ol]
+Check for [b]curses[/b]!
+Identify what [b]family[/b] of artifact it is, and turn to that page.
+Remember, every item has a history. [u]If a story doesn’t align with what you observe, then that item could be suspicious[/u].
+If everything seems correct, then you have a true magic item!
+[/ol]"
+
+[node name="RightPageText" type="RichTextLabel" parent="Handbook Button/Handbook Window/PageSprite2" unique_id=283982207]
+offset_left = 24.0
+offset_top = -188.0
+offset_right = 280.0
+offset_bottom = 188.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -1
+bbcode_enabled = true
+text = "[center][b]Curses[/b][/center]
+
+Beware cursed items!
+
+Many artifacts found in the wild could subject their wielders to ill effects, and some scoundrels even try to pawn them off onto others! 
+
+[ul]
+The sure signs of cursed magics are as follows:
+[b]Mysterious whispers[/b] coming off it.
+A clearly [b]evil-looking[/b] design.
+The colour [color=purple]purple[/color]! As any good apprentice knows, all purple things are surely evil!
+[/ul]
+
+Never accept an item with these attributes under [u]any circumstance[/u]!
+"
+
+[node name="PageSprite3" type="Sprite2D" parent="Handbook Button/Handbook Window" unique_id=950058420]
+visible = false
+position = Vector2(300, 200)
+texture = ExtResource("6_nqi3i")
+
+[node name="LeftPageText" type="RichTextLabel" parent="Handbook Button/Handbook Window/PageSprite3" unique_id=2056636873]
+offset_left = -280.0
+offset_top = -188.0
+offset_right = -24.0
+offset_bottom = 188.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -1
+bbcode_enabled = true
+text = "[center][b]Schools of Magic[/b][/center]
+
+As all wizards well know, there are eight schools of magic. 
+
+When using the [b]Identify[/b] spell [wave](top right)[/wave], you will see a sigil indicating which school of magic an item has been enchanted with. 
+
+These sigils are listed on these pages, alongside their school of magic.
+
+
+
+
+
+
+        Abjuration           Conjuration
+       (Protection)         (Creation)"
+
+[node name="RightPageText" type="RichTextLabel" parent="Handbook Button/Handbook Window/PageSprite3" unique_id=1147941851]
+offset_left = 24.0
+offset_top = -180.0
+offset_right = 280.0
+offset_bottom = 188.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -1
+bbcode_enabled = true
+text = "
+
+
+
+       Divination             Enchantment
+     (Knowledge)        (Empowerment)
+
+
+
+
+
+       Evocation                  Illusion
+      (Attacking)             (Deception)
+
+
+
+
+
+
+     Necromancy          Transmutation
+         (Death)                  (Change)"
+
+[node name="PageSprite4" type="Sprite2D" parent="Handbook Button/Handbook Window" unique_id=39741652]
+visible = false
+position = Vector2(300, 200)
+texture = ExtResource("7_qdtkm")
+
+[node name="LeftPageText" type="RichTextLabel" parent="Handbook Button/Handbook Window/PageSprite4" unique_id=868231424]
+offset_left = -280.0
+offset_top = -188.0
+offset_right = -24.0
+offset_bottom = 188.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -1
+bbcode_enabled = true
+text = "[center][b]Weapons[/b][/center]
+
+A weapon is anything used to slash, stab, or bludgeon someone. We wizards care little for these barbaric tools, but when enchanted their value increases greatly!
+
+
+
+Firstly, check that the weapon is not of the [b]Illusion[/b], [b]Necromancy[/b], or [b]Transmutation[/b] schools. Such items are surely worthless.
+
+Afterwards, the magical qualities of any weapon can be assessed by observing the gems inlaid on them, falling into two categories.
+"
+
+[node name="RightPageText" type="RichTextLabel" parent="Handbook Button/Handbook Window/PageSprite4" unique_id=350179746]
+offset_left = 24.0
+offset_top = -188.0
+offset_right = 280.0
+offset_bottom = 188.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -1
+bbcode_enabled = true
+text = "
+
+	[u]Single Gem[/u]:
+
+When a single gem is inlaid, it should be bright and fierce. Only [b]red[/b], [b]orange[/b], and [b]yellow[/b] gems shall suffice.
+
+	[u]Double Gem[/u]:
+
+Weapons with two gems must balance their magics carefully. Any true craftsman will inlay two [b]complementary gems[/b]: gems with colours that lie [b]opposite[/b] on this handy colour chart. 
+"
+
+[node name="PageSprite5" type="Sprite2D" parent="Handbook Button/Handbook Window" unique_id=1530270963]
+visible = false
+position = Vector2(300, 200)
+texture = ExtResource("8_xxilg")
+
+[node name="LeftPageText" type="RichTextLabel" parent="Handbook Button/Handbook Window/PageSprite5" unique_id=852945014]
+offset_left = -280.0
+offset_top = -188.0
+offset_right = -24.0
+offset_bottom = 188.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -1
+bbcode_enabled = true
+text = "[center][b]Wands and Staves[/b][/center]
+
+A wand or a staff is a wizard's best friend! These stalwart friends keep us company all our lives. Therefore, spotting a quality wand is of utmost importance.
+
+Wands and staves have three major components: The [u]core[/u], the [u]gem[/u], and the [u]wood[/u].
+
+The core and the gem dictate the mana type of the wand, by providing the row and column on this chart:
+[center]
+[table=5]
+[cell]  [/cell]			[cell]  [/cell] [cell]  [/cell][cell] [b]Gem[/b] [/cell] [cell]  [/cell]
+[cell]  [/cell]			[cell]  [/cell] [cell][bgcolor=green]Green[/bgcolor] [/cell] [cell][bgcolor=yellow]Yellow[/bgcolor] [/cell] [cell][bgcolor=orange]Orange[/bgcolor] [/cell]
+[cell]  [/cell]			[cell]  [bgcolor=red] Red[/bgcolor][/cell] [cell]Burst [/cell] [cell]Con. [/cell] [cell]Flow [/cell]
+[cell][b]Core[/b] [/cell]	[cell][bgcolor=green]Green[/bgcolor][/cell] [cell]Con. [/cell] [cell]Flow [/cell] [cell]Burst [/cell]
+[cell]  [/cell]			[cell]  [bgcolor=skyblue]Blue[/bgcolor][/cell] [cell]Flow [/cell] [cell]Burst [/cell] [cell]Con. [/cell]
+[/table]
+[/center]"
+
+[node name="RightPageText" type="RichTextLabel" parent="Handbook Button/Handbook Window/PageSprite5" unique_id=300496301]
+offset_left = 24.0
+offset_top = -188.0
+offset_right = 280.0
+offset_bottom = 188.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -1
+bbcode_enabled = true
+text = "
+
+Each mana type is only compatible with certain woods. The broad strokes are listed below:
+
+[ul]
+[u]Flow[/u] wands must be made of a [b]light[/b]-tone wood, such as birch.
+[u]Burst[/u] wands are made from [b]dark[/b] woods, such as walnut or ebony.
+[u]Concentration (Con)[/u] wands must be made of a [b]light[/b] or [b]medium[/b] wood.
+[/ul]
+
+[rainbow]*[/rainbow] If a wand contains a core or gem of a colour not on the table, then it is a [rainbow]Specialty[/rainbow] wand, a rarity indeed! 
+
+Any wood will suffice for such a wand, but you must ensure that the wand is of the [b]Enchantment[/b] school, otherwise it is a forgery.
+"
+
+[node name="PageSprite6" type="Sprite2D" parent="Handbook Button/Handbook Window" unique_id=1215484521]
+visible = false
+position = Vector2(300, 200)
+texture = ExtResource("9_seayl")
+
+[node name="LeftPageText" type="RichTextLabel" parent="Handbook Button/Handbook Window/PageSprite6" unique_id=1321163405]
+offset_left = -280.0
+offset_top = -188.0
+offset_right = -24.0
+offset_bottom = 188.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -1
+bbcode_enabled = true
+text = "[center][b]Crystals Balls[/b][/center]
+
+Ah, crystal balls! Some wizards enjoy simply pondering their beauty, but these orbs may be host to otherworldly ability.
+
+
+Firstly, their structure. Any high quality crystal ball should sound [u]sharp and clear when tapped[/u], like a fine wine glass. No dull, muted tones.
+
+Secondly, ascertain the [b]school[/b] of the enchantment. For any novice apprentice this step is trivial. 
+
+Each crystal ball has a [b]sigil[/b] borne upon its base. Ensure that this sigil matches the [b]school[/b] of magic that enchants it. 
+"
+
+[node name="RightPageText" type="RichTextLabel" parent="Handbook Button/Handbook Window/PageSprite6" unique_id=237658418]
+offset_left = 24.0
+offset_top = -188.0
+offset_right = 280.0
+offset_bottom = 188.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -1
+bbcode_enabled = true
+text = "
+
+Now, each crystal ball has a different magical [b]affinity[/b]. Ensure that the affinity of the orb is applicable with the orbs [b]colour[/b], as listed here.
+[center]
+[table=2]
+[cell]   [u]Colour[/u]   [/cell]		[cell][u]Affinity[/u][/cell]
+
+[cell][left]Red:[/left][/cell]
+[cell][left]Evocation
+Enchantment
+[/left]
+[/cell] 
+
+[/cell][cell][left]Green:[/left][/cell] 
+[cell][left]Necromancy
+Conjuration
+Transmutation
+
+[/left][/cell] 
+
+[cell][left]Blue:[/left][/cell]
+[cell][left]Abjuration
+Divination
+Illusion[/left][/cell] 
+[/table]
+[/center]
+If it doesn’t match, it’s junk!
+"
+
+[node name="PageSprite7" type="Sprite2D" parent="Handbook Button/Handbook Window" unique_id=1483505099]
+visible = false
+position = Vector2(300, 200)
+texture = ExtResource("10_a3ntf")
+
+[node name="LeftPageText" type="RichTextLabel" parent="Handbook Button/Handbook Window/PageSprite7" unique_id=1382733321]
+offset_left = -280.0
+offset_top = -188.0
+offset_right = -24.0
+offset_bottom = 188.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -2
+bbcode_enabled = true
+text = "[center][b]Other Items[/b][/center]
+
+Magic items come in all shapes and sizes, and many of them fall into none of the categories discussed here. How should one deal with amulets, rings, or potions!?
+
+When assessing these rare artifacts, you must use your best judgement. Is the source [b]trustworthy[/b]? Does the school of magic align with the supposed effect?
+
+There is no hard science for these items, but when in doubt, [u]follow your heart[/u]. And most importantly, remember…
+
+… trust no wanderer!
+"
+
+[node name="RightPageText" type="RichTextLabel" parent="Handbook Button/Handbook Window/PageSprite7" unique_id=1113465877]
+offset_left = 24.0
+offset_top = -188.0
+offset_right = 280.0
+offset_bottom = 188.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -2
+bbcode_enabled = true
 
 [node name="PageLeft" type="Button" parent="Handbook Button/Handbook Window" unique_id=1225658142]
 self_modulate = Color(1, 1, 1, 0)
@@ -56,6 +428,6 @@ script = ExtResource("4_gs2xn")
 [connection signal="pressed" from="Handbook Button" to="Handbook Button" method="_on_pressed"]
 [connection signal="pressed" from="Handbook Button" to="PageFlipSound" method="_on_handbook_button_pressed"]
 [connection signal="close_requested" from="Handbook Button/Handbook Window" to="Handbook Button/Handbook Window" method="_on_close_requested"]
-[connection signal="texture_changed" from="Handbook Button/Handbook Window/PageSprite" to="PageFlipSound" method="_on_page_sprite_texture_changed"]
+[connection signal="flip_sound" from="Handbook Button/Handbook Window" to="PageFlipSound" method="_on_handbook_window_flip_sound"]
 [connection signal="pressed" from="Handbook Button/Handbook Window/PageLeft" to="Handbook Button/Handbook Window" method="_on_page_left_pressed"]
 [connection signal="pressed" from="Handbook Button/Handbook Window/PageRight" to="Handbook Button/Handbook Window" method="_on_page_right_pressed"]
