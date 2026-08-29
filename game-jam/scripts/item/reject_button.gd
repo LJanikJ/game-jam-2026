@@ -25,3 +25,7 @@ func _on_accept_button_pressed() -> void:
 
 func _on_pressed() -> void:
 	disabled = true
+
+
+func _on_timer_timeout() -> void:
+	pressed.emit()

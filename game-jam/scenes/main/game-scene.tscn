@@ -2,10 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://ctpfxcbcdhyqa" path="res://scenes/desk/tabletop_view.tscn" id="1_6s6y0"]
 [ext_resource type="PackedScene" uid="uid://bkqxdb87m7lot" path="res://scenes/handbook/handbook.tscn" id="1_fttaq"]
-[ext_resource type="Texture2D" uid="uid://yu6wdm2vbygb" path="res://resources/sprites/spells/spell1.png" id="1_hquci"]
 [ext_resource type="Texture2D" uid="uid://b8kkhp0hd3ksa" path="res://resources/sprites/spells/spell2.png" id="2_lg53t"]
 [ext_resource type="Texture2D" uid="uid://46npg5x6q131" path="res://resources/sprites/spells/spell3.png" id="3_5y0al"]
-[ext_resource type="Texture2D" uid="uid://iqh2001nqphk" path="res://resources/sprites/spells/spell1_press.png" id="3_cj10v"]
 [ext_resource type="Script" uid="uid://ke26u4b1a1y" path="res://scripts/spells/spell_1.gd" id="4_cmec0"]
 [ext_resource type="Texture2D" uid="uid://bxxptd0ihjds1" path="res://resources/sprites/spells/spell4.png" id="4_tb07p"]
 [ext_resource type="Texture2D" uid="uid://c34pre8d6ykqm" path="res://resources/sprites/spells/spell2_press.png" id="5_cmec0"]
@@ -16,13 +14,16 @@
 [ext_resource type="Texture2D" uid="uid://ddygjqgmjfcrt" path="res://resources/sprites/text/dialogue.png" id="8_uggeb"]
 [ext_resource type="Script" uid="uid://btj8pexgc0x2" path="res://scripts/dialogue/dialogue_background.gd" id="8_yui8m"]
 [ext_resource type="Texture2D" uid="uid://dw0kua0248ryn" path="res://resources/sprites/spells/spell4_press.png" id="9_hlfle"]
+[ext_resource type="Texture2D" uid="uid://ckdegg8irymme" path="res://resources/sprites/timer/full.png" id="10_hlfle"]
 [ext_resource type="PackedScene" uid="uid://e6uh51fia7to" path="res://scenes/end-screen/end-screen.tscn" id="10_io8k2"]
 [ext_resource type="Texture2D" uid="uid://dthmly7t5xo3l" path="res://resources/sprites/desk/accept_button.png" id="11_65vu2"]
+[ext_resource type="Texture2D" uid="uid://dmtn1wn448q8o" path="res://resources/sprites/timer/empty.png" id="11_xyowu"]
 [ext_resource type="Script" uid="uid://bxbfon4g2ims2" path="res://scripts/item/accept_button.gd" id="12_1f4fv"]
 [ext_resource type="Script" uid="uid://2e0qtb7r4bhh" path="res://scripts/music/music_player.gd" id="12_2xsdd"]
 [ext_resource type="Texture2D" uid="uid://itwhvrubxteo" path="res://resources/sprites/desk/accept_button_press.png" id="12_5eu4v"]
 [ext_resource type="AudioStream" uid="uid://n8538lefolro" path="res://resources/music/game_jam.mp3" id="12_diqyw"]
 [ext_resource type="Texture2D" uid="uid://4ys3ckj40civ" path="res://resources/sprites/desk/reject_button.png" id="12_vmbtd"]
+[ext_resource type="Script" uid="uid://c3ty6wtq7fa8s" path="res://scripts/timer/timer_bar.gd" id="12_xyowu"]
 [ext_resource type="Script" uid="uid://7gjqrxjrp58" path="res://scripts/item/reject_button.gd" id="14_uggeb"]
 [ext_resource type="Texture2D" uid="uid://clhdiwmuhvefk" path="res://resources/sprites/desk/reject_button_press.png" id="15_uci7i"]
 [ext_resource type="Texture2D" uid="uid://n3b5tkdvnp1o" path="res://icon.svg" id="22_5u3ss"]
@@ -47,24 +48,23 @@ layer = 5
 
 [node name="Right GUI" type="Node2D" parent="GUILayer" unique_id=725023407]
 position = Vector2(1152, 648)
-scale = Vector2(1.014, 1)
 
 [node name="Right GUI Background" type="Polygon2D" parent="GUILayer/Right GUI" unique_id=1620308746]
-position = Vector2(-1127.0364, -648)
-color = Color(0.45, 0.45, 0.45, 1)
+position = Vector2(-1128.2051, -648)
+color = Color(0.5976163, 0.40050006, 0.2473545, 1)
 texture = SubResource("GradientTexture2D_j5vie")
-polygon = PackedVector2Array(906.1291, 0, 1127.0363, 0, 1127.0363, 648, 906.12897, 648)
+polygon = PackedVector2Array(904.2051, 0, 1128.2051, 0, 1128.2051, 648, 904.2051, 648)
 
 [node name="Spell 1" type="TextureButton" parent="GUILayer/Right GUI" unique_id=533092793]
 texture_filter = 1
-offset_left = -213.01788
+offset_left = -216.0
 offset_top = -632.0
 offset_right = -7.8896484
 offset_bottom = -552.0
 disabled = true
-texture_normal = ExtResource("1_hquci")
-texture_pressed = ExtResource("3_cj10v")
-texture_disabled = ExtResource("3_cj10v")
+texture_normal = ExtResource("4_tb07p")
+texture_pressed = ExtResource("9_hlfle")
+texture_disabled = ExtResource("9_hlfle")
 stretch_mode = 0
 script = ExtResource("4_cmec0")
 
@@ -111,7 +111,28 @@ offset_right = -15.779092
 offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(0.985, 1)
+
+[node name="TimerBar" type="TextureProgressBar" parent="GUILayer/Right GUI" unique_id=363445575]
+offset_left = -192.0
+offset_top = -464.0
+offset_right = -32.0
+offset_bottom = -304.0
+fill_mode = 4
+texture_under = ExtResource("10_hlfle")
+texture_progress = ExtResource("11_xyowu")
+script = ExtResource("12_xyowu")
+
+[node name="Timer" type="Timer" parent="GUILayer/Right GUI/TimerBar" unique_id=1095570080]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GUILayer/Right GUI" unique_id=1794829230]
+offset_left = -207.99998
+offset_top = -504.0
+offset_right = -15.999985
+offset_bottom = -472.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 23
+text = "Customer Patience"
 
 [node name="DialogueManager" type="Node" parent="GUILayer" unique_id=393276648]
 script = ExtResource("7_btbfx")
@@ -197,21 +218,25 @@ script = ExtResource("12_2xsdd")
 
 [connection signal="pressed" from="GUILayer/Right GUI/Spell 1" to="GUILayer/Right GUI/Spell 1" method="_on_pressed"]
 [connection signal="pressed" from="GUILayer/Right GUI/Spell 1" to="GUILayer/magicSchoolSprite" method="_on_spell_1_pressed"]
+[connection signal="timeout" from="GUILayer/Right GUI/TimerBar/Timer" to="GUILayer/RejectButton" method="_on_timer_timeout"]
 [connection signal="finished_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager" method="_on_dialogue_label_finished_typing"]
 [connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/Right GUI/Spell 1" method="_on_dialogue_label_hidden"]
 [connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground Placeholder" method="_on_dialogue_label_hidden"]
 [connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/AcceptButton" method="_on_dialogue_label_hidden"]
 [connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/RejectButton" method="_on_dialogue_label_hidden"]
+[connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="TableLayer/Tabletop View" method="_on_dialogue_label_hidden"]
 [connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground Placeholder" method="_on_dialogue_label_started_typing"]
 [connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/AcceptButton" method="_on_dialogue_label_started_typing"]
 [connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/RejectButton" method="_on_dialogue_label_started_typing"]
 [connection signal="pressed" from="GUILayer/AcceptButton" to="GUILayer/Right GUI/Spell 1" method="_on_accept_button_pressed"]
+[connection signal="pressed" from="GUILayer/AcceptButton" to="GUILayer/Right GUI/TimerBar" method="_on_accept_button_pressed"]
 [connection signal="pressed" from="GUILayer/AcceptButton" to="GUILayer/AcceptButton" method="_on_pressed"]
 [connection signal="pressed" from="GUILayer/AcceptButton" to="GUILayer/RejectButton" method="_on_accept_button_pressed"]
 [connection signal="pressed" from="GUILayer/AcceptButton" to="GUILayer/magicSchoolSprite" method="_on_accept_button_pressed"]
 [connection signal="pressed" from="GUILayer/AcceptButton" to="ShopLayer/ShopView" method="_on_accept_button_pressed"]
 [connection signal="pressed" from="GUILayer/AcceptButton" to="TableLayer/Tabletop View" method="_on_accept_button_pressed"]
 [connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/Right GUI/Spell 1" method="_on_reject_button_pressed"]
+[connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/Right GUI/TimerBar" method="_on_reject_button_pressed"]
 [connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/AcceptButton" method="_on_reject_button_pressed"]
 [connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/RejectButton" method="_on_pressed"]
 [connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/magicSchoolSprite" method="_on_reject_button_pressed"]
@@ -222,3 +247,4 @@ script = ExtResource("12_2xsdd")
 [connection signal="items_empty" from="TableLayer/Tabletop View" to="EndLayer/EndScreen" method="_on_tabletop_view_items_empty"]
 [connection signal="new_item" from="TableLayer/Tabletop View" to="GUILayer/DialogueManager" method="_on_tabletop_view_new_item"]
 [connection signal="new_item" from="TableLayer/Tabletop View" to="GUILayer/magicSchoolSprite" method="_on_tabletop_view_new_item"]
+[connection signal="timer_start" from="TableLayer/Tabletop View" to="GUILayer/Right GUI/TimerBar" method="_on_tabletop_view_timer_start"]

@@ -10,6 +10,7 @@ var num_processed = 0
 signal items_empty
 signal new_item
 signal final_score
+signal timer_start
 
 # Ask is for a couple things regarding the items (functionally the same
 # as the customers):
@@ -30,12 +31,14 @@ func _ready() -> void:
 	for index in range(json.data.size()):
 		var item = preload("res://scenes/item/item.tscn").instantiate()
 		
-		item.load_item(index)
 		items.append(item)
 	
 	items.shuffle()
-	$ItemTimer.start(60)
-
+	items = items.slice(0,10)
+	
+	for index in range(10):
+		items[index].load_item(index)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -43,18 +46,19 @@ func _process(_delta: float) -> void:
 
 # needs to pick up signal when one of the buttons is pressed
 func remove_item() -> void:
+	#$ItemTimer.stop()
+	
 	if current_item:
 		current_item.queue_free()
 		# Decaying timer, next customer has less time to process
 		# than the last
-		$ItemTimer.start(60 - (num_processed * 1.5))
+		#$ItemTimer.start(60 - (num_processed * 1.5))
 		
 	# This is where we fire the signal to end the game
 	# Limited to 10 items processed for some replayability
 	if num_processed >= 10:
 		items_empty.emit()
 		final_score.emit(score)
-		$ItemTimer.stop()
 	
 
 func get_next_item() -> void:
@@ -99,8 +103,6 @@ func _on_shop_view_customer_at_desk() -> void:
 		get_next_item()
 
 
-func _on_item_timer_timeout() -> void:
-	# Since reject does not do anything to the score,
-	# treat a timeout as a reject to keep the game moving
-	print("Timeout!")
-	$"../../GUILayer/RejectButton".emit_signal("pressed")
+func _on_dialogue_label_hidden() -> void:
+	var time = 30 + (3 * items.size())
+	timer_start.emit(time)

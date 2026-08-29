@@ -97,11 +97,7 @@ script = ExtResource("2_bisel")
 [node name="GUILayer" type="CanvasLayer" parent="." unique_id=850804959]
 layer = 3
 
-[node name="ItemTimer" type="Timer" parent="." unique_id=645205300]
-wait_time = 60.0
-
 [connection signal="animation_finished" from="Item Layer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="Item Layer/AnimationPlayer" to="." method="_on_animation_player_animation_started"]
 [connection signal="animation_started" from="Item Layer/AnimationPlayer" to="Item Layer/ItemCarrier/SlidePlayer2D" method="_on_animation_player_animation_started"]
 [connection signal="child_exiting_tree" from="Item Layer/ItemCarrier" to="." method="_on_item_carrier_child_exiting_tree"]
-[connection signal="timeout" from="ItemTimer" to="." method="_on_item_timer_timeout"]
