@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://46npg5x6q131" path="res://resources/sprites/spells/spell3.png" id="3_5y0al"]
 [ext_resource type="Script" uid="uid://ke26u4b1a1y" path="res://scripts/spells/spell_1.gd" id="4_cmec0"]
 [ext_resource type="Texture2D" uid="uid://bxxptd0ihjds1" path="res://resources/sprites/spells/spell4.png" id="4_tb07p"]
+[ext_resource type="Texture2D" uid="uid://cwdm7cirx4n0c" path="res://resources/sprites/spells/spell4_disable.png" id="4_y16fy"]
 [ext_resource type="Texture2D" uid="uid://c34pre8d6ykqm" path="res://resources/sprites/spells/spell2_press.png" id="5_cmec0"]
 [ext_resource type="PackedScene" uid="uid://k8pjt00oc8p8" path="res://scenes/shop/shop_view.tscn" id="6_btbfx"]
 [ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/nodes/dialogue_label/dialogue_label.gd" id="6_rvpa5"]
@@ -28,6 +29,8 @@
 [ext_resource type="Texture2D" uid="uid://clhdiwmuhvefk" path="res://resources/sprites/desk/reject_button_press.png" id="15_uci7i"]
 [ext_resource type="Texture2D" uid="uid://n3b5tkdvnp1o" path="res://icon.svg" id="22_5u3ss"]
 [ext_resource type="Script" uid="uid://buhloeww7yor4" path="res://scripts/spells/SpellSprite.gd" id="23_hlfle"]
+[ext_resource type="Script" uid="uid://bgd66i3ywiu8v" path="res://scripts/start_button.gd" id="26_sq5gy"]
+[ext_resource type="PackedScene" uid="uid://brye4h8rhdg5j" path="res://scenes/main/tutorial.tscn" id="31_8ttbn"]
 
 [sub_resource type="Gradient" id="Gradient_6s6y0"]
 
@@ -36,12 +39,23 @@ gradient = SubResource("Gradient_6s6y0")
 
 [node name="GameScene" type="Node2D" unique_id=1450174136]
 
-[node name="EndLayer" type="CanvasLayer" parent="." unique_id=1371532826]
-layer = 4
-
-[node name="EndScreen" parent="EndLayer" unique_id=1587460076 instance=ExtResource("10_io8k2")]
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1022832991]
 process_mode = 3
-visible = false
+stream = ExtResource("12_diqyw")
+autoplay = true
+panning_strength = 0.0
+parameters/looping = true
+script = ExtResource("12_2xsdd")
+
+[node name="TableLayer" type="CanvasLayer" parent="." unique_id=813252621]
+
+[node name="Tabletop View" parent="TableLayer" unique_id=458742552 instance=ExtResource("1_6s6y0")]
+position = Vector2(464, 240)
+
+[node name="ShopLayer" type="CanvasLayer" parent="." unique_id=309739373]
+
+[node name="ShopView" parent="ShopLayer" unique_id=571563122 instance=ExtResource("6_btbfx")]
+position = Vector2(0, 648)
 
 [node name="GUILayer" type="CanvasLayer" parent="." unique_id=286979011]
 layer = 5
@@ -64,7 +78,7 @@ offset_bottom = -552.0
 disabled = true
 texture_normal = ExtResource("4_tb07p")
 texture_pressed = ExtResource("9_hlfle")
-texture_disabled = ExtResource("9_hlfle")
+texture_disabled = ExtResource("4_y16fy")
 stretch_mode = 0
 script = ExtResource("4_cmec0")
 
@@ -126,13 +140,14 @@ script = ExtResource("12_xyowu")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="GUILayer/Right GUI" unique_id=1794829230]
 offset_left = -207.99998
-offset_top = -504.0
+offset_top = -536.0
 offset_right = -15.999985
 offset_bottom = -472.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
-theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/normal_font_size = 28
 text = "Customer Patience"
+horizontal_alignment = 1
 
 [node name="DialogueManager" type="Node" parent="GUILayer" unique_id=393276648]
 script = ExtResource("7_btbfx")
@@ -162,15 +177,16 @@ texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 768.0
-offset_top = 336.0
-offset_right = -256.0
-offset_bottom = -264.0
+offset_left = 808.0
+offset_top = 256.0
+offset_right = -248.0
+offset_bottom = -296.0
 grow_horizontal = 2
 grow_vertical = 2
 disabled = true
 texture_normal = ExtResource("11_65vu2")
 texture_pressed = ExtResource("12_5eu4v")
+texture_disabled = ExtResource("12_5eu4v")
 stretch_mode = 0
 script = ExtResource("12_1f4fv")
 
@@ -179,15 +195,16 @@ texture_filter = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 768.0
-offset_top = 400.0
-offset_right = -256.0
-offset_bottom = -200.0
+offset_left = 808.0
+offset_top = 368.0
+offset_right = -248.0
+offset_bottom = -184.0
 grow_horizontal = 2
 grow_vertical = 2
 disabled = true
 texture_normal = ExtResource("12_vmbtd")
 texture_pressed = ExtResource("15_uci7i")
+texture_disabled = ExtResource("15_uci7i")
 stretch_mode = 0
 script = ExtResource("14_uggeb")
 
@@ -198,24 +215,34 @@ scale = Vector2(8, 8)
 texture = ExtResource("22_5u3ss")
 script = ExtResource("23_hlfle")
 
-[node name="ShopLayer" type="CanvasLayer" parent="." unique_id=309739373]
+[node name="StartButton" type="Button" parent="GUILayer" unique_id=311764697]
+offset_left = 288.0
+offset_top = 192.0
+offset_right = 640.0
+offset_bottom = 288.0
+theme_override_font_sizes/font_size = 64
+text = "Begin Shift"
+script = ExtResource("26_sq5gy")
 
-[node name="ShopView" parent="ShopLayer" unique_id=571563122 instance=ExtResource("6_btbfx")]
-position = Vector2(0, 648)
+[node name="EndLayer" type="CanvasLayer" parent="GUILayer" unique_id=1371532826]
+layer = 4
 
-[node name="TableLayer" type="CanvasLayer" parent="." unique_id=813252621]
-
-[node name="Tabletop View" parent="TableLayer" unique_id=458742552 instance=ExtResource("1_6s6y0")]
-position = Vector2(464, 240)
-
-[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1022832991]
+[node name="EndScreen" parent="GUILayer/EndLayer" unique_id=1587460076 instance=ExtResource("10_io8k2")]
 process_mode = 3
-stream = ExtResource("12_diqyw")
-autoplay = true
-panning_strength = 0.0
-parameters/looping = true
-script = ExtResource("12_2xsdd")
+visible = false
 
+[node name="TutorialLayer" type="CanvasLayer" parent="." unique_id=402805570]
+layer = 10
+
+[node name="Tutorial" parent="TutorialLayer" unique_id=463648728 instance=ExtResource("31_8ttbn")]
+position = Vector2(544, 296)
+
+[connection signal="final_score" from="TableLayer/Tabletop View" to="GUILayer/EndLayer/EndScreen" method="_on_tabletop_view_final_score"]
+[connection signal="items_empty" from="TableLayer/Tabletop View" to="GUILayer/EndLayer/EndScreen" method="_on_tabletop_view_items_empty"]
+[connection signal="new_item" from="TableLayer/Tabletop View" to="GUILayer/DialogueManager" method="_on_tabletop_view_new_item"]
+[connection signal="new_item" from="TableLayer/Tabletop View" to="GUILayer/magicSchoolSprite" method="_on_tabletop_view_new_item"]
+[connection signal="timer_start" from="TableLayer/Tabletop View" to="GUILayer/Right GUI/TimerBar" method="_on_tabletop_view_timer_start"]
+[connection signal="customer_at_desk" from="ShopLayer/ShopView" to="TableLayer/Tabletop View" method="_on_shop_view_customer_at_desk"]
 [connection signal="pressed" from="GUILayer/Right GUI/Spell 1" to="GUILayer/Right GUI/Spell 1" method="_on_pressed"]
 [connection signal="pressed" from="GUILayer/Right GUI/Spell 1" to="GUILayer/magicSchoolSprite" method="_on_spell_1_pressed"]
 [connection signal="timeout" from="GUILayer/Right GUI/TimerBar/Timer" to="GUILayer/RejectButton" method="_on_timer_timeout"]
@@ -242,9 +269,5 @@ script = ExtResource("12_2xsdd")
 [connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/magicSchoolSprite" method="_on_reject_button_pressed"]
 [connection signal="pressed" from="GUILayer/RejectButton" to="ShopLayer/ShopView" method="_on_reject_button_pressed"]
 [connection signal="pressed" from="GUILayer/RejectButton" to="TableLayer/Tabletop View" method="_on_reject_button_pressed"]
-[connection signal="customer_at_desk" from="ShopLayer/ShopView" to="TableLayer/Tabletop View" method="_on_shop_view_customer_at_desk"]
-[connection signal="final_score" from="TableLayer/Tabletop View" to="EndLayer/EndScreen" method="_on_tabletop_view_final_score"]
-[connection signal="items_empty" from="TableLayer/Tabletop View" to="EndLayer/EndScreen" method="_on_tabletop_view_items_empty"]
-[connection signal="new_item" from="TableLayer/Tabletop View" to="GUILayer/DialogueManager" method="_on_tabletop_view_new_item"]
-[connection signal="new_item" from="TableLayer/Tabletop View" to="GUILayer/magicSchoolSprite" method="_on_tabletop_view_new_item"]
-[connection signal="timer_start" from="TableLayer/Tabletop View" to="GUILayer/Right GUI/TimerBar" method="_on_tabletop_view_timer_start"]
+[connection signal="pressed" from="GUILayer/StartButton" to="ShopLayer/ShopView" method="_on_start_button_pressed"]
+[connection signal="pressed" from="GUILayer/StartButton" to="GUILayer/StartButton" method="_on_pressed"]

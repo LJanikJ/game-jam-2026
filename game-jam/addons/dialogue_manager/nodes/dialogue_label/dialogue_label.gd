@@ -108,7 +108,8 @@ func type_out() -> void:
 	started_typing.emit()
 
 	# Allow typing listeners a chance to connect
-	await get_tree().process_frame
+	if get_tree():
+		await get_tree().process_frame
 
 	if get_total_character_count() == 0:
 		is_typing = false

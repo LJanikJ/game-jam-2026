@@ -27,17 +27,23 @@ func _ready() -> void:
 	# initialize with queue of items 
 	# get list of items from json or something
 	
-	# potentially limit the size of the array so that not every item appears in a single run
+	# get list of ints from 0 to n
 	for index in range(json.data.size()):
-		var item = preload("res://scenes/item/item.tscn").instantiate()
-		
-		items.append(item)
+		items.append(index)
 	
+	# shuffle and choose ten indexes
 	items.shuffle()
 	items = items.slice(0,10)
 	
+	# for each one in the list, read the corresponding JSON entry
 	for index in range(10):
-		items[index].load_item(index)
+		var item = preload("res://scenes/item/item.tscn").instantiate()
+		
+		item.load_item(items[index])
+		
+		# swap out the int in the list for the item itself
+		items[index] = item
+		print(items[index], items[index].item_name)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
