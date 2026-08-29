@@ -18,12 +18,20 @@ func _on_tabletop_view_new_item(_item_type: String, _item_name: String, magic_sc
 
 
 func _on_spell_1_pressed() -> void:
+	# Start fully transparent
+	modulate.a = 0.0
 	visible = true
+	
+	# Create a tween to fade in over 1.0 second
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 1.0, 3.0)
 
 
 func _on_accept_button_pressed() -> void:
-	visible = false 
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0.0, 1.0)
 
 
 func _on_reject_button_pressed() -> void:
-	visible = false
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0.0, 1.0)

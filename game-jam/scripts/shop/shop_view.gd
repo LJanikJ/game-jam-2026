@@ -16,7 +16,7 @@ func _ready() -> void:
 	for person in range(10):
 		create_customer()
 		
-	advance_line()
+	#advance_line()
 	
 func create_customer() -> void:
 	var customer = customer_scene.instantiate()
@@ -81,3 +81,7 @@ func _on_customer_left(customer) -> void:
 
 func _on_customer_carrier_child_exiting_tree(node: Node) -> void:
 	customer_at_desk.emit()
+
+
+func _on_start_button_pressed() -> void:
+	advance_line()
