@@ -13,7 +13,7 @@ signal customer_at_desk
 
 # Ready will create the number of customers 
 func _ready() -> void:
-	for person in range(json.data.size()):
+	for person in range(10):
 		create_customer()
 		
 	advance_line()
