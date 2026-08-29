@@ -110,5 +110,5 @@ func _on_shop_view_customer_at_desk() -> void:
 
 
 func _on_dialogue_label_hidden() -> void:
-	var time = 30 + (3 * items.size())
+	var time = 30 + (6 * items.size())
 	timer_start.emit(time)

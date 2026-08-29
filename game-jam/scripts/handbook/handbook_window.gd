@@ -1,18 +1,26 @@
 extends Window
 
-var pages = [
-	preload("res://resources/sprites/book/page1.png"),
-	preload("res://resources/sprites/book/page2.png"),
-	preload("res://resources/sprites/book/page3.png"),
-	preload("res://resources/sprites/book/page4.png"),
-	preload("res://resources/sprites/book/page5.png"),
-	preload("res://resources/sprites/book/page6.png"),
-	preload("res://resources/sprites/book/page7.png")
-]
+signal flip_sound
 
 var index = 0
 
-@onready var sprite = $PageSprite
+@onready var page1 = $PageSprite1
+@onready var page2 = $PageSprite2
+@onready var page3 = $PageSprite3
+@onready var page4 = $PageSprite4
+@onready var page5 = $PageSprite5
+@onready var page6 = $PageSprite6
+@onready var page7 = $PageSprite7
+
+@onready var pages = [
+	page1,
+	page2,
+	page3,
+	page4,
+	page5,
+	page6,
+	page7
+]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,11 +38,15 @@ func _on_close_requested() -> void:
 
 func _on_page_left_pressed() -> void:
 	if index > 0:
+		pages[index].visible = false
 		index -= 1
-		sprite.texture = pages[index]
+		pages[index].visible = true
+		flip_sound.emit()
 
 
 func _on_page_right_pressed() -> void:
 	if index < 6:
+		pages[index].visible = false
 		index += 1
-		sprite.texture = pages[index]
+		pages[index].visible = true
+		flip_sound.emit()

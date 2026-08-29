@@ -225,7 +225,7 @@ text = "Begin Shift"
 script = ExtResource("26_sq5gy")
 
 [node name="EndLayer" type="CanvasLayer" parent="GUILayer" unique_id=1371532826]
-layer = 4
+layer = 7
 
 [node name="EndScreen" parent="GUILayer/EndLayer" unique_id=1587460076 instance=ExtResource("10_io8k2")]
 process_mode = 3
@@ -247,27 +247,27 @@ position = Vector2(544, 296)
 [connection signal="pressed" from="GUILayer/Right GUI/Spell 1" to="GUILayer/magicSchoolSprite" method="_on_spell_1_pressed"]
 [connection signal="timeout" from="GUILayer/Right GUI/TimerBar/Timer" to="GUILayer/RejectButton" method="_on_timer_timeout"]
 [connection signal="finished_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager" method="_on_dialogue_label_finished_typing"]
+[connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="TableLayer/Tabletop View" method="_on_dialogue_label_hidden"]
 [connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/Right GUI/Spell 1" method="_on_dialogue_label_hidden"]
 [connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground Placeholder" method="_on_dialogue_label_hidden"]
 [connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/AcceptButton" method="_on_dialogue_label_hidden"]
 [connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/RejectButton" method="_on_dialogue_label_hidden"]
-[connection signal="hidden" from="GUILayer/DialogueManager/DialogueLabel" to="TableLayer/Tabletop View" method="_on_dialogue_label_hidden"]
 [connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/DialogueManager/DialogueBackground Placeholder" method="_on_dialogue_label_started_typing"]
 [connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/AcceptButton" method="_on_dialogue_label_started_typing"]
 [connection signal="started_typing" from="GUILayer/DialogueManager/DialogueLabel" to="GUILayer/RejectButton" method="_on_dialogue_label_started_typing"]
+[connection signal="pressed" from="GUILayer/AcceptButton" to="TableLayer/Tabletop View" method="_on_accept_button_pressed"]
+[connection signal="pressed" from="GUILayer/AcceptButton" to="ShopLayer/ShopView" method="_on_accept_button_pressed"]
 [connection signal="pressed" from="GUILayer/AcceptButton" to="GUILayer/Right GUI/Spell 1" method="_on_accept_button_pressed"]
 [connection signal="pressed" from="GUILayer/AcceptButton" to="GUILayer/Right GUI/TimerBar" method="_on_accept_button_pressed"]
 [connection signal="pressed" from="GUILayer/AcceptButton" to="GUILayer/AcceptButton" method="_on_pressed"]
 [connection signal="pressed" from="GUILayer/AcceptButton" to="GUILayer/RejectButton" method="_on_accept_button_pressed"]
 [connection signal="pressed" from="GUILayer/AcceptButton" to="GUILayer/magicSchoolSprite" method="_on_accept_button_pressed"]
-[connection signal="pressed" from="GUILayer/AcceptButton" to="ShopLayer/ShopView" method="_on_accept_button_pressed"]
-[connection signal="pressed" from="GUILayer/AcceptButton" to="TableLayer/Tabletop View" method="_on_accept_button_pressed"]
+[connection signal="pressed" from="GUILayer/RejectButton" to="TableLayer/Tabletop View" method="_on_reject_button_pressed"]
+[connection signal="pressed" from="GUILayer/RejectButton" to="ShopLayer/ShopView" method="_on_reject_button_pressed"]
 [connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/Right GUI/Spell 1" method="_on_reject_button_pressed"]
 [connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/Right GUI/TimerBar" method="_on_reject_button_pressed"]
 [connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/AcceptButton" method="_on_reject_button_pressed"]
 [connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/RejectButton" method="_on_pressed"]
 [connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/magicSchoolSprite" method="_on_reject_button_pressed"]
-[connection signal="pressed" from="GUILayer/RejectButton" to="ShopLayer/ShopView" method="_on_reject_button_pressed"]
-[connection signal="pressed" from="GUILayer/RejectButton" to="TableLayer/Tabletop View" method="_on_reject_button_pressed"]
 [connection signal="pressed" from="GUILayer/StartButton" to="ShopLayer/ShopView" method="_on_start_button_pressed"]
 [connection signal="pressed" from="GUILayer/StartButton" to="GUILayer/StartButton" method="_on_pressed"]
