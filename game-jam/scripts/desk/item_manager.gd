@@ -5,10 +5,19 @@ var current_item
 var score = 0
 var num_cursed = 0
 var magic_school : String
+var num_processed = 0
 
 signal items_empty
 signal new_item
 signal final_score
+
+# Ask is for a couple things regarding the items (functionally the same
+# as the customers):
+# - instead of ending the game at the end of the list, after 10 items end the game
+# - have a timer for each item, decaying overall from 1 min to 45 sec over the 10 items
+#   math: 60 - 45  = 15
+#   15 sec off the time over 10 items
+#   15/10 = 1.5 sec off the timer each time
 
 var json = preload("res://resources/items.tres")
 
@@ -25,6 +34,7 @@ func _ready() -> void:
 		items.append(item)
 	
 	items.shuffle()
+	$ItemTimer.start(60)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,17 +45,23 @@ func _process(_delta: float) -> void:
 func remove_item() -> void:
 	if current_item:
 		current_item.queue_free()
+		# Decaying timer, next customer has less time to process
+		# than the last
+		$ItemTimer.start(60 - (num_processed * 1.5))
 		
-	if items.size() == 0:
+	# This is where we fire the signal to end the game
+	# Limited to 10 items processed for some replayability
+	if num_processed >= 10:
 		items_empty.emit()
 		final_score.emit(score)
+		$ItemTimer.stop()
 	
 
 func get_next_item() -> void:
 	# get next item in queue and load instance, then slide in
 	current_item = items.pop_front()
 	magic_school = current_item.magic_school
-	
+	num_processed += 1
 	
 	$"Item Layer/ItemCarrier".add_child(current_item)
 	$"Item Layer/AnimationPlayer".play("slide_in")
@@ -81,3 +97,10 @@ func _on_animation_player_animation_started(anim_name: StringName) -> void:
 func _on_shop_view_customer_at_desk() -> void:
 	if items.size() > 0:
 		get_next_item()
+
+
+func _on_item_timer_timeout() -> void:
+	# Since reject does not do anything to the score,
+	# treat a timeout as a reject to keep the game moving
+	print("Timeout!")
+	$"../../GUILayer/RejectButton".emit_signal("pressed")
