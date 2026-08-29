@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://c2rc8d4vnqing"
+path="res://.godot/imported/cursed_feather.dialogue-8163c342a21e97bc22d99909d7c5ebca.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/items/misc/cursed_feather.dialogue"
+dest_files=["res://.godot/imported/cursed_feather.dialogue-8163c342a21e97bc22d99909d7c5ebca.tres"]
+
+[params]
+
+defaults=true
