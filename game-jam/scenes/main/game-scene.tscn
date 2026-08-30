@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://n8538lefolro" path="res://resources/music/game_jam.mp3" id="12_diqyw"]
 [ext_resource type="Texture2D" uid="uid://4ys3ckj40civ" path="res://resources/sprites/desk/reject_button.png" id="12_vmbtd"]
 [ext_resource type="Script" uid="uid://c3ty6wtq7fa8s" path="res://scripts/timer/timer_bar.gd" id="12_xyowu"]
+[ext_resource type="Script" uid="uid://boic4srhu630i" path="res://scenes/handbook/handbook.gd" id="14_fhd43"]
 [ext_resource type="Script" uid="uid://7gjqrxjrp58" path="res://scripts/item/reject_button.gd" id="14_uggeb"]
 [ext_resource type="Texture2D" uid="uid://clhdiwmuhvefk" path="res://resources/sprites/desk/reject_button_press.png" id="15_uci7i"]
 [ext_resource type="Texture2D" uid="uid://n3b5tkdvnp1o" path="res://icon.svg" id="22_5u3ss"]
@@ -136,6 +137,7 @@ offset_right = -15.779092
 offset_bottom = -16.0
 grow_horizontal = 0
 grow_vertical = 0
+script = ExtResource("14_fhd43")
 
 [node name="TimerBar" type="TextureProgressBar" parent="GUILayer/Right GUI" unique_id=363445575]
 offset_left = -192.0
@@ -311,5 +313,6 @@ position = Vector2(544, 320)
 [connection signal="pressed" from="GUILayer/RejectButton" to="GUILayer/magicSchoolSprite" method="_on_reject_button_pressed"]
 [connection signal="pressed" from="GUILayer/StartButton" to="ShopLayer/ShopView" method="_on_start_button_pressed"]
 [connection signal="pressed" from="GUILayer/StartButton" to="GUILayer/StartButton" method="_on_pressed"]
+[connection signal="pressed" from="GUILayer/pauseButton" to="GUILayer/Right GUI/Handbook" method="_on_pause_button_pressed"]
 [connection signal="pressed" from="GUILayer/pauseButton" to="GUILayer/EndLayer/OptionsScreen" method="_on_pause_button_pressed"]
 [connection signal="pressed" from="GUILayer/resumeButton" to="GUILayer/resumeButton" method="_on_pressed"]
