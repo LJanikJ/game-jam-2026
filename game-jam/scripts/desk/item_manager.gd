@@ -12,6 +12,8 @@ signal new_item
 signal final_score
 signal timer_start
 
+signal sfx
+
 # Ask is for a couple things regarding the items (functionally the same
 # as the customers):
 # - instead of ending the game at the end of the list, after 10 items end the game
@@ -43,7 +45,6 @@ func _ready() -> void:
 		
 		# swap out the int in the list for the item itself
 		items[index] = item
-		print(items[index], items[index].item_name)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -94,8 +95,11 @@ func _on_accept_button_pressed() -> void:
 		$"Item Layer/AnimationPlayer".play("slide_out")
 		
 		score += current_item.value
-		if current_item.cursed:
+		if current_item.value < 0:
 			num_cursed += 1
+			sfx.emit("hehehe")
+		else:
+			sfx.emit("coin")
 
 
 func _on_animation_player_animation_started(anim_name: StringName) -> void:

@@ -16,4 +16,5 @@ func _on_button_pressed() -> void:
 
 
 func _on_optionsbutton_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/options-screen/options-screen.tscn")
+	$OptionsLayer/OptionsScreen.visible = true
+	#get_tree().change_scene_to_file("res://scenes/options-screen/options-screen.tscn")

@@ -423,6 +423,7 @@ offset_bottom = 400.0
 
 [node name="PageFlipSound" type="AudioStreamPlayer2D" parent="." unique_id=711734584]
 panning_strength = 0.0
+bus = &"SFX"
 script = ExtResource("4_gs2xn")
 
 [connection signal="pressed" from="Handbook Button" to="Handbook Button" method="_on_pressed"]
