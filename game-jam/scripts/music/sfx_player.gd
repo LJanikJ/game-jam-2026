@@ -14,3 +14,8 @@ func _process(delta: float) -> void:
 func _on_tabletop_view_sfx(sfx: String) -> void:
 	stream = load("res://resources/sound_effects/item/"+sfx+".wav")
 	play()
+
+
+func _on_spell_1_pressed() -> void:
+	stream = load("res://resources/sound_effects/spell/spell.wav")
+	play()

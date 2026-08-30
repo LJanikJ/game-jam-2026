@@ -249,6 +249,7 @@ position = Vector2(544, 320)
 [connection signal="sfx" from="TableLayer/Tabletop View" to="SFXPlayer" method="_on_tabletop_view_sfx"]
 [connection signal="timer_start" from="TableLayer/Tabletop View" to="GUILayer/Right GUI/TimerBar" method="_on_tabletop_view_timer_start"]
 [connection signal="customer_at_desk" from="ShopLayer/ShopView" to="TableLayer/Tabletop View" method="_on_shop_view_customer_at_desk"]
+[connection signal="pressed" from="GUILayer/Right GUI/Spell 1" to="SFXPlayer" method="_on_spell_1_pressed"]
 [connection signal="pressed" from="GUILayer/Right GUI/Spell 1" to="GUILayer/Right GUI/Spell 1" method="_on_pressed"]
 [connection signal="pressed" from="GUILayer/Right GUI/Spell 1" to="GUILayer/magicSchoolSprite" method="_on_spell_1_pressed"]
 [connection signal="timeout" from="GUILayer/Right GUI/TimerBar/Timer" to="GUILayer/RejectButton" method="_on_timer_timeout"]
