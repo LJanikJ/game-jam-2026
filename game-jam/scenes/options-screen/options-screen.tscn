@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bum0adiuqljbe" path="res://scripts/options-screen/options_screen.gd" id="1_geulf"]
 [ext_resource type="AudioStream" uid="uid://fm7w0jietdf7" path="res://resources/sound_effects/item/coin.wav" id="2_u1uvb"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_q6h2t"]
+[ext_resource type="PackedScene" uid="uid://ba5mjh5idy7fi" path="res://scenes/title-screen/background.tscn" id="3_axase"]
 
 [node name="OptionsScreen" type="Node2D" unique_id=1553045600]
 script = ExtResource("1_geulf")
@@ -13,11 +12,7 @@ position = Vector2(384, 328)
 stream = ExtResource("2_u1uvb")
 bus = &"SFX"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=280956431]
-modulate = Color(0.23165435, 0.20780748, 0.22630823, 1)
-position = Vector2(575.75, 323.75)
-scale = Vector2(1152.5, 648.5)
-texture = SubResource("CanvasTexture_q6h2t")
+[node name="Sprite2D" parent="." unique_id=943954939 instance=ExtResource("3_axase")]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=299751051]
 offset_left = 400.0
@@ -60,9 +55,9 @@ step = 0.02
 value = 1.0
 
 [node name="ReturnButton" type="Button" parent="." unique_id=2086149429]
-offset_left = 456.0
+offset_left = 464.0
 offset_top = 384.0
-offset_right = 680.0
+offset_right = 688.0
 offset_bottom = 448.0
 theme_override_font_sizes/font_size = 32
 text = "Back"
