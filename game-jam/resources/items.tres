@@ -127,4 +127,25 @@ data = [{
 "school": "necromancy",
 "type": "misc",
 "value": 250
+},{
+"cursed": false,
+"lying": false,
+"name": "amulet",
+"school": "enchantment",
+"type": "misc",
+"value": 250
+},{
+"cursed": false,
+"lying": false,
+"name": "staff2",
+"school": "transmutation",
+"type": "staff",
+"value": 210
+},{
+"cursed": false,
+"lying": false,
+"name": "staff_bad1",
+"school": "conjuration",
+"type": "staff",
+"value": 180
 }]
