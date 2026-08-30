@@ -65,7 +65,7 @@ offset_top = 384.0
 offset_right = 680.0
 offset_bottom = 448.0
 theme_override_font_sizes/font_size = 32
-text = "Main Menu"
+text = "Back"
 
 [connection signal="drag_ended" from="VBoxContainer/MasterSlider" to="." method="_on_master_slider_drag_ended"]
 [connection signal="drag_ended" from="VBoxContainer/BGMSlider" to="." method="_on_bgm_slider_drag_ended"]
