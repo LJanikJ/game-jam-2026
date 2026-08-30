@@ -3,12 +3,7 @@
 [ext_resource type="Script" uid="uid://ccc7gxd7ebyf4" path="res://scripts/title-screen/title-screen.gd" id="1_uhjyj"]
 [ext_resource type="AudioStream" uid="uid://n8538lefolro" path="res://resources/music/game_jam.mp3" id="2_3swuw"]
 [ext_resource type="PackedScene" uid="uid://bt575tbl14tyr" path="res://scenes/options-screen/options-screen.tscn" id="3_3swuw"]
-
-[sub_resource type="Gradient" id="Gradient_1s85s"]
-colors = PackedColorArray(0.7490196, 0, 0, 1, 1, 0, 0.6745098, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_j5vie"]
-gradient = SubResource("Gradient_1s85s")
+[ext_resource type="PackedScene" uid="uid://ba5mjh5idy7fi" path="res://scenes/title-screen/background.tscn" id="3_pcs22"]
 
 [node name="Node2D" type="Node2D" unique_id=769329823]
 script = ExtResource("1_uhjyj")
@@ -24,10 +19,7 @@ parameters/looping = true
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=993996892]
 layer = 0
 
-[node name="Sprite2D" type="Sprite2D" parent="BackgroundLayer" unique_id=135912527]
-position = Vector2(576, 324)
-scale = Vector2(18, 10.125)
-texture = SubResource("GradientTexture2D_j5vie")
+[node name="Sprite2D" parent="BackgroundLayer" unique_id=943954939 instance=ExtResource("3_pcs22")]
 
 [node name="InterfaceLayer" type="CanvasLayer" parent="." unique_id=1664139560]
 
@@ -37,10 +29,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -128.0
-offset_top = -288.0
-offset_right = 128.0
-offset_bottom = -224.0
+offset_left = -112.0
+offset_top = -360.0
+offset_right = 112.0
+offset_bottom = -296.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
@@ -52,10 +44,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -128.0
-offset_top = -200.0
-offset_right = 128.0
-offset_bottom = -136.0
+offset_left = -112.0
+offset_top = -264.0
+offset_right = 112.0
+offset_bottom = -200.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
@@ -66,9 +58,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -288.0
-offset_top = 98.0
+offset_top = 32.0
 offset_right = 288.0
-offset_bottom = 322.0
+offset_bottom = 256.0
 grow_horizontal = 2
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 96

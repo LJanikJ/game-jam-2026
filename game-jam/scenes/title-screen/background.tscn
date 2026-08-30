@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://ba5mjh5idy7fi"]
+
+[ext_resource type="Texture2D" uid="uid://bwv5dtm40q77f" path="res://resources/sprites/background.png" id="1_crbf2"]
+[ext_resource type="Texture2D" uid="uid://lp77e84dry8u" path="res://resources/sprites/items/misc/pixie_dust.png" id="2_qct1s"]
+[ext_resource type="Texture2D" uid="uid://bjit0a3e3a530" path="res://resources/sprites/items/misc/magic_bean.png" id="3_3xld1"]
+[ext_resource type="Texture2D" uid="uid://cu307jmivx13c" path="res://resources/sprites/items/orb/Orb04.png" id="4_fn3lk"]
+[ext_resource type="Texture2D" uid="uid://bely6m1s888m4" path="res://resources/sprites/items/misc/amulet.png" id="5_icxia"]
+[ext_resource type="Texture2D" uid="uid://b274jftcwavn1" path="res://resources/sprites/items/weapon/Sword04.png" id="6_velci"]
+[ext_resource type="Texture2D" uid="uid://bmf1bvtq03ns7" path="res://resources/sprites/items/staff/staff1.png" id="7_mpxt6"]
+[ext_resource type="Texture2D" uid="uid://c4sle1r1a7ps3" path="res://resources/sprites/items/misc/cursed_feather.png" id="8_3xld1"]
+[ext_resource type="Texture2D" uid="uid://boac7snyrhh1k" path="res://resources/sprites/items/weapon/Hammer01.png" id="9_fn3lk"]
+
+[node name="Sprite2D" type="Sprite2D" unique_id=943954939]
+scale = Vector2(8, 8)
+texture = ExtResource("1_crbf2")
+centered = false
+
+[node name="PixieDust" type="Sprite2D" parent="." unique_id=1643901501]
+position = Vector2(12, 60)
+texture = ExtResource("2_qct1s")
+
+[node name="MagicBean" type="Sprite2D" parent="." unique_id=57604088]
+position = Vector2(129, 73)
+texture = ExtResource("3_3xld1")
+
+[node name="Orb04" type="Sprite2D" parent="." unique_id=768731087]
+position = Vector2(42, 64)
+texture = ExtResource("4_fn3lk")
+
+[node name="Amulet" type="Sprite2D" parent="." unique_id=819209597]
+position = Vector2(28, 43)
+texture = ExtResource("5_icxia")
+
+[node name="Sword04" type="Sprite2D" parent="." unique_id=1068659890]
+position = Vector2(17, 22)
+texture = ExtResource("6_velci")
+
+[node name="Staff1" type="Sprite2D" parent="." unique_id=1382804096]
+position = Vector2(99, 54)
+texture = ExtResource("7_mpxt6")
+
+[node name="CursedFeather" type="Sprite2D" parent="." unique_id=272526245]
+position = Vector2(117, 8)
+texture = ExtResource("8_3xld1")
+
+[node name="Hammer01" type="Sprite2D" parent="." unique_id=2027270430]
+position = Vector2(124, 52)
+texture = ExtResource("9_fn3lk")

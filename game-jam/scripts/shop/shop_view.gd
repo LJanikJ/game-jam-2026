@@ -43,29 +43,12 @@ func advance_line() -> void:
 		next_up.is_walking = true
 		await get_tree().create_timer(0.2).timeout
 		
-		# control all other customers in line
-		var threads = []
-		
 		for customer in queue:
-			var thread: Thread = Thread.new()
-			threads.append(thread)
+			var tween = customer.create_tween()
 			
-			thread.start(shift_forward.bind(customer))
+			tween.tween_property(customer, "position", Vector2(customer.position.x + spacing,customer.position.y), 0.35)
 			
-			if get_tree():
-				await get_tree().create_timer(0.2).timeout
-			
-		for thread in threads:
-			thread.wait_to_finish()
-
-func shift_forward(customer) -> void:
-	customer.is_walking = true
-	
-	for i in range(spacing):
-		if get_tree():
-			await get_tree().process_frame
-		
-	customer.is_walking = false
+			await get_tree().create_timer(0.2).timeout
 
 func _on_accept_button_pressed() -> void:
 	advance_line()

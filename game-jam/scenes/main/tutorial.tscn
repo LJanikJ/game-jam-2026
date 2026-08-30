@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ldfs2kgmo1eu" path="res://scripts/tutorial.gd" id="1_6bxba"]
 
 [sub_resource type="Gradient" id="Gradient_6bxba"]
-colors = PackedColorArray(0.66, 0.47685, 0.4158, 1, 1, 0.7255, 0.39, 1)
+colors = PackedColorArray(1, 0.802, 0.56, 1, 1, 0.8039216, 0.56078434, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8ikh4"]
 gradient = SubResource("Gradient_6bxba")
@@ -23,7 +23,7 @@ offset_left = -224.0
 offset_top = -240.0
 offset_right = 224.0
 offset_bottom = 192.0
-theme_override_constants/outline_size = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 20
 text = "You're a newly hired apprentice at a magic item pawn shop! But, before your training even started, your boss ran off and left you to handle customers by yourself. 
 
