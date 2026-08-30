@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://bt575tbl14tyr"]
 
 [ext_resource type="Script" uid="uid://bum0adiuqljbe" path="res://scripts/options-screen/options_screen.gd" id="1_geulf"]
+[ext_resource type="AudioStream" uid="uid://fm7w0jietdf7" path="res://resources/sound_effects/item/coin.wav" id="2_u1uvb"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_q6h2t"]
 
 [node name="OptionsScreen" type="Node2D" unique_id=1553045600]
 script = ExtResource("1_geulf")
+
+[node name="SampleSFX" type="AudioStreamPlayer2D" parent="." unique_id=64847005]
+position = Vector2(384, 328)
+stream = ExtResource("2_u1uvb")
+bus = &"SFX"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=280956431]
 modulate = Color(0.23165435, 0.20780748, 0.22630823, 1)
@@ -14,9 +20,9 @@ scale = Vector2(1152.5, 648.5)
 texture = SubResource("CanvasTexture_q6h2t")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=299751051]
-offset_left = 384.0
+offset_left = 400.0
 offset_top = 128.0
-offset_right = 768.0
+offset_right = 752.0
 offset_bottom = 512.0
 theme_override_constants/separation = 12
 
@@ -27,8 +33,9 @@ text = "Master Volume"
 
 [node name="MasterSlider" type="HSlider" parent="VBoxContainer" unique_id=662904658]
 layout_mode = 2
-max_value = 1.0
-step = 0.05
+max_value = 2.0
+step = 0.02
+value = 1.0
 
 [node name="BGMLabel" type="Label" parent="VBoxContainer" unique_id=1857864445]
 layout_mode = 2
@@ -37,8 +44,9 @@ text = "Music Volume"
 
 [node name="BGMSlider" type="HSlider" parent="VBoxContainer" unique_id=1649492168]
 layout_mode = 2
-max_value = 1.0
-step = 0.05
+max_value = 2.0
+step = 0.02
+value = 1.0
 
 [node name="SFXLabel" type="Label" parent="VBoxContainer" unique_id=1255028551]
 layout_mode = 2
@@ -47,8 +55,9 @@ text = "Effects Volume"
 
 [node name="SFXSlider" type="HSlider" parent="VBoxContainer" unique_id=2127686043]
 layout_mode = 2
-max_value = 1.0
-step = 0.05
+max_value = 2.0
+step = 0.02
+value = 1.0
 
 [node name="ReturnButton" type="Button" parent="." unique_id=2086149429]
 offset_left = 456.0
