@@ -11,15 +11,38 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_end_screen_final_score(score: int) -> void:
-	if (score >= 0):
-		self.text = """Shift Over!
+func _on_end_screen_final_score(score: int, num_bad: int) -> void:
+	if score >= 0:
+		if num_bad == 0:
+			self.text = """Shift Over!
 
-You made a profit of %d gold pieces.""" % [score]
+You made a profit of %d gold pieces.
+
+[rainbow]You did perfectly![/rainbow]""" % [score, num_bad]
+		else:
+			self.text = """Shift Over!
+
+You made a profit of %d gold pieces.
+
+You made %d wrong choices.""" % [score, num_bad]
+	
+	
+	
 	
 	else:
-		self.text = """Shift Over!
+		if num_bad == 10:
+			self.text = """You did absolutely abysmal!
 
-You're Fired!
+You're [shake]Fired[/shake]!
 
-You lost the shop %d gold pieces.""" % [score * -1]
+You lost the shop %d gold pieces.
+
+You didn't make a single right choice...""" % [score * -1]
+		else:
+			self.text = """Shift Over!
+
+You're [shake]Fired[/shake]!
+
+You lost the shop %d gold pieces.
+
+You made %d wrong choices.""" % [score * -1, num_bad]

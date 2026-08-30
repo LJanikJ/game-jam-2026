@@ -65,7 +65,7 @@ func remove_item() -> void:
 	# Limited to 10 items processed for some replayability
 	if num_processed >= 10:
 		items_empty.emit()
-		final_score.emit(score)
+		final_score.emit(score, num_cursed)
 	
 
 func get_next_item() -> void:
@@ -87,6 +87,9 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 func _on_reject_button_pressed() -> void:
 	if $"Item Layer/ItemCarrier".get_child_count() > 0:
 		$"Item Layer/AnimationPlayer".play("slide_out")
+	
+	if current_item.value > 0:
+		num_cursed += 1
 
 # On accepting any item we need to process the change to the score and
 # update the relevant statistics
@@ -104,6 +107,7 @@ func _on_accept_button_pressed() -> void:
 
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
 	if anim_name == "slide_in":
+		print(current_item.value)
 		new_item.emit(current_item.type, current_item.item_name, current_item.magic_school)
 
 
