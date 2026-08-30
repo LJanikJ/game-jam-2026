@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://b5hgtotx7mtu"
+path="res://.godot/imported/staff_bad1.dialogue-2201f3816f9e450a5c1417f243f9020b.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/items/staff/staff_bad1.dialogue"
+dest_files=["res://.godot/imported/staff_bad1.dialogue-2201f3816f9e450a5c1417f243f9020b.tres"]
+
+[params]
+
+defaults=true

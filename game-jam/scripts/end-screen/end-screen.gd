@@ -27,7 +27,7 @@ func _on_retry_button_pressed() -> void:
 	get_tree().reload_current_scene()
 
 
-func _on_tabletop_view_final_score(score: int) -> void:
+func _on_tabletop_view_final_score(score: int, num_bad: int) -> void:
 	# Set the rich text label's number for score
 	# right now placeholder is 999
-	final_score.emit(score)
+	final_score.emit(score, num_bad)

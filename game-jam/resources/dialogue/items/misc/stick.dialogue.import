@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://da4iejt8spuv3"
+path="res://.godot/imported/stick.dialogue-1a3d23c67f8d1c8f974bfd2fb642f3be.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/items/misc/stick.dialogue"
+dest_files=["res://.godot/imported/stick.dialogue-1a3d23c67f8d1c8f974bfd2fb642f3be.tres"]
+
+[params]
+
+defaults=true

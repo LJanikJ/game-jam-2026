@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://dy60r31iadjuo"
+path="res://.godot/imported/amulet.dialogue-1306ae1ccf7acf03c6e81c65fc9e317b.tres"
+
+[deps]
+
+source_file="res://resources/dialogue/items/misc/amulet.dialogue"
+dest_files=["res://.godot/imported/amulet.dialogue-1306ae1ccf7acf03c6e81c65fc9e317b.tres"]
+
+[params]
+
+defaults=true

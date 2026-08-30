@@ -51,11 +51,11 @@ text = "Main Menu"
 
 [node name="RetryButton" type="Button" parent="." unique_id=1240793077]
 offset_left = 480.0
-offset_top = 392.0
+offset_top = 400.0
 offset_right = 672.0
-offset_bottom = 456.0
+offset_bottom = 464.0
 theme_override_font_sizes/font_size = 32
-text = "Try Again"
+text = "Try Again?"
 
 [connection signal="final_score" from="." to="FinalScoreLabel" method="_on_end_screen_final_score"]
 [connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
