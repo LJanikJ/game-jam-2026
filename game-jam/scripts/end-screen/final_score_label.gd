@@ -24,7 +24,7 @@ You made a profit of %d gold pieces.
 
 You made a profit of %d gold pieces.
 
-You made %d wrong choices.""" % [score, num_bad]
+You made %d mistakes.""" % [score, num_bad]
 	
 	
 	
@@ -37,7 +37,7 @@ You're [shake]Fired[/shake]!
 
 You lost the shop %d gold pieces.
 
-You didn't make a single right choice...""" % [score * -1]
+You didn't make a single correct choice...""" % [score * -1]
 		else:
 			self.text = """Shift Over!
 
@@ -45,4 +45,4 @@ You're [shake]Fired[/shake]!
 
 You lost the shop %d gold pieces.
 
-You made %d wrong choices.""" % [score * -1, num_bad]
+You made %d mistakes.""" % [score * -1, num_bad]
