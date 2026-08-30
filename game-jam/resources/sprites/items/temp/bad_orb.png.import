@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjx881gsj5exu"
-path="res://.godot/imported/super_sword.png-1891d4dea06c110c720f476fa84cd91c.ctex"
+uid="uid://bkhe5ykvqprt"
+path="res://.godot/imported/bad_orb.png-4184435bffa1da862e8100949201c5c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/items/super_sword.png"
-dest_files=["res://.godot/imported/super_sword.png-1891d4dea06c110c720f476fa84cd91c.ctex"]
+source_file="res://resources/sprites/items/temp/bad_orb.png"
+dest_files=["res://.godot/imported/bad_orb.png-4184435bffa1da862e8100949201c5c3.ctex"]
 
 [params]
 
