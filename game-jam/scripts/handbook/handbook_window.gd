@@ -42,6 +42,9 @@ func _on_page_left_pressed() -> void:
 		index -= 1
 		pages[index].visible = true
 		flip_sound.emit()
+		
+		if index == 0:
+			$PageFlipLeft.visible = false
 
 
 func _on_page_right_pressed() -> void:
@@ -50,3 +53,23 @@ func _on_page_right_pressed() -> void:
 		index += 1
 		pages[index].visible = true
 		flip_sound.emit()
+		
+		if index == 6:
+			$PageFlipRight.visible = false
+
+func _on_page_left_mouse_entered() -> void:
+	if index > 0:
+		$PageFlipLeft.visible = true
+
+
+func _on_page_left_mouse_exited() -> void:
+	$PageFlipLeft.visible = false
+
+
+func _on_page_right_mouse_entered() -> void:
+	if index < 6:
+		$PageFlipRight.visible = true
+
+
+func _on_page_right_mouse_exited() -> void:
+	$PageFlipRight.visible = false
