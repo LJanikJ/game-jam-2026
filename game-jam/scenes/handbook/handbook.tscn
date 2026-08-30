@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://p5t8y645pqev" path="res://resources/sprites/book/page5.png" id="8_xxilg"]
 [ext_resource type="Texture2D" uid="uid://hefk8b53ydua" path="res://resources/sprites/book/page6.png" id="9_seayl"]
 [ext_resource type="Texture2D" uid="uid://s0shr115eru6" path="res://resources/sprites/book/page7.png" id="10_a3ntf"]
+[ext_resource type="Texture2D" uid="uid://ywsbehm43us6" path="res://resources/sprites/book/pageflip.png" id="11_seayl"]
 
 [node name="Handbook" type="Control" unique_id=531685002]
 layout_mode = 3
@@ -412,14 +413,25 @@ bbcode_enabled = true
 
 [node name="PageLeft" type="Button" parent="Handbook Button/Handbook Window" unique_id=1225658142]
 self_modulate = Color(1, 1, 1, 0)
-offset_right = 148.0
+offset_right = 108.0
 offset_bottom = 400.0
 
 [node name="PageRight" type="Button" parent="Handbook Button/Handbook Window" unique_id=160501002]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 460.0
+offset_left = 492.0
 offset_right = 600.0
 offset_bottom = 400.0
+
+[node name="PageFlipRight" type="Sprite2D" parent="Handbook Button/Handbook Window" unique_id=1666206560]
+visible = false
+position = Vector2(570, 370)
+texture = ExtResource("11_seayl")
+
+[node name="PageFlipLeft" type="Sprite2D" parent="Handbook Button/Handbook Window" unique_id=1589903638]
+visible = false
+position = Vector2(30, 370)
+texture = ExtResource("11_seayl")
+flip_h = true
 
 [node name="PageFlipSound" type="AudioStreamPlayer2D" parent="." unique_id=711734584]
 panning_strength = 0.0
@@ -430,5 +442,9 @@ script = ExtResource("4_gs2xn")
 [connection signal="pressed" from="Handbook Button" to="PageFlipSound" method="_on_handbook_button_pressed"]
 [connection signal="close_requested" from="Handbook Button/Handbook Window" to="Handbook Button/Handbook Window" method="_on_close_requested"]
 [connection signal="flip_sound" from="Handbook Button/Handbook Window" to="PageFlipSound" method="_on_handbook_window_flip_sound"]
+[connection signal="mouse_entered" from="Handbook Button/Handbook Window/PageLeft" to="Handbook Button/Handbook Window" method="_on_page_left_mouse_entered"]
+[connection signal="mouse_exited" from="Handbook Button/Handbook Window/PageLeft" to="Handbook Button/Handbook Window" method="_on_page_left_mouse_exited"]
 [connection signal="pressed" from="Handbook Button/Handbook Window/PageLeft" to="Handbook Button/Handbook Window" method="_on_page_left_pressed"]
+[connection signal="mouse_entered" from="Handbook Button/Handbook Window/PageRight" to="Handbook Button/Handbook Window" method="_on_page_right_mouse_entered"]
+[connection signal="mouse_exited" from="Handbook Button/Handbook Window/PageRight" to="Handbook Button/Handbook Window" method="_on_page_right_mouse_exited"]
 [connection signal="pressed" from="Handbook Button/Handbook Window/PageRight" to="Handbook Button/Handbook Window" method="_on_page_right_pressed"]

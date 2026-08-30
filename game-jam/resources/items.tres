@@ -110,9 +110,9 @@ data = [{
 "cursed": false,
 "lying": false,
 "name": "magic_bean",
-"school": "transmutation",
+"school": "unknown",
 "type": "misc",
-"value": 500
+"value": 1000
 }, {
 "cursed": false,
 "lying": false,

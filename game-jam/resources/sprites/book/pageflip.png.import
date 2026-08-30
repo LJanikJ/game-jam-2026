@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjx881gsj5exu"
-path="res://.godot/imported/super_sword.png-1891d4dea06c110c720f476fa84cd91c.ctex"
+uid="uid://ywsbehm43us6"
+path="res://.godot/imported/pageflip.png-c1532e079ebb3be8b5a35b19a0b9b873.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/items/super_sword.png"
-dest_files=["res://.godot/imported/super_sword.png-1891d4dea06c110c720f476fa84cd91c.ctex"]
+source_file="res://resources/sprites/book/pageflip.png"
+dest_files=["res://.godot/imported/pageflip.png-c1532e079ebb3be8b5a35b19a0b9b873.ctex"]
 
 [params]
 
