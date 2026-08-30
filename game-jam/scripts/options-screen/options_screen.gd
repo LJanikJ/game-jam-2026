@@ -16,20 +16,21 @@ func _process(delta: float) -> void:
 
 
 func _on_master_slider_drag_ended(value_changed: bool) -> void:
-	AudioServer.set_bus_volume_db(master_idx, linear_to_db($VBoxContainer/MasterSlider.value))
+	AudioServer.set_bus_volume_db(bgm_idx, linear_to_db($VBoxContainer/BGMSlider.value * $VBoxContainer/MasterSlider.value))
+	AudioServer.set_bus_volume_db(sfx_idx, linear_to_db($VBoxContainer/SFXSlider.value * $VBoxContainer/MasterSlider.value))
 
 
 func _on_bgm_slider_drag_ended(value_changed: bool) -> void:
-	AudioServer.set_bus_volume_db(bgm_idx, linear_to_db($VBoxContainer/BGMSlider.value))
+	AudioServer.set_bus_volume_db(bgm_idx, linear_to_db($VBoxContainer/BGMSlider.value * $VBoxContainer/MasterSlider.value))
 
 
 func _on_sfx_slider_drag_ended(value_changed: bool) -> void:
-	AudioServer.set_bus_volume_db(sfx_idx, linear_to_db($VBoxContainer/SFXSlider.value))
+	AudioServer.set_bus_volume_db(sfx_idx, linear_to_db($VBoxContainer/SFXSlider.value * $VBoxContainer/MasterSlider.value))
+	$SampleSFX.play()
 
 
 func _on_return_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/title-screen/title-screen.tscn")
-
+  visible = false
 
 func _on_pause_button_pressed() -> void:
 	visible = true

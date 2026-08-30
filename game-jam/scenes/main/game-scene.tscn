@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dmywb3rw07ll8"]
 
 [ext_resource type="PackedScene" uid="uid://ctpfxcbcdhyqa" path="res://scenes/desk/tabletop_view.tscn" id="1_6s6y0"]
+[ext_resource type="Script" uid="uid://bpufmda7p3htp" path="res://scripts/music/sfx_player.gd" id="1_8ikh4"]
 [ext_resource type="PackedScene" uid="uid://bkqxdb87m7lot" path="res://scenes/handbook/handbook.tscn" id="1_fttaq"]
 [ext_resource type="Texture2D" uid="uid://b8kkhp0hd3ksa" path="res://resources/sprites/spells/spell2.png" id="2_lg53t"]
 [ext_resource type="Texture2D" uid="uid://46npg5x6q131" path="res://resources/sprites/spells/spell3.png" id="3_5y0al"]
@@ -20,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://dthmly7t5xo3l" path="res://resources/sprites/desk/accept_button.png" id="11_65vu2"]
 [ext_resource type="Texture2D" uid="uid://dmtn1wn448q8o" path="res://resources/sprites/timer/empty.png" id="11_xyowu"]
 [ext_resource type="Script" uid="uid://bxbfon4g2ims2" path="res://scripts/item/accept_button.gd" id="12_1f4fv"]
-[ext_resource type="Script" uid="uid://2e0qtb7r4bhh" path="res://scripts/music/music_player.gd" id="12_2xsdd"]
 [ext_resource type="Texture2D" uid="uid://itwhvrubxteo" path="res://resources/sprites/desk/accept_button_press.png" id="12_5eu4v"]
 [ext_resource type="AudioStream" uid="uid://n8538lefolro" path="res://resources/music/game_jam.mp3" id="12_diqyw"]
 [ext_resource type="Texture2D" uid="uid://4ys3ckj40civ" path="res://resources/sprites/desk/reject_button.png" id="12_vmbtd"]
@@ -45,13 +45,18 @@ gradient = SubResource("Gradient_6s6y0")
 
 [node name="GameScene" type="Node2D" unique_id=1450174136]
 
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="." unique_id=730574906]
+panning_strength = 0.0
+bus = &"SFX"
+script = ExtResource("1_8ikh4")
+
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1022832991]
 process_mode = 3
 stream = ExtResource("12_diqyw")
 autoplay = true
 panning_strength = 0.0
+bus = &"BGM"
 parameters/looping = true
-script = ExtResource("12_2xsdd")
 
 [node name="TableLayer" type="CanvasLayer" parent="." unique_id=813252621]
 
@@ -268,14 +273,16 @@ script = ExtResource("34_jenue")
 layer = 10
 
 [node name="Tutorial" parent="TutorialLayer" unique_id=463648728 instance=ExtResource("31_8ttbn")]
-position = Vector2(544, 296)
+position = Vector2(544, 320)
 
 [connection signal="final_score" from="TableLayer/Tabletop View" to="GUILayer/EndLayer/EndScreen" method="_on_tabletop_view_final_score"]
 [connection signal="items_empty" from="TableLayer/Tabletop View" to="GUILayer/EndLayer/EndScreen" method="_on_tabletop_view_items_empty"]
 [connection signal="new_item" from="TableLayer/Tabletop View" to="GUILayer/DialogueManager" method="_on_tabletop_view_new_item"]
 [connection signal="new_item" from="TableLayer/Tabletop View" to="GUILayer/magicSchoolSprite" method="_on_tabletop_view_new_item"]
+[connection signal="sfx" from="TableLayer/Tabletop View" to="SFXPlayer" method="_on_tabletop_view_sfx"]
 [connection signal="timer_start" from="TableLayer/Tabletop View" to="GUILayer/Right GUI/TimerBar" method="_on_tabletop_view_timer_start"]
 [connection signal="customer_at_desk" from="ShopLayer/ShopView" to="TableLayer/Tabletop View" method="_on_shop_view_customer_at_desk"]
+[connection signal="pressed" from="GUILayer/Right GUI/Spell 1" to="SFXPlayer" method="_on_spell_1_pressed"]
 [connection signal="pressed" from="GUILayer/Right GUI/Spell 1" to="GUILayer/Right GUI/Spell 1" method="_on_pressed"]
 [connection signal="pressed" from="GUILayer/Right GUI/Spell 1" to="GUILayer/magicSchoolSprite" method="_on_spell_1_pressed"]
 [connection signal="timeout" from="GUILayer/Right GUI/TimerBar/Timer" to="GUILayer/RejectButton" method="_on_timer_timeout"]

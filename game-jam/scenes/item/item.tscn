@@ -12,5 +12,6 @@ script = ExtResource("1_vcqat")
 shape = SubResource("RectangleShape2D_vcqat")
 
 [node name="ClickPlayer" type="AudioStreamPlayer2D" parent="." unique_id=957733592]
+bus = &"SFX"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

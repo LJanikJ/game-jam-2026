@@ -14,33 +14,33 @@ process_mode = 3
 script = ExtResource("1_6bxba")
 
 [node name="TutorialBackground" type="Sprite2D" parent="." unique_id=1910133998]
-position = Vector2(1.1444092e-05, 3.9999738)
-scale = Vector2(5.9999995, 8.125)
+position = Vector2(-1.1444092e-05, 3.9999676)
+scale = Vector2(8, 8.625)
 texture = SubResource("GradientTexture2D_8ikh4")
 
 [node name="TutorialText" type="RichTextLabel" parent="." unique_id=1630193276]
-offset_left = -160.0
-offset_top = -224.0
-offset_right = 160.0
-offset_bottom = 160.0
-theme_override_constants/outline_size = 2
-text = "This is where the tutorial text goes.
+offset_left = -224.0
+offset_top = -240.0
+offset_right = 224.0
+offset_bottom = 192.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 20
+text = "You're a newly hired apprentice at a magic item pawn shop! But, before your training even started, your boss ran off and left you to handle customers by yourself. 
 
-Your boss left you alone.
+All you have is your trusty handbook and a low-level identification spell.
 
-You appraise magic items, and decide whether the store buys them.
+Click the accept or reject buttons on the table to decide whether to buy their items as they come in, but be quick! These customers have very little patience.
 
-Accept/reject buttons, spell button.
-
-Feel free to get acquainted with the handbook, but don't keep the customers waiting too long! 
+Feel free to get acquainted with the handbook in the bottom right, but don't keep the customers waiting too long! 
 
 Sometimes the only way to learn is by doing."
 
 [node name="DismissButton" type="Button" parent="." unique_id=929008855]
-offset_left = -64.0
-offset_top = 192.0
-offset_right = 64.0
-offset_bottom = 232.0
+offset_left = -72.0
+offset_top = 208.0
+offset_right = 72.0
+offset_bottom = 248.0
+theme_override_font_sizes/font_size = 24
 text = "I understand"
 
 [connection signal="pressed" from="DismissButton" to="." method="_on_dismiss_button_pressed"]

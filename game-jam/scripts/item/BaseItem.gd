@@ -47,6 +47,9 @@ func load_item(index: int) -> void:
 		value = json_entry["value"]
 		magic_school = json_entry["school"]
 		
+		if cursed or lying:
+			value *= -1
+		
 	else:
 		print("Unexpected data")
 

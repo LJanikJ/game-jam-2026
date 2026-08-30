@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cvp6wf8x1x3v1"]
 
 [ext_resource type="Script" uid="uid://ccc7gxd7ebyf4" path="res://scripts/title-screen/title-screen.gd" id="1_uhjyj"]
+[ext_resource type="AudioStream" uid="uid://n8538lefolro" path="res://resources/music/game_jam.mp3" id="2_3swuw"]
+[ext_resource type="PackedScene" uid="uid://bt575tbl14tyr" path="res://scenes/options-screen/options-screen.tscn" id="3_3swuw"]
 
 [sub_resource type="Gradient" id="Gradient_1s85s"]
 colors = PackedColorArray(0.7490196, 0, 0, 1, 1, 0, 0.6745098, 1)
@@ -10,6 +12,14 @@ gradient = SubResource("Gradient_1s85s")
 
 [node name="Node2D" type="Node2D" unique_id=769329823]
 script = ExtResource("1_uhjyj")
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="." unique_id=185440436]
+process_mode = 3
+stream = ExtResource("2_3swuw")
+autoplay = true
+panning_strength = 0.0
+bus = &"BGM"
+parameters/looping = true
 
 [node name="BackgroundLayer" type="CanvasLayer" parent="." unique_id=993996892]
 layer = 0
@@ -65,6 +75,11 @@ theme_override_font_sizes/normal_font_size = 96
 bbcode_enabled = true
 text = "Trust No Wanderer"
 horizontal_alignment = 1
+
+[node name="OptionsLayer" type="CanvasLayer" parent="." unique_id=1544327293]
+
+[node name="OptionsScreen" parent="OptionsLayer" unique_id=1553045600 instance=ExtResource("3_3swuw")]
+visible = false
 
 [connection signal="pressed" from="InterfaceLayer/start-button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="InterfaceLayer/options-button" to="." method="_on_optionsbutton_pressed"]
