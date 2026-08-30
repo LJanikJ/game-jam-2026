@@ -30,4 +30,8 @@ func _on_sfx_slider_drag_ended(value_changed: bool) -> void:
 
 
 func _on_return_button_pressed() -> void:
-	visible = false
+  visible = false
+
+func _on_pause_button_pressed() -> void:
+	visible = true
+	get_tree().paused = true
